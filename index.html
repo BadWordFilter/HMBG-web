@@ -36,6 +36,7 @@
         <li role="none"><a href="#about" class="nav-link" role="menuitem">소개</a></li>
         <li role="none"><a href="#activities" class="nav-link" role="menuitem">활동</a></li>
         <li role="none"><a href="#projects" class="nav-link" role="menuitem">프로젝트</a></li>
+        <li role="none"><a href="#awards" class="nav-link" role="menuitem">수상</a></li>
         <li role="none"><a href="#members" class="nav-link" role="menuitem">멤버</a></li>
         <li role="none"><a href="#join" class="nav-link nav-cta" id="nav-join-btn" role="menuitem">가입하기</a></li>
       </ul>
@@ -101,15 +102,15 @@
           <p class="panel-label">// CLUB_STATUS.json</p>
           <div class="panel-stats" id="hero-stats">
             <div class="panel-stat">
-              <div class="stat-num" data-target="13">0</div>
+              <div class="stat-num" data-target="21">0</div>
               <div class="stat-label">활동 멤버</div>
             </div>
             <div class="panel-stat">
-              <div class="stat-num" data-target="1">0</div>
+              <div class="stat-num" data-target="2">0</div>
               <div class="stat-label">제작/출시 게임</div>
             </div>
             <div class="panel-stat">
-              <div class="stat-num" data-target="0">0</div>
+              <div class="stat-num" data-target="1">0</div>
               <div class="stat-label">수상 실적</div>
             </div>
           </div>
@@ -336,6 +337,59 @@
   </section>
 
   <!-- ══════════════════════════
+       AWARDS
+  ══════════════════════════ -->
+  <section id="awards" class="section awards" aria-labelledby="awards-title">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Awards</p>
+        <h2 class="section-title" id="awards-title">
+          우리가 이룬 <span class="gradient-text-gold">성취들</span>
+        </h2>
+        <div class="neon-line"
+          style="background: linear-gradient(90deg, var(--neon-gold), var(--neon-pink)); box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);">
+        </div>
+      </div>
+
+      <div class="projects-grid" role="list">
+
+        <div class="activity-card award-card reveal" style="grid-column: span 1;" id="activity-award" role="listitem">
+          <div class="activity-icon-wrap">🏅</div>
+          <div class="activity-body">
+            <h3>2025 AI·SW 페스티벌 수상</h3>
+            <p>SCHU 게임개발경진대회에서 최우수상을 수상하며 동아리의 기술력과 창의성을 인정받았습니다.</p>
+            <span class="activity-badge">🥇 최우수상 · 2025</span>
+            <div class="award-media">
+              <div class="award-cert">
+                <img src="award_schu.png" alt="2025 SCHU AI·SW 페스티벌 게임개발경진대회 최우수상 상장" class="award-cert-img" />
+              </div>
+              <div class="award-links">
+                <a href="https://youtu.be/Hd9ynbk7nds?si=7zqHeXQpdO4yjs1q" target="_blank" rel="noopener"
+                  class="award-yt-btn" id="award-yt-link-1">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                  </svg>
+                  영상 1 보기
+                </a>
+                <a href="https://youtu.be/Qo9u8bUePX8?si=bTHXAJI_MR1nGkZ_" target="_blank" rel="noopener"
+                  class="award-yt-btn" id="award-yt-link-2">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                  </svg>
+                  영상 2 보기
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════
        MEMBERS
   ══════════════════════════ -->
   <section id="members" class="section members" aria-labelledby="members-title">
@@ -367,7 +421,33 @@
           </a>
         </div>
 
+        <div class="member-card reveal" id="member-kimbomin" role="listitem">
+          <div class="member-glow-bg" aria-hidden="true"></div>
+          <div class="member-avatar" style="background: linear-gradient(135deg, hsl(340,70%,45%), hsl(20,80%,55%));">
+            <div class="avatar-ring" aria-hidden="true"></div>
+            <span aria-hidden="true">김</span>
+          </div>
+          <h3 class="member-name">김보민</h3>
+          <p class="member-role">// 운영진 · Game Dev</p>
+          <p class="member-desc">햄부기(HMBG) 운영진. 게임 개발 및 동아리 운영을 함께 이끌어 나갑니다.</p>
+          <div class="member-tags" aria-label="기술 스택">
+            <span>Unity</span><span>C#</span><span>운영진</span>
+          </div>
+        </div>
 
+        <div class="member-card reveal" id="member-leeiksun" role="listitem">
+          <div class="member-glow-bg" aria-hidden="true"></div>
+          <div class="member-avatar" style="background: linear-gradient(135deg, hsl(190,70%,40%), hsl(230,80%,55%));">
+            <div class="avatar-ring" aria-hidden="true"></div>
+            <span aria-hidden="true">이</span>
+          </div>
+          <h3 class="member-name">이익선</h3>
+          <p class="member-role">// 운영진 · Game Dev</p>
+          <p class="member-desc">햄부기(HMBG) 운영진. 게임 개발 및 동아리 운영을 함께 이끌어 나갑니다.</p>
+          <div class="member-tags" aria-label="기술 스택">
+            <span>Unity</span><span>C#</span><span>운영진</span>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -458,6 +538,7 @@
             <a href="#about" id="footer-about-link">소개</a>
             <a href="#activities" id="footer-activities-link">활동</a>
             <a href="#projects" id="footer-projects-link">프로젝트</a>
+            <a href="#awards" id="footer-awards-link">수상</a>
             <a href="#members" id="footer-members-link">멤버</a>
           </nav>
         </div>
