@@ -28,8 +28,10 @@ export default async function handler(req, res) {
         'Authorization': `Bearer ${process.env.API_KEY || ''}`
       },
       body: JSON.stringify({
-        model: "claude-sonnet-4-6", // API Gateway에서 지원하는 모델명 (gpt-4o 등 변경 가능)
+        model: "gpt-5.2", // 문서에 명시된 사용 가능한 챗 모델 ID 적용
         messages: messages,
+        temperature: 0.7, // 마스코트의 창의적이고 친근한 성격을 위해 온도 조절
+        max_tokens: 1000  // 불필요하게 긴 답변 방지
       })
     });
 
