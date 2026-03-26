@@ -1472,6 +1472,10 @@ body::after {
   grid-column: 2;
 }
 
+.member-card:nth-child(2) {
+  grid-column: 1;
+}
+
 .member-card {
   background: var(--void-3);
   border: 1px solid var(--border-dim);
