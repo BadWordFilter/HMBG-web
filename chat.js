@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingMsg = addMessage('...', 'bot-loading');
 
     try {
-      // 3. Vercel 서버리스 함수로 요청 전송 (/api/chat)
+      // 3. Vercel 서버리스 함수로 요청 전송 (CORS 허용된 API 라우트 호출)
       const response = await fetch('https://hmbg-web.vercel.app/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
