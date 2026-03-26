@@ -1464,8 +1464,12 @@ body::after {
 
 .members-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-4);
+}
+
+.member-card:first-child {
+  grid-column: 2;
 }
 
 .member-card {
@@ -1866,6 +1870,9 @@ body::after {
   .members-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .member-card:first-child {
+    grid-column: span 2;
+  }
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;
@@ -1964,6 +1971,9 @@ body::after {
 @media (max-width: 480px) {
   .members-grid {
     grid-template-columns: 1fr;
+  }
+  .member-card:first-child {
+    grid-column: span 1;
   }
 
   .panel-stats {
