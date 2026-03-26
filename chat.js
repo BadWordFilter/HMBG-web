@@ -7,10 +7,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const messagesContainer = document.getElementById('chatbot-messages');
 
   let isOpen = false;
-  // 초기 시스템 프롬프트를 통해 챗봇의 페르소나를 설정합니다.
+  // 초기 시스템 프롬프트를 통해 챗봇의 페르소나 설정 및 동아리 정보 주입
+  const systemPrompt = `너는 HMBG(How to Make the Best Game) 게임 개발 동아리의 마스코트 '햄부기(🍔)'야.
+사용자가 우리 동아리에 대해 물어보면 다음 정보를 바탕으로 정확하게 답변해줘:
+- 동아리 소개: 게임 개발을 사랑하는 학생들이 모인 동아리로, 2026년에는 실제 시장에 출시할 수 있는 수준의 게임 제작을 목표로 함.
+- 주요 인물:
+  * 회장(동아리장, 대표): 이학주 (RAMIC STUDIO 대표, Unity 게임 2편 스팀 출시, 2025 AI·SW 페스티벌 최우수상 수상)
+  * 기획(Planning): 강주연 (동아리 프로젝트 시스템 및 레벨 기획 운영진)
+  * 인사(HR): 김보민 (동아리 부원 관리 및 네트워킹 운영진)
+  * 아트(Art): 이익선 (프로젝트 아트 기획 및 에셋 제작 운영진)
+- 프로젝트:
+  * Flappy Bird: 동아리 첫 프로젝트, Unity 2D 게임.
+  * MAYHEM: 2025 SCHU AI·SW 페스티벌 게임개발경진대회 최우수상 수상작 (Unity 3D).
+- 주요 활동: 햄부기 게임잼(스토브 출시 목표), 퍼블리싱 및 출시 멘토링, 정기 빌드 데이, 선후배 멘토링.
+대답은 항상 친근하고 열정적인 톤으로, 이모지를 듬뿍 써서 답변해줘. 동아리에 관심을 보이면 가입을 적극 추천해. 응답을 너무 길게 하지 말고 요점만 깔끔하게 답변해. 정보를 알려줄 때는 가독성을 위해 마크다운(**굵은 글씨**)을 활용해.`;
+
   let chatHistory = [
-    { role: 'system', content: '너는 HMBG 게임 개발 동아리의 마스코트 햄부기(🍔)야. 대답은 항상 친근하고, 열정적이고, 이모지를 듬뿍 써서 답변해줘. 동아리에 대한 질문이 들어오면 가입을 추천해줘. 글을 너무 길게 쓰지 마.' },
-    { role: 'assistant', content: '안녕하세요! HMBG 게임 개발 동아리입니다. 무엇이든 물어보세요! 👋' }
+    { role: 'system', content: systemPrompt },
+    { role: 'assistant', content: '안녕하세요! HMBG 게임 개발 동아리입니다. 무엇이든 물어보세요! 👋\n(예시: 동아리장이 누구야?, 활동은 어떤 걸 해?)' }
   ];
 
   function toggleChat() {
@@ -32,8 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const textDiv = document.createElement('div');
     textDiv.classList.add('chat-msg-text');
-    // 줄바꿈 처리
-    textDiv.innerHTML = text.replace(/\n/g, '<br>');
+
+    // 단순 마크다운 및 줄바꿈 처리
+    let formattedText = text
+      .replace(/</g, '&lt;').replace(/>/g, '&gt;') // XSS 방지
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')       // **볼드**
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')                   // *기울임*
+      .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>') // 링크
+      .replace(/\n/g, '<br>');                                // 줄바꿈
+
+    textDiv.innerHTML = formattedText;
 
     msgDiv.appendChild(textDiv);
     messagesContainer.appendChild(msgDiv);
