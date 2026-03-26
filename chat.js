@@ -29,16 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
   function addMessage(text, sender) {
     const msgDiv = document.createElement('div');
     msgDiv.classList.add('chat-msg', sender);
-    
+
     const textDiv = document.createElement('div');
     textDiv.classList.add('chat-msg-text');
     // 줄바꿈 처리
     textDiv.innerHTML = text.replace(/\n/g, '<br>');
-    
+
     msgDiv.appendChild(textDiv);
     messagesContainer.appendChild(msgDiv);
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    
+
     return msgDiv;
   }
 
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       // 3. Vercel 서버리스 함수로 요청 전송 (/api/chat)
-      const response = await fetch('/api/chat', {
+      const response = await fetch('https://hmbg-web.vercel.app/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: chatHistory })
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const data = await response.json();
-      
+
       // 4. 응답 메시지 추출 및 UI에 추가
       if (data.choices && data.choices[0] && data.choices[0].message) {
         const botReply = data.choices[0].message.content;
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   sendBtn.addEventListener('click', sendMessage);
-  
+
   inputField.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
       sendMessage();

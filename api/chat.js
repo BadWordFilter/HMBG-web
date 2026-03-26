@@ -1,5 +1,10 @@
 export default async function handler(req, res) {
-  // CORS 처리 (필요시)
+  // GitHub Pages 등 외부 도메인에서 API를 호출할 수 있도록 CORS 허용 세팅
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
