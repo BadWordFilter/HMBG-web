@@ -214,14 +214,19 @@ if (joinForm) {
 }
 
 /* ════════════════════════════
-   10. GLITCH TITLE EFFECT (subtle)
+   10. SCROLL TO TOP
 ════════════════════════════ */
-const heroTitle = document.getElementById('hero-title');
-if (heroTitle) {
-  setInterval(() => {
-    if (Math.random() > 0.92) {
-      heroTitle.style.transform = `translateX(${(Math.random() - 0.5) * 3}px)`;
-      setTimeout(() => { heroTitle.style.transform = ''; }, 80);
+const scrollTopBtn = document.getElementById('scroll-top-btn');
+if (scrollTopBtn) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      scrollTopBtn.classList.add('visible');
+    } else {
+      scrollTopBtn.classList.remove('visible');
     }
-  }, 2000);
+  }, { passive: true });
+
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 }

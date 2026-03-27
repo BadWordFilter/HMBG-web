@@ -83,6 +83,16 @@ html {
   font-size: 16px;
 }
 
+::-moz-selection {
+  background: var(--neon-pink);
+  color: var(--void);
+}
+
+::selection {
+  background: var(--neon-pink);
+  color: var(--void);
+}
+
 body {
   font-family: var(--font-body);
   background: var(--void);
@@ -630,6 +640,42 @@ body::after {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   filter: drop-shadow(0 0 20px rgba(224, 64, 251, 0.4));
+}
+
+@keyframes cyber-glitch {
+  0% { transform: translate(0); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  2% { transform: translate(-2px, 1px); clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%); }
+  4% { transform: translate(2px, -1px); clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%); }
+  6% { transform: translate(0); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  100% { transform: translate(0); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+}
+
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.8;
+}
+.glitch-text::before {
+  -webkit-text-fill-color: var(--neon-cyan);
+  z-index: -1;
+  animation: cyber-glitch 4s infinite linear alternate-reverse;
+  left: -2px;
+}
+.glitch-text::after {
+  -webkit-text-fill-color: var(--neon-pink);
+  z-index: -2;
+  animation: cyber-glitch 3s infinite linear alternate;
+  left: 2px;
 }
 
 .hero-sub {
@@ -1480,7 +1526,7 @@ body::after {
   background: var(--void-3);
   border: 1px solid var(--border-dim);
   border-radius: var(--r-lg);
-  padding: var(--sp-6) var(--sp-5);
+  padding: var(--sp-5) var(--sp-4);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -1507,15 +1553,15 @@ body::after {
 }
 
 .member-avatar {
-  width: 76px;
-  height: 76px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  margin: 0 auto var(--sp-5);
+  margin: 0 auto var(--sp-4);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: var(--void);
   position: relative;
@@ -1536,7 +1582,7 @@ body::after {
 
 .member-name {
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   margin-bottom: 4px;
@@ -1546,19 +1592,19 @@ body::after {
 
 .member-role {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   letter-spacing: 0.08em;
   color: var(--neon-pink);
-  margin-bottom: var(--sp-3);
+  margin-bottom: var(--sp-2);
   position: relative;
   z-index: 1;
 }
 
 .member-desc {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--text-2);
-  line-height: 1.65;
-  margin-bottom: var(--sp-4);
+  line-height: 1.5;
+  margin-bottom: var(--sp-3);
   position: relative;
   z-index: 1;
 }
@@ -1986,6 +2032,64 @@ body::after {
 
   .join-form {
     padding: var(--sp-5);
+  }
+}
+
+/* ══════════════════════════════════
+   SCROLL TO TOP
+══════════════════════════════════ */
+.scroll-top-btn {
+  position: fixed;
+  bottom: calc(var(--sp-6) + 75px);
+  right: var(--sp-6);
+  width: 50px;
+  height: 50px;
+  background: rgba(10, 10, 20, 0.8);
+  border: 1px solid var(--border-neon);
+  border-radius: var(--r-sm);
+  color: var(--neon-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9998;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all var(--t-mid) var(--ease);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+  background: rgba(34, 211, 238, 0.15);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+  transform: translateY(-5px);
+  color: var(--void);
+  border-color: var(--neon-cyan);
+}
+
+.scroll-top-btn:hover svg {
+  animation: bounce-up 1s ease infinite;
+}
+
+@keyframes bounce-up {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@media (max-width: 480px) {
+  .scroll-top-btn {
+    bottom: calc(var(--sp-6) + 85px);
+    width: 44px;
+    height: 44px;
+    right: 20px;
   }
 }
 

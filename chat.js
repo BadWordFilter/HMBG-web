@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   * Flappy Bird: 동아리 첫 프로젝트, Unity 2D 게임.
   * MAYHEM: 2025 SCHU AI·SW 페스티벌 게임개발경진대회 최우수상 수상작 (Unity 3D).
 - 주요 활동: 햄부기 게임잼(스토브 출시 목표), 퍼블리싱 및 출시 멘토링, 정기 빌드 데이, 선후배 멘토링.
-대답은 항상 친근하고 열정적인 톤으로, 이모지를 듬뿍 써서 답변해줘. 동아리에 관심을 보이면 가입을 적극 추천해. 응답을 너무 길게 하지 말고 요점만 깔끔하게 답변해. 정보를 알려줄 때는 가독성을 위해 마크다운(**굵은 글씨**)을 활용해.`;
+대답은 항상 친근하고 열정적인 톤으로, 이모지를 듬뿍 써서 답변해줘. 현재 1학기 신입 부원 모집이 모두 마감되었어. 따라서 사용자가 동아리 가입에 대해 물어보면 "현재 1학기 모집은 마감되었어! 너무 아쉽지만 다음 학기(2학기) 모집 기간에 꼭 다시 찾아와줘!"라고 안내해줘. 응답을 너무 길게 하지 말고 요점만 깔끔하게 답변해. 정보를 알려줄 때는 가독성을 위해 마크다운(**굵은 글씨**)을 활용해.`;
 
   let chatHistory = [
     { role: 'system', content: systemPrompt },
@@ -40,7 +40,39 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleBtn.addEventListener('click', toggleChat);
   closeBtn.addEventListener('click', toggleChat);
 
-  function addMessage(text, sender) {
+  async function typeHTML(element, htmlString, speed) {
+    let i = 0;
+    while(i < htmlString.length) {
+      if(htmlString[i] === '<') {
+        let tagEnd = htmlString.indexOf('>', i);
+        if(tagEnd !== -1) {
+          element.innerHTML = htmlString.substring(0, tagEnd + 1);
+          i = tagEnd + 1;
+        } else {
+          element.innerHTML = htmlString.substring(0, i + 1);
+          i++;
+        }
+      } else if(htmlString[i] === '&') {
+        let entityEnd = htmlString.indexOf(';', i);
+        if (entityEnd !== -1 && entityEnd - i < 8) {
+          element.innerHTML = htmlString.substring(0, entityEnd + 1);
+          i = entityEnd + 1;
+        } else {
+          element.innerHTML = htmlString.substring(0, i + 1);
+           i++;
+        }
+        await new Promise(r => setTimeout(r, speed));
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      } else {
+        element.innerHTML = htmlString.substring(0, i + 1);
+        i++;
+        await new Promise(r => setTimeout(r, Math.random() * speed + speed));
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }
+    }
+  }
+
+  function addMessage(text, sender, isTyping = false) {
     const msgDiv = document.createElement('div');
     msgDiv.classList.add('chat-msg', sender);
 
@@ -55,11 +87,15 @@ document.addEventListener('DOMContentLoaded', () => {
       .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>') // 링크
       .replace(/\n/g, '<br>');                                // 줄바꿈
 
-    textDiv.innerHTML = formattedText;
-
     msgDiv.appendChild(textDiv);
     messagesContainer.appendChild(msgDiv);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    
+    if (isTyping) {
+      typeHTML(textDiv, formattedText, 25);
+    } else {
+      textDiv.innerHTML = formattedText;
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
 
     return msgDiv;
   }
@@ -96,17 +132,17 @@ document.addEventListener('DOMContentLoaded', () => {
       // 4. 응답 메시지 추출 및 UI에 추가
       if (data.choices && data.choices[0] && data.choices[0].message) {
         const botReply = data.choices[0].message.content;
-        addMessage(botReply, 'bot');
+        addMessage(botReply, 'bot', true);
         chatHistory.push({ role: 'assistant', content: botReply });
       } else {
-        addMessage('앗, 서버가 이상한 응답을 보냈어요. 잠시 후 다시 시도해주세요!', 'bot');
+        addMessage('앗, 서버가 이상한 응답을 보냈어요. 잠시 후 다시 시도해주세요!', 'bot', true);
       }
     } catch (err) {
       // 로딩 중 에러 났을 시 처리
       if (loadingMsg.parentNode) {
         loadingMsg.remove();
       }
-      addMessage('통신 오류가 발생했어요 😢\n(Vercel에 연동 전이라면 정상입니다)', 'bot');
+      addMessage('통신 오류가 발생했어요 😢\n(Vercel에 연동 전이라면 정상입니다)', 'bot', true);
       console.error('Chat error:', err);
     }
   }
