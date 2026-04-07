@@ -311,6 +311,8 @@ body::after {
   flex-shrink: 0;
   transition: all var(--t-mid) var(--ease);
   filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.4));
+  object-fit: contain;
+  padding: 3px;
 }
 
 .nav-logo:hover .logo-emoji {
@@ -944,6 +946,171 @@ body::after {
 .btn-full {
   width: 100%;
   justify-content: center;
+}
+
+/* ══════════════════════════════════
+   HAMBGI PIXEL ART SHOWCASE
+══════════════════════════════════ */
+.hambgi-showcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--sp-9);
+  padding: var(--sp-5) 0;
+}
+
+.hambgi-frame {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-6);
+  background: rgba(10, 10, 24, 0.8);
+  border: 1px solid var(--border-neon);
+  border-radius: var(--r-lg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+  animation: hambgi-float 5s ease-in-out infinite;
+  box-shadow:
+    0 0 40px rgba(224, 64, 251, 0.12),
+    0 0 80px rgba(224, 64, 251, 0.06),
+    inset 0 0 60px rgba(224, 64, 251, 0.03);
+  transition: box-shadow var(--t-mid) var(--ease);
+}
+
+.hambgi-frame:hover {
+  box-shadow:
+    0 0 60px rgba(224, 64, 251, 0.25),
+    0 0 120px rgba(34, 211, 238, 0.12),
+    inset 0 0 60px rgba(224, 64, 251, 0.06);
+}
+
+@keyframes hambgi-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(0.5deg); }
+  75% { transform: translateY(4px) rotate(-0.5deg); }
+}
+
+/* Top gradient bar */
+.hambgi-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-pink), var(--neon-cyan), var(--neon-pink), transparent);
+  animation: hambgi-glow-bar 3s linear infinite;
+}
+
+@keyframes hambgi-glow-bar {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* Scan line animation */
+.hambgi-scan {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(224, 64, 251, 0.03) 3px,
+    rgba(224, 64, 251, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hambgi-scan::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom,
+    transparent,
+    rgba(224, 64, 251, 0.08) 50%,
+    transparent
+  );
+  animation: scan-move 4s linear infinite;
+}
+
+@keyframes scan-move {
+  0% { top: -60px; }
+  100% { top: 100%; }
+}
+
+/* Neon corner brackets */
+.hambgi-frame-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--neon-pink);
+  border-style: solid;
+  z-index: 3;
+  transition: border-color var(--t-mid);
+}
+
+.hambgi-frame:hover .hambgi-frame-corner {
+  border-color: var(--neon-cyan);
+}
+
+/* Reuse corner classes from panel */
+.hambgi-frame-corner.corner-tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+.hambgi-frame-corner.corner-tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+.hambgi-frame-corner.corner-bl { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+.hambgi-frame-corner.corner-br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+/* The image itself */
+.hambgi-img {
+  width: clamp(240px, 35vw, 420px);
+  height: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  display: block;
+  position: relative;
+  z-index: 2;
+  filter:
+    drop-shadow(0 0 20px rgba(224, 64, 251, 0.4))
+    drop-shadow(0 0 40px rgba(34, 211, 238, 0.2));
+  transition: filter var(--t-mid) var(--ease), transform var(--t-mid) var(--ease);
+}
+
+.hambgi-frame:hover .hambgi-img {
+  filter:
+    drop-shadow(0 0 30px rgba(224, 64, 251, 0.6))
+    drop-shadow(0 0 60px rgba(34, 211, 238, 0.3));
+  transform: scale(1.03);
+}
+
+/* Label at bottom */
+.hambgi-label {
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  color: var(--text-3);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 3;
+  text-transform: uppercase;
+}
+
+.hambgi-label-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--neon-pink);
+  box-shadow: 0 0 8px var(--neon-pink);
+  animation: ping 2s ease infinite;
+  flex-shrink: 0;
 }
 
 /* ══════════════════════════════════
