@@ -432,6 +432,7 @@ function initWeekSelect() {
     if (i === 0) opt.selected = true;
     sel.appendChild(opt);
   }
+  setTimeout(() => applyCustomSelect(sel), 50);
 }
 
 document.getElementById('btn-open-submit').addEventListener('click', () => openNewSubmitModal());
@@ -580,7 +581,7 @@ async function loadAdminUsers(tabName) {
         ? `<button class="btn-approve" data-uid="${d.id}">승인</button>
              <button class="btn-reject"  data-uid="${d.id}">거절</button>`
         : `<select class="role-select" data-uid="${d.id}">
-               <option value="member"    ${u.role === 'member' ? 'selected' : ''}>부원</option>
+               <option value="member"    ${u.role === 'member' ? 'selected' : ''}>운영진</option>
                <option value="leader"    ${u.role === 'leader' ? 'selected' : ''}>팀장</option>
                <option value="executive" ${u.role === 'executive' ? 'selected' : ''}>운영진</option>
              </select>
@@ -615,6 +616,7 @@ async function loadAdminUsers(tabName) {
     });
 
     listEl.appendChild(row);
+    row.querySelectorAll('select').forEach(applyCustomSelect);
   });
 }
 
@@ -993,6 +995,7 @@ function addLinkRow(container, type = 'github', url = '') {
   `;
   row.querySelector('.btn-remove-link').addEventListener('click', () => row.remove());
   container.appendChild(row);
+  applyCustomSelect(row.querySelector('select'));
 }
 
 async function handleDeleteSubmission(id, title) {
@@ -1010,7 +1013,7 @@ async function handleDeleteSubmission(id, title) {
 //   UTILITIES
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 function roleLabel(role) {
-  const map = { pending: '승인 대기', member: '부원', leader: '팀장', executive: '운영진' };
+  const map = { pending: '승인 대기', member: '운영진', leader: '팀장', executive: '운영진' };
   return map[role] || role;
 }
 
@@ -1042,3 +1045,70 @@ function showError(el, msg) {
   el.textContent = msg; el.hidden = false;
   el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//   CUSTOM SELECT UI
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function applyCustomSelect(selectEl) {
+  if (selectEl.dataset.customized) return;
+  selectEl.dataset.customized = 'true';
+  selectEl.style.display = 'none';
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'custom-select-wrapper';
+  selectEl.parentNode.insertBefore(wrapper, selectEl);
+  wrapper.appendChild(selectEl);
+
+  const trigger = document.createElement('div');
+  trigger.className = 'custom-select-trigger';
+  
+  const selectedOpt = selectEl.options[selectEl.selectedIndex];
+  trigger.innerHTML = `<span class="trigger-text">${selectedOpt ? selectedOpt.text : ''}</span>
+    <svg class="custom-select-icon" viewBox="0 0 24 24" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg>`;
+  
+  wrapper.appendChild(trigger);
+
+  const optionsDiv = document.createElement('div');
+  optionsDiv.className = 'custom-options';
+  wrapper.appendChild(optionsDiv);
+
+  function renderOptions() {
+    optionsDiv.innerHTML = '';
+    Array.from(selectEl.options).forEach((opt, idx) => {
+      const optDiv = document.createElement('div');
+      optDiv.className = 'custom-option' + (opt.selected ? ' selected' : '');
+      optDiv.textContent = opt.text;
+      optDiv.addEventListener('click', (e) => {
+        e.stopPropagation();
+        selectEl.selectedIndex = idx;
+        trigger.querySelector('.trigger-text').textContent = opt.text;
+        trigger.classList.remove('open');
+        selectEl.dispatchEvent(new Event('change'));
+        renderOptions();
+      });
+      optionsDiv.appendChild(optDiv);
+    });
+  }
+  renderOptions();
+
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    document.querySelectorAll('.custom-select-trigger.open').forEach(t => {
+      if (t !== trigger) t.classList.remove('open');
+    });
+    trigger.classList.toggle('open');
+  });
+
+  selectEl.addEventListener('change', () => {
+    const selOpt = selectEl.options[selectEl.selectedIndex];
+    if (selOpt) trigger.querySelector('.trigger-text').textContent = selOpt.text;
+    renderOptions();
+  });
+}
+
+document.addEventListener('click', () => {
+  document.querySelectorAll('.custom-select-trigger.open').forEach(t => {
+    t.classList.remove('open');
+  });
+});
+
