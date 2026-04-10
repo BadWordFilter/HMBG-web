@@ -106,7 +106,8 @@
         </a>
         <div class="portal-nav-right">
           <div class="portal-user-info" id="portal-user-info">
-            <img src="" alt="프로필" class="portal-user-avatar" id="portal-user-avatar" />
+            <img src="" alt="프로필" class="portal-user-avatar" id="portal-user-avatar"
+              style="cursor:pointer;" title="프로필 수정" onclick="openProfileModal()" />
             <div class="portal-user-meta">
               <span class="portal-user-name" id="portal-user-name"></span>
               <span class="portal-user-role" id="portal-user-role"></span>
@@ -129,6 +130,23 @@
 
         <!-- ── LEFT SIDEBAR ── -->
         <aside class="portal-sidebar" id="portal-sidebar" aria-label="사이드바">
+
+          <!-- My Profile -->
+          <div class="sidebar-card sidebar-profile-card" id="sidebar-profile-card">
+            <p class="sidebar-label">// MY_PROFILE</p>
+            <div class="sidebar-profile-preview" id="sidebar-profile-preview">
+              <img id="sidebar-profile-avatar" src="" alt="내 프로필" class="sidebar-profile-avatar" />
+              <div class="sidebar-profile-info">
+                <div class="sidebar-profile-name" id="sidebar-profile-name"></div>
+                <div class="sidebar-profile-jobrole" id="sidebar-profile-jobrole"></div>
+              </div>
+            </div>
+            <div class="sidebar-profile-bio" id="sidebar-profile-bio"></div>
+            <a id="sidebar-profile-portfolio" class="sidebar-profile-portfolio-link" href="#" target="_blank" rel="noopener" hidden></a>
+            <button id="btn-open-profile" class="btn-secondary full-width" style="margin-top:12px;" aria-haspopup="dialog">
+              ⚙️ 프로필 수정
+            </button>
+          </div>
 
           <!-- My Team Info -->
           <div class="sidebar-card" id="sidebar-team-card">
@@ -378,6 +396,81 @@
         <p class="form-hint">승인된 회원 중 팀에 追加할 회원을 선택하세요.</p>
         <div id="invite-users-list" class="admin-users-list"></div>
       </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════
+       PROFILE MODAL
+  ══════════════════════════ -->
+  <div id="modal-profile" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-profile-title" hidden>
+    <div class="modal-card">
+      <div class="card-corner corner-tl" aria-hidden="true"></div>
+      <div class="card-corner corner-tr" aria-hidden="true"></div>
+      <div class="card-corner corner-bl" aria-hidden="true"></div>
+      <div class="card-corner corner-br" aria-hidden="true"></div>
+
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-profile-title">프로필 수정</h3>
+        <button id="btn-close-profile" class="modal-close" aria-label="닫기">&times;</button>
+      </div>
+
+      <form id="form-profile" class="submit-form" novalidate>
+
+        <!-- Photo preview + URL -->
+        <div class="profile-photo-section">
+          <div class="profile-preview-wrap">
+            <img id="profile-preview-img" class="profile-preview-avatar" src="" alt="프로필 미리보기" />
+            <div class="profile-preview-ring" aria-hidden="true"></div>
+          </div>
+          <div class="form-group" style="flex:1;">
+            <label class="form-label" for="profile-photo-url">프로필 사진 URL</label>
+            <input type="url" id="profile-photo-url" class="form-input"
+              placeholder="비워두면 Google 계정 사진 사용" />
+            <span class="form-hint">Imgur, Google Photos 등 공개 이미지 URL</span>
+          </div>
+        </div>
+
+        <!-- Nickname -->
+        <div class="form-group">
+          <label class="form-label" for="profile-nickname">닉네임 <span class="required">*</span></label>
+          <input type="text" id="profile-nickname" class="form-input"
+            placeholder="이름 또는 닉네임" required maxlength="30" />
+        </div>
+
+        <!-- Job role -->
+        <div class="form-group">
+          <label class="form-label" for="profile-job-role">맡은 역할</label>
+          <input type="text" id="profile-job-role" class="form-input"
+            placeholder="예: Unity 개발, 기획, 3D 아트, 사운드" maxlength="50" />
+        </div>
+
+        <!-- Bio -->
+        <div class="form-group">
+          <label class="form-label" for="profile-bio">자기소개</label>
+          <textarea id="profile-bio" class="form-textarea"
+            placeholder="간단한 자기소개를 작성해주세요..."
+            rows="3" maxlength="200"></textarea>
+          <span class="char-count" id="bio-char-count">0 / 200</span>
+        </div>
+
+        <!-- Portfolio -->
+        <div class="form-group">
+          <label class="form-label" for="profile-portfolio">포트폴리오 링크</label>
+          <input type="url" id="profile-portfolio" class="form-input"
+            placeholder="https://..." />
+        </div>
+
+        <div id="profile-error" class="form-error" role="alert" hidden></div>
+
+        <div class="form-actions">
+          <button type="button" id="btn-cancel-profile" class="btn-secondary">취소</button>
+          <button type="submit" id="btn-save-profile" class="btn-primary">
+            <span id="profile-btn-text">저장하기</span>
+            <div class="btn-spinner" id="profile-spinner" hidden></div>
+          </button>
+        </div>
+
+      </form>
     </div>
   </div>
 

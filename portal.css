@@ -384,7 +384,62 @@ body::after {
 }
 .sidebar-member-leader .sidebar-member-dot { background: var(--neon-gold); }
 
+/* ── SIDEBAR PROFILE CARD ── */
+.sidebar-profile-preview {
+  display: flex; align-items: center; gap: var(--sp-3);
+  margin-bottom: var(--sp-3);
+}
+.sidebar-profile-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  object-fit: cover; flex-shrink: 0;
+  border: 2px solid var(--border-neon);
+  box-shadow: 0 0 12px rgba(224,64,251,0.25);
+}
+.sidebar-profile-info { flex: 1; min-width: 0; }
+.sidebar-profile-name {
+  font-weight: 600; font-size: 0.92rem;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.sidebar-profile-jobrole {
+  font-family: var(--font-mono); font-size: 0.62rem;
+  color: var(--neon-cyan); margin-top: 2px;
+}
+.sidebar-profile-bio {
+  font-size: 0.8rem; color: var(--text-2); line-height: 1.5;
+  margin-bottom: var(--sp-3);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.sidebar-profile-portfolio-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 0.78rem; color: var(--neon-cyan);
+  border-bottom: 1px solid rgba(34,211,238,0.3);
+  padding-bottom: 1px; margin-bottom: var(--sp-3);
+  transition: color var(--t-mid), border-color var(--t-mid);
+}
+.sidebar-profile-portfolio-link:hover { color: var(--text-0); border-color: transparent; }
+
+/* ── PROFILE MODAL ── */
+.profile-photo-section {
+  display: flex; align-items: flex-start; gap: var(--sp-4);
+}
+.profile-preview-wrap {
+  position: relative; flex-shrink: 0;
+}
+.profile-preview-avatar {
+  width: 72px; height: 72px; border-radius: 50%; object-fit: cover;
+  border: 2px solid var(--border-neon);
+  background: var(--void-3);
+}
+.profile-preview-ring {
+  position: absolute; inset: -4px; border-radius: 50%;
+  border: 1px solid rgba(224,64,251,0.4);
+  animation: spin 8s linear infinite;
+  background: conic-gradient(from 0deg, transparent 70%, rgba(224,64,251,0.5) 100%);
+}
+
 /* ── BUTTONS ── */
+
 .btn-primary {
   display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-2);
   padding: var(--sp-3) var(--sp-5);

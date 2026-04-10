@@ -135,10 +135,11 @@ async function loadPortal() {
 
   // Nav user info
   const navAvatar = document.getElementById('portal-user-avatar');
-  navAvatar.src   = currentUser.photoURL || '';
+  const photoUrl  = currentProfile.customPhotoURL || currentUser.photoURL || '';
+  navAvatar.src   = photoUrl;
   navAvatar.alt   = currentUser.displayName || '프로필';
-  document.getElementById('portal-user-name').textContent  = currentUser.displayName || '회원';
-  document.getElementById('portal-user-role').textContent  = roleLabel(currentProfile.role);
+  document.getElementById('portal-user-name').textContent = currentProfile.displayName || currentUser.displayName || '회원';
+  document.getElementById('portal-user-role').textContent = roleLabel(currentProfile.role);
 
   // 권한별 패널 표시
   const isExec   = currentProfile.role === 'executive';
@@ -151,6 +152,9 @@ async function loadPortal() {
 
   // 내 팀 정보
   await loadMyTeamSidebar();
+
+  // 사이드바 프로필 초기화
+  updateSidebarProfile();
 
   // 피드 초기 로드
   setupFeedListeners();
@@ -733,9 +737,111 @@ function modalOverlayClose(e) {
 // ESC key
 document.addEventListener('keydown', (e) => {
   if (e.key !== 'Escape') return;
-  ['modal-submit','modal-admin-users','modal-admin-teams','modal-invite'].forEach(id => {
+  ['modal-submit','modal-admin-users','modal-admin-teams','modal-invite','modal-profile'].forEach(id => {
     if (!document.getElementById(id)?.hidden) closeModal(id);
   });
+});
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//   PROFILE MODAL
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function openProfileModal() {
+  const p = currentProfile;
+  document.getElementById('profile-photo-url').value = p.customPhotoURL || '';
+  document.getElementById('profile-nickname').value  = p.displayName || currentUser.displayName || '';
+  document.getElementById('profile-job-role').value  = p.jobRole || '';
+  document.getElementById('profile-bio').value       = p.bio || '';
+  document.getElementById('profile-portfolio').value = p.portfolioUrl || '';
+  document.getElementById('bio-char-count').textContent = `${(p.bio || '').length} / 200`;
+  document.getElementById('profile-error').hidden = true;
+  updatePhotoPreview();
+  openModal('modal-profile');
+}
+
+function updatePhotoPreview() {
+  const url = document.getElementById('profile-photo-url').value.trim();
+  document.getElementById('profile-preview-img').src = url || currentUser?.photoURL || '';
+}
+
+function updateSidebarProfile() {
+  const name    = currentProfile.displayName || currentUser?.displayName || '회원';
+  const photo   = currentProfile.customPhotoURL || currentUser?.photoURL || '';
+  const jobRole = currentProfile.jobRole || roleLabel(currentProfile.role);
+  const bio     = currentProfile.bio || '';
+  const port    = currentProfile.portfolioUrl || '';
+
+  document.getElementById('sidebar-profile-name').textContent    = name;
+  document.getElementById('sidebar-profile-jobrole').textContent = jobRole;
+  document.getElementById('sidebar-profile-avatar').src          = photo;
+
+  const bioEl = document.getElementById('sidebar-profile-bio');
+  bioEl.textContent = bio;
+  bioEl.style.display = bio ? 'block' : 'none';
+
+  const portEl = document.getElementById('sidebar-profile-portfolio');
+  if (port) {
+    portEl.href        = port;
+    portEl.textContent = '🔗 포트폴리오 보기';
+    portEl.hidden      = false;
+  } else {
+    portEl.hidden = true;
+  }
+}
+
+document.getElementById('btn-open-profile')?.addEventListener('click', () => openProfileModal());
+document.getElementById('btn-close-profile')?.addEventListener('click', () => closeModal('modal-profile'));
+document.getElementById('btn-cancel-profile')?.addEventListener('click', () => closeModal('modal-profile'));
+
+// Photo URL 실시간 미리보기
+document.getElementById('profile-photo-url')?.addEventListener('input', updatePhotoPreview);
+// Bio 글자수
+document.getElementById('profile-bio')?.addEventListener('input', function () {
+  document.getElementById('bio-char-count').textContent = `${this.value.length} / 200`;
+});
+
+document.getElementById('form-profile')?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const errEl   = document.getElementById('profile-error');
+  const spinner = document.getElementById('profile-spinner');
+  const btnText = document.getElementById('profile-btn-text');
+  errEl.hidden  = true;
+
+  const nickname = document.getElementById('profile-nickname').value.trim();
+  if (!nickname) { showError(errEl, '닉네임을 입력해주세요.'); return; }
+
+  const customPhotoURL = document.getElementById('profile-photo-url').value.trim();
+  const jobRole        = document.getElementById('profile-job-role').value.trim();
+  const bio            = document.getElementById('profile-bio').value.trim();
+  const portfolioUrl   = document.getElementById('profile-portfolio').value.trim();
+
+  spinner.hidden = false; btnText.textContent = '저장 중...';
+  document.getElementById('btn-save-profile').disabled = true;
+
+  try {
+    await updateDoc(doc(db, 'users', currentUser.uid), {
+      displayName: nickname, customPhotoURL, jobRole, bio, portfolioUrl,
+      updatedAt: serverTimestamp(),
+    });
+
+    // currentProfile 업데이트
+    Object.assign(currentProfile, { displayName: nickname, customPhotoURL, jobRole, bio, portfolioUrl });
+
+    // Nav 갱신
+    document.getElementById('portal-user-name').textContent = nickname;
+    document.getElementById('portal-user-avatar').src = customPhotoURL || currentUser.photoURL || '';
+
+    // 사이드바 갱신
+    updateSidebarProfile();
+
+    closeModal('modal-profile');
+    showToast('프로필이 저장되었습니다! 🍔', 'success');
+  } catch (err) {
+    showError(errEl, '저장 중 오류: ' + err.message);
+  } finally {
+    spinner.hidden = true; btnText.textContent = '저장하기';
+    document.getElementById('btn-save-profile').disabled = false;
+  }
 });
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
