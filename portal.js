@@ -773,7 +773,6 @@ function openProfileModal() {
   document.getElementById('bio-char-count').textContent = `${(p.bio || '').length} / 200`;
   document.getElementById('profile-error').hidden    = true;
   document.getElementById('profile-upload-status').textContent = '';
-  document.getElementById('profile-upload-progress').hidden    = true;
   openModal('modal-profile');
 }
 
