@@ -52,6 +52,7 @@
         <li role="none"><a href="portal.html" class="nav-link" id="nav-portal-btn" role="menuitem"
             style="color:var(--neon-cyan);">🔐 멤버 포털</a></li>
         <li role="none"><a href="#join" class="nav-link nav-cta" id="nav-join-btn" role="menuitem">모집 마감</a></li>
+        <li role="none"><button id="theme-toggle" class="theme-toggle-btn" aria-label="테마 변경">☀️</button></li>
       </ul>
       <button class="hamburger" id="hamburger-btn" aria-label="메뉴 열기" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -487,11 +488,15 @@
             <span aria-hidden="true">김</span>
           </div>
           <h3 class="member-name">김보민</h3>
-          <p class="member-role">// 운영진 · 기획총괄</p>
-          <p class="member-desc">햄부기(HMBG) 운영진. 동아리 프로젝트 전반의 기획을 총괄하며 방향성을 정립합니다.</p>
+          <p class="member-role">// 운영진 · 인사(HR)</p>
+          <p class="member-desc">햄부기(HMBG) 운영진. 동아리 부원 관리 및 네트워킹을 담당합니다.</p>
           <div class="member-tags" aria-label="기술 스택">
-            <span>기획총괄</span><span>Planning</span><span>운영진</span>
+            <span>인사</span><span>HR</span><span>운영진</span>
           </div>
+          <a href="#" target="_blank" rel="noopener"
+            class="member-portfolio-link" id="member-kimbomin-portfolio" onclick="alert('포트폴리오 준비 중입니다!'); return false;">
+            Portfolio ↗
+          </a>
         </div>
 
         <div class="member-card reveal" id="member-leeiksun" role="listitem">
@@ -501,10 +506,10 @@
             <span aria-hidden="true">이</span>
           </div>
           <h3 class="member-name">이익선</h3>
-          <p class="member-role">// 운영진 · 팀관리 · 기록</p>
-          <p class="member-desc">햄부기(HMBG) 운영진. 팀 내부 일정을 관리하고 활동 내용을 체계적으로 기록합니다.</p>
+          <p class="member-role">// 운영진 · 아트(Art)</p>
+          <p class="member-desc">햄부기(HMBG) 운영진. 프로젝트 아트 기획 및 에셋 제작을 담당합니다.</p>
           <div class="member-tags" aria-label="기술 스택">
-            <span>팀관리</span><span>기록</span><span>운영진</span>
+            <span>아트</span><span>Art</span><span>운영진</span>
           </div>
           <a href="https://artmug.kr/index.php?channel=list&field=brand&search=Z2xlZXNoOTk4Ng==" target="_blank"
             rel="noopener" class="member-portfolio-link" id="member-leeiksun-portfolio">
@@ -519,11 +524,15 @@
             <span aria-hidden="true">강</span>
           </div>
           <h3 class="member-name">강주연</h3>
-          <p class="member-role">// 운영진 · SNS · 홍보</p>
-          <p class="member-desc">햄부기(HMBG) 운영진. 동아리 SNS 채널을 운영하고 대외 홍보를 담당합니다.</p>
+          <p class="member-role">// 운영진 · 기획(Planning)</p>
+          <p class="member-desc">햄부기(HMBG) 운영진. 동아리 프로젝트 시스템 운영 및 레벨 기획을 담당합니다.</p>
           <div class="member-tags" aria-label="기술 스택">
-            <span>SNS</span><span>홍보</span><span>운영진</span>
+            <span>기획</span><span>Planning</span><span>운영진</span>
           </div>
+          <a href="#" target="_blank" rel="noopener"
+            class="member-portfolio-link" id="member-kangjuyeon-portfolio" onclick="alert('포트폴리오 준비 중입니다!'); return false;">
+            Portfolio ↗
+          </a>
         </div>
 
       </div>
@@ -614,7 +623,7 @@
           <nav class="footer-nav" aria-label="소셜 미디어 링크">
             <a href="#" onclick="alert('현재 서비스 준비 중입니다! 🍔 개편 완료 후 공개됩니다.'); return false;"
               id="footer-email-link">이메일</a>
-            <a href="#" onclick="alert('현재 서비스 준비 중입니다! 🍔 개편 완료 후 공개됩니다.'); return false;"
+            <a href="https://www.instagram.com/h.m.b.g_/" target="_blank" rel="noopener"
               id="footer-instagram-link">인스타그램</a>
             <a href="#" onclick="alert('현재 서비스 준비 중입니다! 🍔 개편 완료 후 공개됩니다.'); return false;"
               id="footer-github-link">GitHub</a>
@@ -650,12 +659,18 @@
       <div class="chatbot-header">
         <span class="logo-emoji logo-emoji-sm" aria-hidden="true">🍔</span>
         <h3>HMBG 봇</h3>
+        <button id="chatbot-reset" class="chatbot-reset" aria-label="대화 초기화">🔄</button>
         <button id="chatbot-close" class="chatbot-close" aria-label="채팅 닫기">&times;</button>
       </div>
       <div id="chatbot-messages" class="chatbot-messages">
         <div class="chat-msg bot">
           <div class="chat-msg-text">안녕하세요! HMBG 게임 개발 동아리입니다. 무엇이든 물어보세요! 👋<br>(예시: 동아리장이 누구야?, 활동은 어떤 걸 해?)</div>
         </div>
+      </div>
+      <div class="chatbot-quick-replies">
+        <button class="quick-reply-btn">동아리장이 누구야?</button>
+        <button class="quick-reply-btn">어떤 활동을 해?</button>
+        <button class="quick-reply-btn">모집 기간이 언제야?</button>
       </div>
       <div class="chatbot-input-area">
         <input type="text" id="chatbot-input" class="chatbot-input" placeholder="메시지를 입력하세요..." autocomplete="off" />

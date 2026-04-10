@@ -230,3 +230,20 @@ if (scrollTopBtn) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+
+/* ════════════════════════════
+   11. THEME TOGGLE
+════════════════════════════ */
+const themeToggleBtn = document.getElementById('theme-toggle');
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener('click', () => {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    if (isLight) {
+      document.documentElement.removeAttribute('data-theme');
+      themeToggleBtn.textContent = '☀️';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      themeToggleBtn.textContent = '🌙';
+    }
+  });
+}

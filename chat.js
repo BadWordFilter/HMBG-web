@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const sendBtn = document.getElementById('chatbot-send');
   const inputField = document.getElementById('chatbot-input');
   const messagesContainer = document.getElementById('chatbot-messages');
+  const resetBtn = document.getElementById('chatbot-reset');
+  const quickReplyBtns = document.querySelectorAll('.quick-reply-btn');
 
   let isOpen = false;
   // 초기 시스템 프롬프트를 통해 챗봇의 페르소나 설정 및 동아리 정보 주입
@@ -13,9 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
 - 동아리 소개: 게임 개발을 사랑하는 학생들이 모인 동아리로, 2026년에는 실제 시장에 출시할 수 있는 수준의 게임 제작을 목표로 함.
 - 주요 인물:
   * 회장(동아리장, 대표): 이학주 (RAMIC STUDIO 대표, Unity 게임 2편 스팀 출시, 2025 AI·SW 페스티벌 최우수상 수상)
-  * 기획(Planning): 강주연 (동아리 프로젝트 시스템 및 레벨 기획 운영진)
-  * 인사(HR): 김보민 (동아리 부원 관리 및 네트워킹 운영진)
-  * 아트(Art): 이익선 (프로젝트 아트 기획 및 에셋 제작 운영진)
+  * 기획(Planning) 담당: 강주연 (동아리 프로젝트 시스템 운영 및 레벨 기획 운영진. 기획을 맡고 있는 사람은 강주연임)
+  * 인사(HR) 담당: 김보민 (동아리 부원 관리 및 네트워킹 운영진. 인사를 맡고 있는 사람은 김보민임)
+  * 아트(Art) 담당: 이익선 (프로젝트 아트 기획 및 에셋 제작 운영진. 아트를 맡고 있는 사람은 이익선임)
 - 프로젝트: 
   * Flappy Bird: 동아리 첫 프로젝트, Unity 2D 게임.
   * MAYHEM: 2025 SCHU AI·SW 페스티벌 게임개발경진대회 최우수상 수상작 (Unity 3D).
@@ -153,5 +155,25 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Enter') {
       sendMessage();
     }
+  });
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      chatHistory = [
+        { role: 'system', content: systemPrompt },
+        { role: 'assistant', content: '안녕하세요! HMBG 게임 개발 동아리입니다. 무엇이든 물어보세요! 👋\n(예시: 동아리장이 누구야?, 활동은 어떤 걸 해?)' }
+      ];
+      messagesContainer.innerHTML = '';
+      addMessage('안녕하세요! HMBG 게임 개발 동아리입니다. 무엇이든 물어보세요! 👋\n(예시: 동아리장이 누구야?, 활동은 어떤 걸 해?)', 'bot');
+    });
+  }
+
+  quickReplyBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (inputField.value.trim() === '') {
+        inputField.value = btn.textContent;
+        sendMessage();
+      }
+    });
   });
 });
