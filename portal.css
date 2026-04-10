@@ -644,6 +644,37 @@ body::after {
 }
 .btn-delete-submission:hover { background: rgba(239,68,68,0.18); border-color: #f87171; }
 
+/* ── VISIBILITY TOGGLE ── */
+.vis-toggle-group { display: flex; flex-direction: column; gap: var(--sp-2); }
+.vis-option {
+  display: flex; align-items: center; gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4); border-radius: var(--r-md);
+  border: 1px solid var(--border-dim); cursor: pointer;
+  transition: border-color var(--t-mid), background var(--t-mid);
+}
+.vis-option:hover { border-color: var(--border-subtle); background: rgba(255,255,255,0.03); }
+.vis-option input[type="radio"] { display: none; }
+.vis-option:has(input:checked) {
+  border-color: var(--neon-cyan);
+  background: rgba(34,211,238,0.06);
+}
+.vis-icon { font-size: 1.1rem; flex-shrink: 0; }
+.vis-text { display: flex; flex-direction: column; gap: 2px; }
+.vis-title { font-size: 0.85rem; font-weight: 600; color: var(--text-0); }
+.vis-desc  { font-size: 0.72rem; color: var(--text-3); }
+
+/* ── VISIBILITY BADGES (on cards) ── */
+.submission-badges { display: flex; align-items: center; gap: var(--sp-2); flex-wrap: wrap; margin-left: auto; }
+.vis-badge {
+  font-size: 0.6rem; font-weight: 600; padding: 2px 8px;
+  border-radius: 99px; font-family: var(--font-mono); letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+.vis-badge-all  { background: rgba(34,211,238,0.10); border: 1px solid rgba(34,211,238,0.25); color: var(--neon-cyan); }
+.vis-badge-team { background: rgba(234,179,8,0.12);  border: 1px solid rgba(234,179,8,0.3);   color: #fbbf24; }
+
+
+
 .submission-header { display: flex; align-items: center; gap: var(--sp-3); margin-bottom: var(--sp-4); }
 .submission-avatar {
   width: 36px; height: 36px; border-radius: 50%;

@@ -236,68 +236,76 @@ async function loadFeed() {
   const empty    = document.getElementById('feed-empty');
   const timeline = document.getElementById('feed-timeline');
 
-  loading.style.display  = 'flex';
-  empty.hidden           = true;
-  timeline.innerHTML     = '';
+  loading.style.display = 'flex';
+  empty.hidden          = true;
+  timeline.innerHTML    = '';
 
-  if (feedUnsubscribe) feedUnsubscribe();
+  if (feedUnsubscribe) { feedUnsubscribe(); feedUnsubscribe = null; }
 
-  const isExec = currentProfile.role === 'executive';
-  let q;
+  const isExec   = currentProfile.role === 'executive';
+  const myTeamId = currentProfile.teamId;
+  let submissions = [];
 
-  if (currentFeedView === 'team' && currentProfile.teamId) {
-    // 내 팀 피드
-    q = query(
-      collection(db, 'submissions'),
-      where('teamId', '==', currentProfile.teamId),
-      orderBy('createdAt', 'desc')
-    );
-  } else if (isExec) {
-    // 임원진: 전체 피드
-    q = query(collection(db, 'submissions'), orderBy('createdAt', 'desc'));
-  } else {
-    // 일반회원: 자기 팀 + 자신의 글만
-    if (!currentProfile.teamId) {
-      q = query(
-        collection(db, 'submissions'),
-        where('userId', '==', currentUser.uid),
-        orderBy('createdAt', 'desc')
+  try {
+    if (isExec) {
+      // 임원: 전체 조회
+      const snap = await getDocs(query(collection(db, 'submissions'), orderBy('createdAt', 'desc')));
+      snap.forEach(d => submissions.push({ id: d.id, ...d.data() }));
+
+    } else if (currentFeedView === 'team' && myTeamId) {
+      // 내 팀 보기
+      const snap = await getDocs(
+        query(collection(db, 'submissions'), where('teamId', '==', myTeamId), orderBy('createdAt', 'desc'))
       );
+      snap.forEach(d => submissions.push({ id: d.id, ...d.data() }));
+
     } else {
-      q = query(
-        collection(db, 'submissions'),
-        where('teamId', '==', currentProfile.teamId),
-        orderBy('createdAt', 'desc')
-      );
+      // 전체 보기: 전체공개 게시물 + 내 팀 게시물 병합
+      const seenIds = new Set();
+      const promises = [
+        getDocs(query(collection(db, 'submissions'), where('visibility', '==', 'all'), orderBy('createdAt', 'desc'))),
+      ];
+      if (myTeamId) {
+        promises.push(
+          getDocs(query(collection(db, 'submissions'), where('teamId', '==', myTeamId), orderBy('createdAt', 'desc')))
+        );
+      } else {
+        promises.push(
+          getDocs(query(collection(db, 'submissions'), where('userId', '==', currentUser.uid), orderBy('createdAt', 'desc')))
+        );
+      }
+      const snaps = await Promise.all(promises);
+      snaps.forEach(snap => {
+        snap.forEach(d => {
+          if (!seenIds.has(d.id)) {
+            seenIds.add(d.id);
+            submissions.push({ id: d.id, ...d.data() });
+          }
+        });
+      });
+      submissions.sort((a, b) => (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0));
     }
-  }
-
-  feedUnsubscribe = onSnapshot(q, (snap) => {
-    loading.style.display = 'none';
-    timeline.innerHTML  = '';
-
-    if (snap.empty) {
-      empty.hidden = false;
-      return;
-    }
-
-    // 주차별로 그룹핑
-    const grouped = {};
-    snap.forEach(d => {
-      const data = d.data();
-      const key  = data.weekLabel || '미분류';
-      if (!grouped[key]) grouped[key] = { label: key, order: data.weekOrder || 0, items: [] };
-      grouped[key].items.push({ id: d.id, ...data });
-    });
-
-    // 주차 역순 정렬
-    const sorted = Object.values(grouped).sort((a, b) => b.order - a.order);
-    sorted.forEach(group => renderWeekGroup(group, timeline));
-  }, (err) => {
+  } catch (err) {
     console.error('Feed error:', err);
     loading.style.display = 'none';
     showToast('피드를 불러오는 중 오류가 발생했습니다.', 'error');
+    return;
+  }
+
+  loading.style.display = 'none';
+
+  if (!submissions.length) { empty.hidden = false; return; }
+
+  // 주차별 그룹핑
+  const grouped = {};
+  submissions.forEach(data => {
+    const key = data.weekLabel || '미분류';
+    if (!grouped[key]) grouped[key] = { label: key, order: data.weekOrder || 0, items: [] };
+    grouped[key].items.push(data);
   });
+
+  const sorted = Object.values(grouped).sort((a, b) => b.order - a.order);
+  sorted.forEach(group => renderWeekGroup(group, timeline));
 }
 
 // ── WEEK GROUP RENDER ──
@@ -349,6 +357,10 @@ function renderSubmissionCard(item) {
     ? formatDate(item.createdAt.toDate())
     : '';
 
+  const visBadge = item.visibility === 'team'
+    ? `<span class="vis-badge vis-badge-team">🔒 팀공개</span>`
+    : `<span class="vis-badge vis-badge-all">🌐 전체</span>`;
+
   const canEdit = currentUser?.uid === item.userId || currentProfile?.role === 'executive';
   const actionsHtml = canEdit ? `
     <div class="submission-actions">
@@ -370,7 +382,7 @@ function renderSubmissionCard(item) {
         <div class="submission-author">${escapeHtml(item.userName || '알 수 없음')}</div>
         <div class="submission-time">${timeStr}</div>
       </div>
-      ${teamBadge}
+      <div class="submission-badges">${teamBadge}${visBadge}</div>
     </div>
     <div class="submission-title">${escapeHtml(item.title)}</div>
     ${descHtml}
@@ -463,7 +475,8 @@ document.getElementById('form-submit').addEventListener('submit', async (e) => {
     if (url) links.push({ type, url, label: linkLabel(type) });
   });
 
-  const weekData = JSON.parse(weekRaw);
+  const visibility = document.querySelector('input[name="submit-visibility"]:checked')?.value || 'all';
+  const weekData   = JSON.parse(weekRaw);
 
   const isEditing = !!currentEditId;
   spinner.hidden = false; btnText.textContent = isEditing ? '수정 중...' : '제출 중...';
@@ -477,14 +490,15 @@ document.getElementById('form-submit').addEventListener('submit', async (e) => {
         title,
         description: desc,
         links,
+        visibility,
         updatedAt: serverTimestamp(),
       });
       showToast('작업물이 수정되었습니다! ✏️', 'success');
     } else {
       await addDoc(collection(db, 'submissions'), {
         userId:       currentUser.uid,
-        userName:     currentUser.displayName,
-        userPhotoURL: currentUser.photoURL,
+        userName:     currentProfile.displayName || currentUser.displayName,
+        userPhotoURL: currentProfile.customPhotoURL || currentUser.photoURL,
         teamId:       currentProfile.teamId || null,
         teamName:     currentTeam?.name || null,
         weekLabel:    weekData.label,
@@ -492,11 +506,13 @@ document.getElementById('form-submit').addEventListener('submit', async (e) => {
         title,
         description: desc,
         links,
+        visibility,
         createdAt: serverTimestamp(),
       });
       showToast('작업물이 제출되었습니다! 🎉', 'success');
     }
     resetSubmitModal();
+    loadFeed();
   } catch (err) {
     showError(errEl, `${isEditing ? '수정' : '제출'} 중 오류가 발생했습니다: ` + err.message);
   } finally {
@@ -910,6 +926,9 @@ function openNewSubmitModal() {
   document.getElementById('submit-btn-text').textContent    = '제출하기';
   document.getElementById('form-submit').reset();
   document.getElementById('desc-char-count').textContent = '0 / 500';
+  // 공개 범위 초기화
+  const allVis = document.getElementById('vis-all');
+  if (allVis) allVis.checked = true;
   const container = document.getElementById('links-container');
   container.innerHTML = '';
   addLinkRow(container);
@@ -921,7 +940,7 @@ function openEditModal(item) {
   document.getElementById('modal-submit-title').textContent = '작업물 수정';
   document.getElementById('submit-btn-text').textContent    = '수정하기';
 
-  // 주차 선택 — 기존 옵션에서 일치하는 것 찾기, 없으면 추가
+  // 주차 선택 &amp; 내용 채우기
   const sel = document.getElementById('submit-week');
   let found = false;
   for (const opt of sel.options) {
@@ -938,6 +957,11 @@ function openEditModal(item) {
   document.getElementById('submit-title').value = item.title || '';
   document.getElementById('submit-desc').value  = item.description || '';
   document.getElementById('desc-char-count').textContent = `${(item.description || '').length} / 500`;
+
+  // 공개 범위 채우기
+  const visVal   = item.visibility || 'all';
+  const visInput = document.querySelector(`input[name="submit-visibility"][value="${visVal}"]`);
+  if (visInput) visInput.checked = true;
 
   const container = document.getElementById('links-container');
   container.innerHTML = '';
@@ -977,6 +1001,7 @@ async function handleDeleteSubmission(id, title) {
   try {
     await deleteDoc(doc(db, 'submissions', id));
     showToast('작업물이 삭제되었습니다.', 'success');
+    loadFeed();
   } catch (err) {
     showToast('삭제 중 오류: ' + err.message, 'error');
   }

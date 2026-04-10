@@ -254,6 +254,29 @@
           </select>
         </div>
 
+        <!-- Visibility -->
+        <div class="form-group">
+          <label class="form-label">공개 범위</label>
+          <div class="vis-toggle-group" role="group" aria-label="공개 범위 선택">
+            <label class="vis-option" for="vis-all">
+              <input type="radio" id="vis-all" name="submit-visibility" value="all" checked />
+              <span class="vis-icon">🌐</span>
+              <span class="vis-text">
+                <span class="vis-title">전체 공개</span>
+                <span class="vis-desc">모든 동아리 회원이 볼 수 있어요</span>
+              </span>
+            </label>
+            <label class="vis-option" for="vis-team">
+              <input type="radio" id="vis-team" name="submit-visibility" value="team" />
+              <span class="vis-icon">🔒</span>
+              <span class="vis-text">
+                <span class="vis-title">팀/임원진 공개</span>
+                <span class="vis-desc">같은 팀원과 임원진만 볼 수 있어요</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
         <!-- Title -->
         <div class="form-group">
           <label class="form-label" for="submit-title">제목 <span class="required">*</span></label>
