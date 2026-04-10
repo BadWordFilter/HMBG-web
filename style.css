@@ -2534,10 +2534,9 @@ body::after {
 
 .chatbot-quick-replies {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   padding: 0 var(--sp-4) var(--sp-3);
-  overflow-x: auto;
-  scrollbar-width: none;
 }
 
 .chatbot-quick-replies::-webkit-scrollbar {
