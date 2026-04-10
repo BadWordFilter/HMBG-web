@@ -42,24 +42,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function typeHTML(element, htmlString, speed) {
     let i = 0;
-    while(i < htmlString.length) {
-      if(htmlString[i] === '<') {
+    while (i < htmlString.length) {
+      if (htmlString[i] === '<') {
         let tagEnd = htmlString.indexOf('>', i);
-        if(tagEnd !== -1) {
+        if (tagEnd !== -1) {
           element.innerHTML = htmlString.substring(0, tagEnd + 1);
           i = tagEnd + 1;
         } else {
           element.innerHTML = htmlString.substring(0, i + 1);
           i++;
         }
-      } else if(htmlString[i] === '&') {
+      } else if (htmlString[i] === '&') {
         let entityEnd = htmlString.indexOf(';', i);
         if (entityEnd !== -1 && entityEnd - i < 8) {
           element.innerHTML = htmlString.substring(0, entityEnd + 1);
           i = entityEnd + 1;
         } else {
           element.innerHTML = htmlString.substring(0, i + 1);
-           i++;
+          i++;
         }
         await new Promise(r => setTimeout(r, speed));
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     msgDiv.appendChild(textDiv);
     messagesContainer.appendChild(msgDiv);
-    
+
     if (isTyping) {
       typeHTML(textDiv, formattedText, 25);
     } else {

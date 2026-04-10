@@ -645,17 +645,37 @@ body::after {
 }
 
 @keyframes cyber-glitch {
-  0% { transform: translate(0); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  2% { transform: translate(-2px, 1px); clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%); }
-  4% { transform: translate(2px, -1px); clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%); }
-  6% { transform: translate(0); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  100% { transform: translate(0); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  0% {
+    transform: translate(0);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  2% {
+    transform: translate(-2px, 1px);
+    clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+  }
+
+  4% {
+    transform: translate(2px, -1px);
+    clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%);
+  }
+
+  6% {
+    transform: translate(0);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  100% {
+    transform: translate(0);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
 }
 
 .glitch-text {
   position: relative;
   display: inline-block;
 }
+
 .glitch-text::before,
 .glitch-text::after {
   content: attr(data-text);
@@ -667,12 +687,14 @@ body::after {
   pointer-events: none;
   opacity: 0.8;
 }
+
 .glitch-text::before {
   -webkit-text-fill-color: var(--neon-cyan);
   z-index: -1;
   animation: cyber-glitch 4s infinite linear alternate-reverse;
   left: -2px;
 }
+
 .glitch-text::after {
   -webkit-text-fill-color: var(--neon-pink);
   z-index: -2;
@@ -987,9 +1009,19 @@ body::after {
 }
 
 @keyframes hambgi-float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  25% { transform: translateY(-8px) rotate(0.5deg); }
-  75% { transform: translateY(4px) rotate(-0.5deg); }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+
+  75% {
+    transform: translateY(4px) rotate(-0.5deg);
+  }
 }
 
 /* Top gradient bar */
@@ -1005,22 +1037,28 @@ body::after {
 }
 
 @keyframes hambgi-glow-bar {
-  0% { opacity: 0.6; }
-  50% { opacity: 1; }
-  100% { opacity: 0.6; }
+  0% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
 }
 
 /* Scan line animation */
 .hambgi-scan {
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0px,
-    transparent 3px,
-    rgba(224, 64, 251, 0.03) 3px,
-    rgba(224, 64, 251, 0.03) 4px
-  );
+  background: repeating-linear-gradient(to bottom,
+      transparent 0px,
+      transparent 3px,
+      rgba(224, 64, 251, 0.03) 3px,
+      rgba(224, 64, 251, 0.03) 4px);
   pointer-events: none;
   z-index: 1;
 }
@@ -1032,16 +1070,20 @@ body::after {
   right: 0;
   height: 60px;
   background: linear-gradient(to bottom,
-    transparent,
-    rgba(224, 64, 251, 0.08) 50%,
-    transparent
-  );
+      transparent,
+      rgba(224, 64, 251, 0.08) 50%,
+      transparent);
   animation: scan-move 4s linear infinite;
 }
 
 @keyframes scan-move {
-  0% { top: -60px; }
-  100% { top: 100%; }
+  0% {
+    top: -60px;
+  }
+
+  100% {
+    top: 100%;
+  }
 }
 
 /* Neon corner brackets */
@@ -1060,10 +1102,29 @@ body::after {
 }
 
 /* Reuse corner classes from panel */
-.hambgi-frame-corner.corner-tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
-.hambgi-frame-corner.corner-tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
-.hambgi-frame-corner.corner-bl { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
-.hambgi-frame-corner.corner-br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+.hambgi-frame-corner.corner-tl {
+  top: -1px;
+  left: -1px;
+  border-width: 2px 0 0 2px;
+}
+
+.hambgi-frame-corner.corner-tr {
+  top: -1px;
+  right: -1px;
+  border-width: 2px 2px 0 0;
+}
+
+.hambgi-frame-corner.corner-bl {
+  bottom: -1px;
+  left: -1px;
+  border-width: 0 0 2px 2px;
+}
+
+.hambgi-frame-corner.corner-br {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 2px 2px 0;
+}
 
 /* The image itself */
 .hambgi-img {
@@ -1075,15 +1136,13 @@ body::after {
   position: relative;
   z-index: 2;
   filter:
-    drop-shadow(0 0 20px rgba(224, 64, 251, 0.4))
-    drop-shadow(0 0 40px rgba(34, 211, 238, 0.2));
+    drop-shadow(0 0 20px rgba(224, 64, 251, 0.4)) drop-shadow(0 0 40px rgba(34, 211, 238, 0.2));
   transition: filter var(--t-mid) var(--ease), transform var(--t-mid) var(--ease);
 }
 
 .hambgi-frame:hover .hambgi-img {
   filter:
-    drop-shadow(0 0 30px rgba(224, 64, 251, 0.6))
-    drop-shadow(0 0 60px rgba(34, 211, 238, 0.3));
+    drop-shadow(0 0 30px rgba(224, 64, 251, 0.6)) drop-shadow(0 0 60px rgba(34, 211, 238, 0.3));
   transform: scale(1.03);
 }
 
@@ -2087,6 +2146,7 @@ body::after {
   .members-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .member-card:first-child {
     grid-column: span 2;
   }
@@ -2189,6 +2249,7 @@ body::after {
   .members-grid {
     grid-template-columns: 1fr;
   }
+
   .member-card:first-child {
     grid-column: span 1;
   }
@@ -2247,8 +2308,15 @@ body::after {
 }
 
 @keyframes bounce-up {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
 }
 
 @media (max-width: 480px) {

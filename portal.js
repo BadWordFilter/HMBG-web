@@ -28,23 +28,23 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db      = getFirestore(app);
+const db = getFirestore(app);
 
 // ── STATE ──
-let currentUser    = null; // Firebase Auth user
+let currentUser = null; // Firebase Auth user
 let currentProfile = null; // Firestore user doc
-let currentTeam    = null; // Firestore team doc
-let allTeams       = [];   // 팀 목록
+let currentTeam = null; // Firestore team doc
+let allTeams = [];   // 팀 목록
 let currentFeedView = 'all'; // 'all' | 'team'
 let feedUnsubscribe = null;
-let currentEditId   = null; // null = 새 제출 | string = 수정 중인 제출 ID
+let currentEditId = null; // null = 새 제출 | string = 수정 중인 제출 ID
 let pendingPhotoURL = null; // 모달에서 업로드된 사진 URL (null = 변경 없음)
 
 // ── DOM REFS ──
 const screens = {
-  login:   document.getElementById('screen-login'),
+  login: document.getElementById('screen-login'),
   pending: document.getElementById('screen-pending'),
-  portal:  document.getElementById('screen-portal'),
+  portal: document.getElementById('screen-portal'),
 };
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -136,16 +136,16 @@ async function loadPortal() {
 
   // Nav user info
   const navAvatar = document.getElementById('portal-user-avatar');
-  const photoUrl  = currentProfile.customPhotoURL || currentUser.photoURL || '';
-  navAvatar.src   = photoUrl;
-  navAvatar.alt   = currentUser.displayName || '프로필';
+  const photoUrl = currentProfile.customPhotoURL || currentUser.photoURL || '';
+  navAvatar.src = photoUrl;
+  navAvatar.alt = currentUser.displayName || '프로필';
   document.getElementById('portal-user-name').textContent = currentProfile.displayName || currentUser.displayName || '회원';
   document.getElementById('portal-user-role').textContent = roleLabel(currentProfile.role);
 
   // 권한별 패널 표시
-  const isExec   = currentProfile.role === 'executive';
+  const isExec = currentProfile.role === 'executive';
   const isLeader = currentProfile.role === 'leader';
-  document.getElementById('sidebar-admin-card').hidden  = !isExec;
+  document.getElementById('sidebar-admin-card').hidden = !isExec;
   document.getElementById('sidebar-leader-card').hidden = !(isLeader && !isExec);
 
   // 팀 목록 로드
@@ -171,12 +171,12 @@ async function loadAllTeams() {
 }
 
 async function loadMyTeamSidebar() {
-  const teamNameEl    = document.getElementById('sidebar-team-name');
-  const teamBadgeEl   = document.getElementById('sidebar-team-badge');
+  const teamNameEl = document.getElementById('sidebar-team-name');
+  const teamBadgeEl = document.getElementById('sidebar-team-badge');
   const teamMembersEl = document.getElementById('sidebar-team-members');
 
   if (!currentProfile.teamId) {
-    teamNameEl.textContent  = '팀 미배정';
+    teamNameEl.textContent = '팀 미배정';
     teamBadgeEl.textContent = '-';
     teamMembersEl.innerHTML = '';
     currentTeam = null;
@@ -189,7 +189,7 @@ async function loadMyTeamSidebar() {
 
   const abbr = currentTeam.name.slice(0, 3).toUpperCase();
   teamBadgeEl.textContent = abbr;
-  teamNameEl.textContent  = currentTeam.name;
+  teamNameEl.textContent = currentTeam.name;
 
   // 팀원 목록
   const membersSnap = await getDocs(
@@ -197,7 +197,7 @@ async function loadMyTeamSidebar() {
   );
   teamMembersEl.innerHTML = '';
   membersSnap.forEach(d => {
-    const m   = d.data();
+    const m = d.data();
     const row = document.createElement('div');
     row.className = `sidebar-member-row${m.role === 'leader' ? ' sidebar-member-leader' : ''}`;
     row.innerHTML = `<div class="sidebar-member-dot"></div><span>${m.displayName || m.email}${m.uid === currentUser.uid ? ' (나)' : ''}${m.role === 'leader' ? ' ⭐' : ''}</span>`;
@@ -225,24 +225,24 @@ function setupFeedListeners() {
   const viewTeamBtn = document.getElementById('view-my-team');
   if (!currentProfile.teamId) {
     viewTeamBtn.disabled = true;
-    viewTeamBtn.title    = '팀에 배정된 후 사용 가능합니다';
+    viewTeamBtn.title = '팀에 배정된 후 사용 가능합니다';
   }
 
   loadFeed();
 }
 
 async function loadFeed() {
-  const loading  = document.getElementById('feed-loading');
-  const empty    = document.getElementById('feed-empty');
+  const loading = document.getElementById('feed-loading');
+  const empty = document.getElementById('feed-empty');
   const timeline = document.getElementById('feed-timeline');
 
   loading.style.display = 'flex';
-  empty.hidden          = true;
-  timeline.innerHTML    = '';
+  empty.hidden = true;
+  timeline.innerHTML = '';
 
   if (feedUnsubscribe) { feedUnsubscribe(); feedUnsubscribe = null; }
 
-  const isExec   = currentProfile.role === 'executive';
+  const isExec = currentProfile.role === 'executive';
   const myTeamId = currentProfile.teamId;
   let submissions = [];
 
@@ -417,18 +417,18 @@ function initWeekSelect() {
     const d = new Date(now);
     d.setDate(d.getDate() - i * 7);
 
-    const year  = d.getFullYear();
+    const year = d.getFullYear();
     const month = d.getMonth() + 1;
     // 해당 월의 몇 번째 주인지 계산
     const firstDay = new Date(year, d.getMonth(), 1);
-    const weekNum  = Math.ceil((d.getDate() + firstDay.getDay()) / 7);
-    const label    = `${year}년 ${month}월 ${weekNum}주차`;
+    const weekNum = Math.ceil((d.getDate() + firstDay.getDay()) / 7);
+    const label = `${year}년 ${month}월 ${weekNum}주차`;
     // 정렬용 순서 값 (연월주 숫자)
     const order = year * 10000 + month * 100 + weekNum;
 
     const opt = document.createElement('option');
-    opt.value          = JSON.stringify({ label, order });
-    opt.textContent    = label;
+    opt.value = JSON.stringify({ label, order });
+    opt.textContent = label;
     if (i === 0) opt.selected = true;
     sel.appendChild(opt);
   }
@@ -454,29 +454,29 @@ document.getElementById('btn-add-link').addEventListener('click', () => {
 document.getElementById('form-submit').addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  const errEl   = document.getElementById('submit-error');
+  const errEl = document.getElementById('submit-error');
   const spinner = document.getElementById('submit-spinner');
   const btnText = document.getElementById('submit-btn-text');
 
   errEl.hidden = true;
 
-  const weekRaw   = document.getElementById('submit-week').value;
-  const title     = document.getElementById('submit-title').value.trim();
-  const desc      = document.getElementById('submit-desc').value.trim();
+  const weekRaw = document.getElementById('submit-week').value;
+  const title = document.getElementById('submit-title').value.trim();
+  const desc = document.getElementById('submit-desc').value.trim();
 
-  if (!weekRaw)  { showError(errEl, '주차를 선택해주세요.'); return; }
-  if (!title)    { showError(errEl, '제목을 입력해주세요.'); return; }
+  if (!weekRaw) { showError(errEl, '주차를 선택해주세요.'); return; }
+  if (!title) { showError(errEl, '제목을 입력해주세요.'); return; }
 
   // 링크 수집
   const links = [];
   document.querySelectorAll('#links-container .link-row').forEach(row => {
     const type = row.querySelector('.link-type').value;
-    const url  = row.querySelector('.link-url').value.trim();
+    const url = row.querySelector('.link-url').value.trim();
     if (url) links.push({ type, url, label: linkLabel(type) });
   });
 
   const visibility = document.querySelector('input[name="submit-visibility"]:checked')?.value || 'all';
-  const weekData   = JSON.parse(weekRaw);
+  const weekData = JSON.parse(weekRaw);
 
   const isEditing = !!currentEditId;
   spinner.hidden = false; btnText.textContent = isEditing ? '수정 중...' : '제출 중...';
@@ -485,8 +485,8 @@ document.getElementById('form-submit').addEventListener('submit', async (e) => {
   try {
     if (isEditing) {
       await updateDoc(doc(db, 'submissions', currentEditId), {
-        weekLabel:   weekData.label,
-        weekOrder:   weekData.order,
+        weekLabel: weekData.label,
+        weekOrder: weekData.order,
         title,
         description: desc,
         links,
@@ -496,13 +496,13 @@ document.getElementById('form-submit').addEventListener('submit', async (e) => {
       showToast('작업물이 수정되었습니다! ✏️', 'success');
     } else {
       await addDoc(collection(db, 'submissions'), {
-        userId:       currentUser.uid,
-        userName:     currentProfile.displayName || currentUser.displayName,
+        userId: currentUser.uid,
+        userName: currentProfile.displayName || currentUser.displayName,
         userPhotoURL: currentProfile.customPhotoURL || currentUser.photoURL,
-        teamId:       currentProfile.teamId || null,
-        teamName:     currentTeam?.name || null,
-        weekLabel:    weekData.label,
-        weekOrder:    weekData.order,
+        teamId: currentProfile.teamId || null,
+        teamName: currentTeam?.name || null,
+        weekLabel: weekData.label,
+        weekOrder: weekData.order,
         title,
         description: desc,
         links,
@@ -540,9 +540,9 @@ document.querySelectorAll('.admin-tab').forEach(tab => {
 });
 
 async function loadAdminUsers(tabName) {
-  const listEl   = document.getElementById('admin-users-list');
-  const loadEl   = document.getElementById('admin-loading');
-  loadEl.style.display  = 'flex';
+  const listEl = document.getElementById('admin-users-list');
+  const loadEl = document.getElementById('admin-loading');
+  loadEl.style.display = 'flex';
   listEl.innerHTML = '';
 
   let q;
@@ -564,7 +564,7 @@ async function loadAdminUsers(tabName) {
     const u = d.data();
     const row = document.createElement('div');
     row.className = 'admin-user-row';
-    row.id        = `admin-row-${d.id}`;
+    row.id = `admin-row-${d.id}`;
 
     const team = allTeams.find(t => t.id === u.teamId);
 
@@ -577,18 +577,18 @@ async function loadAdminUsers(tabName) {
       <div class="admin-user-controls">
         <span class="role-badge role-${u.role}">${roleLabel(u.role)}</span>
         ${tabName === 'pending'
-          ? `<button class="btn-approve" data-uid="${d.id}">승인</button>
+        ? `<button class="btn-approve" data-uid="${d.id}">승인</button>
              <button class="btn-reject"  data-uid="${d.id}">거절</button>`
-          : `<select class="role-select" data-uid="${d.id}">
-               <option value="member"    ${u.role==='member'    ? 'selected':''}>회원</option>
-               <option value="leader"    ${u.role==='leader'    ? 'selected':''}>팀장</option>
-               <option value="executive" ${u.role==='executive' ? 'selected':''}>임원</option>
+        : `<select class="role-select" data-uid="${d.id}">
+               <option value="member"    ${u.role === 'member' ? 'selected' : ''}>회원</option>
+               <option value="leader"    ${u.role === 'leader' ? 'selected' : ''}>팀장</option>
+               <option value="executive" ${u.role === 'executive' ? 'selected' : ''}>임원</option>
              </select>
              <select class="role-select" data-uid="${d.id}" data-type="team">
                <option value="">팀 없음</option>
-               ${allTeams.map(t => `<option value="${t.id}" ${u.teamId===t.id?'selected':''}>${escapeHtml(t.name)}</option>`).join('')}
+               ${allTeams.map(t => `<option value="${t.id}" ${u.teamId === t.id ? 'selected' : ''}>${escapeHtml(t.name)}</option>`).join('')}
              </select>`
-        }
+      }
       </div>
     `;
 
@@ -629,7 +629,7 @@ document.getElementById('btn-close-admin-teams')?.addEventListener('click', () =
 
 document.getElementById('btn-create-team')?.addEventListener('click', async () => {
   const input = document.getElementById('new-team-name');
-  const name  = input.value.trim();
+  const name = input.value.trim();
   if (!name) return;
 
   await addDoc(collection(db, 'teams'), {
@@ -704,7 +704,7 @@ async function loadInviteList() {
   }
 
   unassigned.forEach(d => {
-    const u   = d.data();
+    const u = d.data();
     const row = document.createElement('div');
     row.className = 'admin-user-row';
     row.innerHTML = `
@@ -754,7 +754,7 @@ function modalOverlayClose(e) {
 // ESC key
 document.addEventListener('keydown', (e) => {
   if (e.key !== 'Escape') return;
-  ['modal-submit','modal-admin-users','modal-admin-teams','modal-invite','modal-profile'].forEach(id => {
+  ['modal-submit', 'modal-admin-users', 'modal-admin-teams', 'modal-invite', 'modal-profile'].forEach(id => {
     if (!document.getElementById(id)?.hidden) closeModal(id);
   });
 });
@@ -766,12 +766,12 @@ function openProfileModal() {
   const p = currentProfile;
   pendingPhotoURL = null;
   document.getElementById('profile-preview-img').src = p.customPhotoURL || currentUser?.photoURL || '';
-  document.getElementById('profile-nickname').value  = p.displayName || currentUser.displayName || '';
-  document.getElementById('profile-job-role').value  = p.jobRole || '';
-  document.getElementById('profile-bio').value       = p.bio || '';
+  document.getElementById('profile-nickname').value = p.displayName || currentUser.displayName || '';
+  document.getElementById('profile-job-role').value = p.jobRole || '';
+  document.getElementById('profile-bio').value = p.bio || '';
   document.getElementById('profile-portfolio').value = p.portfolioUrl || '';
   document.getElementById('bio-char-count').textContent = `${(p.bio || '').length} / 200`;
-  document.getElementById('profile-error').hidden    = true;
+  document.getElementById('profile-error').hidden = true;
   document.getElementById('profile-upload-status').textContent = '';
   openModal('modal-profile');
 }
@@ -779,12 +779,12 @@ function openProfileModal() {
 // Canvas로 앞축 후 base64로 변환 → Firestore에 직접 저장 (무료)
 async function compressToBase64(file, maxSide = 120, quality = 0.65) {
   return new Promise((resolve, reject) => {
-    const img     = new Image();
+    const img = new Image();
     const blobUrl = URL.createObjectURL(file);
     img.onload = () => {
-      const scale  = Math.min(1, maxSide / Math.max(img.width, img.height));
+      const scale = Math.min(1, maxSide / Math.max(img.width, img.height));
       const canvas = document.createElement('canvas');
-      canvas.width  = Math.round(img.width  * scale);
+      canvas.width = Math.round(img.width * scale);
       canvas.height = Math.round(img.height * scale);
       canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
       URL.revokeObjectURL(blobUrl);
@@ -796,15 +796,15 @@ async function compressToBase64(file, maxSide = 120, quality = 0.65) {
 }
 
 function updateSidebarProfile() {
-  const name    = currentProfile.displayName || currentUser?.displayName || '회원';
-  const photo   = currentProfile.customPhotoURL || currentUser?.photoURL || '';
+  const name = currentProfile.displayName || currentUser?.displayName || '회원';
+  const photo = currentProfile.customPhotoURL || currentUser?.photoURL || '';
   const jobRole = currentProfile.jobRole || roleLabel(currentProfile.role);
-  const bio     = currentProfile.bio || '';
-  const port    = currentProfile.portfolioUrl || '';
+  const bio = currentProfile.bio || '';
+  const port = currentProfile.portfolioUrl || '';
 
-  document.getElementById('sidebar-profile-name').textContent    = name;
+  document.getElementById('sidebar-profile-name').textContent = name;
   document.getElementById('sidebar-profile-jobrole').textContent = jobRole;
-  document.getElementById('sidebar-profile-avatar').src          = photo;
+  document.getElementById('sidebar-profile-avatar').src = photo;
 
   const bioEl = document.getElementById('sidebar-profile-bio');
   bioEl.textContent = bio;
@@ -812,9 +812,9 @@ function updateSidebarProfile() {
 
   const portEl = document.getElementById('sidebar-profile-portfolio');
   if (port) {
-    portEl.href        = port;
+    portEl.href = port;
     portEl.textContent = '🔗 포트폴리오 보기';
-    portEl.hidden      = false;
+    portEl.hidden = false;
   } else {
     portEl.hidden = true;
   }
@@ -849,7 +849,7 @@ document.getElementById('profile-photo-input')?.addEventListener('change', async
   document.getElementById('profile-preview-img').src = tempUrl;
 
   try {
-    const dataUrl   = await compressToBase64(file);
+    const dataUrl = await compressToBase64(file);
     pendingPhotoURL = dataUrl;
     document.getElementById('profile-preview-img').src = dataUrl;
     statusEl.textContent = '✅ 준비 완료! "저장하기"를 눌러 적용하세요.';
@@ -873,18 +873,18 @@ document.getElementById('profile-bio')?.addEventListener('input', function () {
 document.getElementById('form-profile')?.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  const errEl   = document.getElementById('profile-error');
+  const errEl = document.getElementById('profile-error');
   const spinner = document.getElementById('profile-spinner');
   const btnText = document.getElementById('profile-btn-text');
-  errEl.hidden  = true;
+  errEl.hidden = true;
 
   const nickname = document.getElementById('profile-nickname').value.trim();
   if (!nickname) { showError(errEl, '닉네임을 입력해주세요.'); return; }
 
   const customPhotoURL = pendingPhotoURL ?? (currentProfile.customPhotoURL || '');
-  const jobRole        = document.getElementById('profile-job-role').value.trim();
-  const bio            = document.getElementById('profile-bio').value.trim();
-  const portfolioUrl   = document.getElementById('profile-portfolio').value.trim();
+  const jobRole = document.getElementById('profile-job-role').value.trim();
+  const bio = document.getElementById('profile-bio').value.trim();
+  const portfolioUrl = document.getElementById('profile-portfolio').value.trim();
 
   spinner.hidden = false; btnText.textContent = '저장 중...';
   document.getElementById('btn-save-profile').disabled = true;
@@ -922,7 +922,7 @@ document.getElementById('form-profile')?.addEventListener('submit', async (e) =>
 function openNewSubmitModal() {
   currentEditId = null;
   document.getElementById('modal-submit-title').textContent = '작업물 제출';
-  document.getElementById('submit-btn-text').textContent    = '제출하기';
+  document.getElementById('submit-btn-text').textContent = '제출하기';
   document.getElementById('form-submit').reset();
   document.getElementById('desc-char-count').textContent = '0 / 500';
   // 공개 범위 초기화
@@ -937,7 +937,7 @@ function openNewSubmitModal() {
 function openEditModal(item) {
   currentEditId = item.id;
   document.getElementById('modal-submit-title').textContent = '작업물 수정';
-  document.getElementById('submit-btn-text').textContent    = '수정하기';
+  document.getElementById('submit-btn-text').textContent = '수정하기';
 
   // 주차 선택 &amp; 내용 채우기
   const sel = document.getElementById('submit-week');
@@ -946,7 +946,7 @@ function openEditModal(item) {
     if (!opt.value) continue;
     try {
       if (JSON.parse(opt.value).label === item.weekLabel) { opt.selected = true; found = true; break; }
-    } catch {}
+    } catch { }
   }
   if (!found) {
     const opt = new Option(item.weekLabel, JSON.stringify({ label: item.weekLabel, order: item.weekOrder || 0 }), true, true);
@@ -954,11 +954,11 @@ function openEditModal(item) {
   }
 
   document.getElementById('submit-title').value = item.title || '';
-  document.getElementById('submit-desc').value  = item.description || '';
+  document.getElementById('submit-desc').value = item.description || '';
   document.getElementById('desc-char-count').textContent = `${(item.description || '').length} / 500`;
 
   // 공개 범위 채우기
-  const visVal   = item.visibility || 'all';
+  const visVal = item.visibility || 'all';
   const visInput = document.querySelector(`input[name="submit-visibility"][value="${visVal}"]`);
   if (visInput) visInput.checked = true;
 
@@ -980,13 +980,13 @@ function resetSubmitModal() {
 
 function addLinkRow(container, type = 'github', url = '') {
   if (container.children.length >= 5) return;
-  const types  = ['github','notion','drive','youtube','itch','other'];
-  const labels = ['GitHub','Notion','Google Drive','YouTube','itch.io','기타'];
+  const types = ['github', 'notion', 'drive', 'youtube', 'itch', 'other'];
+  const labels = ['GitHub', 'Notion', 'Google Drive', 'YouTube', 'itch.io', '기타'];
   const row = document.createElement('div');
   row.className = 'link-row';
   row.innerHTML = `
     <select class="form-input link-type" aria-label="링크 종류">
-      ${types.map((t,i) => `<option value="${t}"${t === type ? ' selected' : ''}>${labels[i]}</option>`).join('')}
+      ${types.map((t, i) => `<option value="${t}"${t === type ? ' selected' : ''}>${labels[i]}</option>`).join('')}
     </select>
     <input type="url" class="form-input link-url" placeholder="https://" value="${escapeHtml(url)}" aria-label="링크 URL" />
     <button type="button" class="btn-remove-link" aria-label="링크 삭제">×</button>
@@ -1025,17 +1025,17 @@ function linkLabel(type) {
 }
 
 function formatDate(date) {
-  const now  = new Date();
+  const now = new Date();
   const diff = (now - date) / 1000;
-  if (diff < 60)        return '방금 전';
-  if (diff < 3600)      return `${Math.floor(diff/60)}분 전`;
-  if (diff < 86400)     return `${Math.floor(diff/3600)}시간 전`;
+  if (diff < 60) return '방금 전';
+  if (diff < 3600) return `${Math.floor(diff / 60)}분 전`;
+  if (diff < 86400) return `${Math.floor(diff / 3600)}시간 전`;
   return date.toLocaleDateString('ko-KR', { month: 'short', day: 'numeric' });
 }
 
 function escapeHtml(str) {
   if (!str) return '';
-  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
 function showError(el, msg) {

@@ -15,7 +15,7 @@ window.addEventListener('scroll', () => {
    3. HAMBURGER MENU
 ════════════════════════════ */
 const hamburgerBtn = document.getElementById('hamburger-btn');
-const navLinks     = document.getElementById('nav-links');
+const navLinks = document.getElementById('nav-links');
 
 hamburgerBtn.addEventListener('click', () => {
   const isOpen = hamburgerBtn.classList.toggle('open');
@@ -46,11 +46,11 @@ navLinks.querySelectorAll('.nav-link').forEach(link => {
   for (let i = 0; i < 55; i++) {
     const p = document.createElement('div');
     p.className = 'particle';
-    const size  = 1.5 + Math.random() * 2.5;
-    const left  = Math.random() * 100;
-    const dur   = 8 + Math.random() * 14;
+    const size = 1.5 + Math.random() * 2.5;
+    const left = Math.random() * 100;
+    const dur = 8 + Math.random() * 14;
     const delay = -(Math.random() * 14);
-    const col   = colours[Math.floor(Math.random() * colours.length)];
+    const col = colours[Math.floor(Math.random() * colours.length)];
     p.style.cssText = `
       left: ${left}%;
       bottom: 0;
@@ -69,11 +69,11 @@ navLinks.querySelectorAll('.nav-link').forEach(link => {
    5. NUMBER COUNTER
 ════════════════════════════ */
 function animateCounter(el) {
-  const target   = parseInt(el.dataset.target, 10);
+  const target = parseInt(el.dataset.target, 10);
   const duration = 1800;
-  const start    = performance.now();
+  const start = performance.now();
   function tick(now) {
-    const p    = Math.min((now - start) / duration, 1);
+    const p = Math.min((now - start) / duration, 1);
     const ease = 1 - Math.pow(1 - p, 4); // ease-out-quart
     el.textContent = Math.floor(ease * target);
     if (p < 1) requestAnimationFrame(tick);
@@ -120,7 +120,7 @@ if (heroStats) counterObs.observe(heroStats);
 /* ════════════════════════════
    7. PROJECT FILTER
 ════════════════════════════ */
-const filterBtns   = document.querySelectorAll('.filter-btn');
+const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 
 filterBtns.forEach(btn => {
@@ -147,9 +147,9 @@ filterBtns.forEach(btn => {
 /* ════════════════════════════
    8. ACTIVE NAV HIGHLIGHT
 ════════════════════════════ */
-const sections  = document.querySelectorAll('section[id]');
-const navItems  = document.querySelectorAll('.nav-link:not(.nav-cta)');
-const navObs    = new IntersectionObserver((entries) => {
+const sections = document.querySelectorAll('section[id]');
+const navItems = document.querySelectorAll('.nav-link:not(.nav-cta)');
+const navObs = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       navItems.forEach(link => {
@@ -164,7 +164,7 @@ sections.forEach(s => navObs.observe(s));
 /* ════════════════════════════
    9. JOIN FORM
 ════════════════════════════ */
-const joinForm    = document.getElementById('join-form');
+const joinForm = document.getElementById('join-form');
 const joinSuccess = document.getElementById('join-success');
 
 if (joinForm) {
@@ -173,22 +173,22 @@ if (joinForm) {
 
     const nameEl = document.getElementById('input-name');
     const deptEl = document.getElementById('input-dept');
-    const msgEl  = document.getElementById('input-msg');
+    const msgEl = document.getElementById('input-msg');
 
     const fields = [
       { el: nameEl, val: nameEl.value.trim() },
       { el: deptEl, val: deptEl.value.trim() },
-      { el: msgEl,  val: msgEl.value.trim()  },
+      { el: msgEl, val: msgEl.value.trim() },
     ];
     const invalid = fields.filter(f => !f.val);
 
     if (invalid.length) {
       invalid.forEach(({ el }) => {
         el.style.borderColor = 'hsl(0,80%,60%)';
-        el.style.boxShadow   = '0 0 0 3px rgba(239,68,68,0.15)';
+        el.style.boxShadow = '0 0 0 3px rgba(239,68,68,0.15)';
         el.addEventListener('input', () => {
           el.style.borderColor = '';
-          el.style.boxShadow   = '';
+          el.style.boxShadow = '';
         }, { once: true });
       });
       invalid[0].el.focus();
@@ -201,11 +201,11 @@ if (joinForm) {
     submitBtn.innerHTML = '<span>처리 중...</span>';
 
     setTimeout(() => {
-      joinForm.style.transition   = 'opacity 0.4s ease, transform 0.4s ease';
-      joinForm.style.opacity      = '0';
-      joinForm.style.transform    = 'translateY(-12px)';
+      joinForm.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      joinForm.style.opacity = '0';
+      joinForm.style.transform = 'translateY(-12px)';
       setTimeout(() => {
-        joinForm.style.display    = 'none';
+        joinForm.style.display = 'none';
         joinSuccess.style.display = 'block';
         joinSuccess.style.animation = 'hero-enter 0.7s var(--ease) both';
       }, 400);
