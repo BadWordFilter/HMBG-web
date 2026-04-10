@@ -37,6 +37,7 @@ let currentTeam    = null; // Firestore team doc
 let allTeams       = [];   // 팀 목록
 let currentFeedView = 'all'; // 'all' | 'team'
 let feedUnsubscribe = null;
+let currentEditId   = null; // null = 새 제출 | string = 수정 중인 제출 ID
 
 // ── DOM REFS ──
 const screens = {
@@ -343,6 +344,20 @@ function renderSubmissionCard(item) {
     ? formatDate(item.createdAt.toDate())
     : '';
 
+  const canEdit = currentUser?.uid === item.userId || currentProfile?.role === 'executive';
+  const actionsHtml = canEdit ? `
+    <div class="submission-actions">
+      <button type="button" class="btn-edit-submission" aria-label="수정">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        수정
+      </button>
+      <button type="button" class="btn-delete-submission" aria-label="삭제">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+        삭제
+      </button>
+    </div>
+  ` : '';
+
   card.innerHTML = `
     <div class="submission-header">
       ${avatarHtml}
@@ -355,7 +370,19 @@ function renderSubmissionCard(item) {
     <div class="submission-title">${escapeHtml(item.title)}</div>
     ${descHtml}
     ${linksHtml ? `<div class="submission-links">${linksHtml}</div>` : ''}
+    ${actionsHtml}
   `;
+
+  if (canEdit) {
+    card.querySelector('.btn-edit-submission')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openEditModal(item);
+    });
+    card.querySelector('.btn-delete-submission')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      handleDeleteSubmission(item.id, item.title);
+    });
+  }
 
   return card;
 }
@@ -390,46 +417,20 @@ function initWeekSelect() {
   }
 }
 
-document.getElementById('btn-open-submit').addEventListener('click', () => {
-  openModal('modal-submit');
-});
-
-document.getElementById('btn-close-submit').addEventListener('click', () => closeModal('modal-submit'));
-document.getElementById('btn-cancel-submit').addEventListener('click', () => closeModal('modal-submit'));
+document.getElementById('btn-open-submit').addEventListener('click', () => openNewSubmitModal());
+document.getElementById('btn-close-submit').addEventListener('click', () => resetSubmitModal());
+document.getElementById('btn-cancel-submit').addEventListener('click', () => resetSubmitModal());
 
 // Textarea char count
 document.getElementById('submit-desc').addEventListener('input', function () {
   document.getElementById('desc-char-count').textContent = `${this.value.length} / 500`;
 });
 
-// Link management
+// Link management — btn-add-link uses addLinkRow helper
 document.getElementById('btn-add-link').addEventListener('click', () => {
   const container = document.getElementById('links-container');
-  const idx       = container.children.length;
-  if (idx >= 5) { showToast('링크는 최대 5개까지 추가할 수 있습니다.'); return; }
-
-  const row = document.createElement('div');
-  row.className = 'link-row';
-  row.dataset.index = idx;
-  row.innerHTML = `
-    <select class="form-input link-type" aria-label="링크 종류">
-      <option value="github">GitHub</option>
-      <option value="notion">Notion</option>
-      <option value="drive">Google Drive</option>
-      <option value="youtube">YouTube</option>
-      <option value="itch">itch.io</option>
-      <option value="other">기타</option>
-    </select>
-    <input type="url" class="form-input link-url" placeholder="https://" aria-label="링크 URL" />
-    <button type="button" class="btn-remove-link" aria-label="링크 삭제">×</button>
-  `;
-  row.querySelector('.btn-remove-link').addEventListener('click', () => row.remove());
-  container.appendChild(row);
-});
-
-// 첫 번째 링크 삭제 버튼
-document.querySelector('.btn-remove-link')?.addEventListener('click', function () {
-  this.closest('.link-row').remove();
+  if (container.children.length >= 5) { showToast('링크는 최대 5개까지 추가할 수 있습니다.'); return; }
+  addLinkRow(container);
 });
 
 // Form submit
@@ -459,33 +460,42 @@ document.getElementById('form-submit').addEventListener('submit', async (e) => {
 
   const weekData = JSON.parse(weekRaw);
 
-  // 제출
-  spinner.hidden = false; btnText.textContent = '제출 중...';
+  const isEditing = !!currentEditId;
+  spinner.hidden = false; btnText.textContent = isEditing ? '수정 중...' : '제출 중...';
   document.getElementById('btn-submit-work').disabled = true;
 
   try {
-    await addDoc(collection(db, 'submissions'), {
-      userId:       currentUser.uid,
-      userName:     currentUser.displayName,
-      userPhotoURL: currentUser.photoURL,
-      teamId:       currentProfile.teamId || null,
-      teamName:     currentTeam?.name || null,
-      weekLabel:    weekData.label,
-      weekOrder:    weekData.order,
-      title,
-      description: desc,
-      links,
-      createdAt: serverTimestamp(),
-    });
-
-    closeModal('modal-submit');
-    document.getElementById('form-submit').reset();
-    document.getElementById('desc-char-count').textContent = '0 / 500';
-    showToast('작업물이 제출되었습니다! 🎉', 'success');
+    if (isEditing) {
+      await updateDoc(doc(db, 'submissions', currentEditId), {
+        weekLabel:   weekData.label,
+        weekOrder:   weekData.order,
+        title,
+        description: desc,
+        links,
+        updatedAt: serverTimestamp(),
+      });
+      showToast('작업물이 수정되었습니다! ✏️', 'success');
+    } else {
+      await addDoc(collection(db, 'submissions'), {
+        userId:       currentUser.uid,
+        userName:     currentUser.displayName,
+        userPhotoURL: currentUser.photoURL,
+        teamId:       currentProfile.teamId || null,
+        teamName:     currentTeam?.name || null,
+        weekLabel:    weekData.label,
+        weekOrder:    weekData.order,
+        title,
+        description: desc,
+        links,
+        createdAt: serverTimestamp(),
+      });
+      showToast('작업물이 제출되었습니다! 🎉', 'success');
+    }
+    resetSubmitModal();
   } catch (err) {
-    showError(errEl, '제출 중 오류가 발생했습니다: ' + err.message);
+    showError(errEl, `${isEditing ? '수정' : '제출'} 중 오류가 발생했습니다: ` + err.message);
   } finally {
-    spinner.hidden = true; btnText.textContent = '제출하기';
+    spinner.hidden = true; btnText.textContent = isEditing ? '수정하기' : '제출하기';
     document.getElementById('btn-submit-work').disabled = false;
   }
 });
@@ -727,6 +737,87 @@ document.addEventListener('keydown', (e) => {
     if (!document.getElementById(id)?.hidden) closeModal(id);
   });
 });
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//   SUBMIT MODAL HELPERS
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function openNewSubmitModal() {
+  currentEditId = null;
+  document.getElementById('modal-submit-title').textContent = '작업물 제출';
+  document.getElementById('submit-btn-text').textContent    = '제출하기';
+  document.getElementById('form-submit').reset();
+  document.getElementById('desc-char-count').textContent = '0 / 500';
+  const container = document.getElementById('links-container');
+  container.innerHTML = '';
+  addLinkRow(container);
+  openModal('modal-submit');
+}
+
+function openEditModal(item) {
+  currentEditId = item.id;
+  document.getElementById('modal-submit-title').textContent = '작업물 수정';
+  document.getElementById('submit-btn-text').textContent    = '수정하기';
+
+  // 주차 선택 — 기존 옵션에서 일치하는 것 찾기, 없으면 추가
+  const sel = document.getElementById('submit-week');
+  let found = false;
+  for (const opt of sel.options) {
+    if (!opt.value) continue;
+    try {
+      if (JSON.parse(opt.value).label === item.weekLabel) { opt.selected = true; found = true; break; }
+    } catch {}
+  }
+  if (!found) {
+    const opt = new Option(item.weekLabel, JSON.stringify({ label: item.weekLabel, order: item.weekOrder || 0 }), true, true);
+    sel.add(opt, 1);
+  }
+
+  document.getElementById('submit-title').value = item.title || '';
+  document.getElementById('submit-desc').value  = item.description || '';
+  document.getElementById('desc-char-count').textContent = `${(item.description || '').length} / 500`;
+
+  const container = document.getElementById('links-container');
+  container.innerHTML = '';
+  if (item.links?.length) {
+    item.links.forEach(link => addLinkRow(container, link.type, link.url));
+  } else {
+    addLinkRow(container);
+  }
+
+  openModal('modal-submit');
+}
+
+function resetSubmitModal() {
+  currentEditId = null;
+  closeModal('modal-submit');
+}
+
+function addLinkRow(container, type = 'github', url = '') {
+  if (container.children.length >= 5) return;
+  const types  = ['github','notion','drive','youtube','itch','other'];
+  const labels = ['GitHub','Notion','Google Drive','YouTube','itch.io','기타'];
+  const row = document.createElement('div');
+  row.className = 'link-row';
+  row.innerHTML = `
+    <select class="form-input link-type" aria-label="링크 종류">
+      ${types.map((t,i) => `<option value="${t}"${t === type ? ' selected' : ''}>${labels[i]}</option>`).join('')}
+    </select>
+    <input type="url" class="form-input link-url" placeholder="https://" value="${escapeHtml(url)}" aria-label="링크 URL" />
+    <button type="button" class="btn-remove-link" aria-label="링크 삭제">×</button>
+  `;
+  row.querySelector('.btn-remove-link').addEventListener('click', () => row.remove());
+  container.appendChild(row);
+}
+
+async function handleDeleteSubmission(id, title) {
+  if (!confirm(`"${title}"\n이 작업물을 삭제하시겠습니까? 되돌릴 수 없습니다.`)) return;
+  try {
+    await deleteDoc(doc(db, 'submissions', id));
+    showToast('작업물이 삭제되었습니다.', 'success');
+  } catch (err) {
+    showToast('삭제 중 오류: ' + err.message, 'error');
+  }
+}
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 //   UTILITIES
