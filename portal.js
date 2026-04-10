@@ -28,7 +28,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db   = getFirestore(app);
+const db      = getFirestore(app);
 
 // ── STATE ──
 let currentUser    = null; // Firebase Auth user
@@ -38,6 +38,7 @@ let allTeams       = [];   // 팀 목록
 let currentFeedView = 'all'; // 'all' | 'team'
 let feedUnsubscribe = null;
 let currentEditId   = null; // null = 새 제출 | string = 수정 중인 제출 ID
+let pendingPhotoURL = null; // 모달에서 업로드된 사진 URL (null = 변경 없음)
 
 // ── DOM REFS ──
 const screens = {
@@ -747,20 +748,36 @@ document.addEventListener('keydown', (e) => {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 function openProfileModal() {
   const p = currentProfile;
-  document.getElementById('profile-photo-url').value = p.customPhotoURL || '';
+  pendingPhotoURL = null;
+  document.getElementById('profile-preview-img').src = p.customPhotoURL || currentUser?.photoURL || '';
   document.getElementById('profile-nickname').value  = p.displayName || currentUser.displayName || '';
   document.getElementById('profile-job-role').value  = p.jobRole || '';
   document.getElementById('profile-bio').value       = p.bio || '';
   document.getElementById('profile-portfolio').value = p.portfolioUrl || '';
   document.getElementById('bio-char-count').textContent = `${(p.bio || '').length} / 200`;
-  document.getElementById('profile-error').hidden = true;
-  updatePhotoPreview();
+  document.getElementById('profile-error').hidden    = true;
+  document.getElementById('profile-upload-status').textContent = '';
+  document.getElementById('profile-upload-progress').hidden    = true;
   openModal('modal-profile');
 }
 
-function updatePhotoPreview() {
-  const url = document.getElementById('profile-photo-url').value.trim();
-  document.getElementById('profile-preview-img').src = url || currentUser?.photoURL || '';
+// Canvas로 앞축 후 base64로 변환 → Firestore에 직접 저장 (무료)
+async function compressToBase64(file, maxSide = 120, quality = 0.65) {
+  return new Promise((resolve, reject) => {
+    const img     = new Image();
+    const blobUrl = URL.createObjectURL(file);
+    img.onload = () => {
+      const scale  = Math.min(1, maxSide / Math.max(img.width, img.height));
+      const canvas = document.createElement('canvas');
+      canvas.width  = Math.round(img.width  * scale);
+      canvas.height = Math.round(img.height * scale);
+      canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+      URL.revokeObjectURL(blobUrl);
+      resolve(canvas.toDataURL('image/jpeg', quality));
+    };
+    img.onerror = () => { URL.revokeObjectURL(blobUrl); reject(new Error('이미지 로드 실패')); };
+    img.src = blobUrl;
+  });
 }
 
 function updateSidebarProfile() {
@@ -789,11 +806,50 @@ function updateSidebarProfile() {
 }
 
 document.getElementById('btn-open-profile')?.addEventListener('click', () => openProfileModal());
+document.getElementById('portal-user-avatar')?.addEventListener('click', () => openProfileModal());
 document.getElementById('btn-close-profile')?.addEventListener('click', () => closeModal('modal-profile'));
 document.getElementById('btn-cancel-profile')?.addEventListener('click', () => closeModal('modal-profile'));
 
-// Photo URL 실시간 미리보기
-document.getElementById('profile-photo-url')?.addEventListener('input', updatePhotoPreview);
+// 프로필 사진 로카 클릭 → 파일 선택 다이얼로그
+document.getElementById('profile-photo-upload-btn')?.addEventListener('click', () => {
+  document.getElementById('profile-photo-input').click();
+});
+
+// 파일 선택 시 로카에서 base64로 변환
+document.getElementById('profile-photo-input')?.addEventListener('change', async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const statusEl = document.getElementById('profile-upload-status');
+
+  if (file.size > 10 * 1024 * 1024) {
+    showToast('파일이 너무 큽니다. 10MB 이하로 선택해주세요.', 'error');
+    e.target.value = ''; return;
+  }
+
+  statusEl.textContent = '이미지 압축 중...';
+
+  // 즉시 로카 미리보기
+  const tempUrl = URL.createObjectURL(file);
+  document.getElementById('profile-preview-img').src = tempUrl;
+
+  try {
+    const dataUrl   = await compressToBase64(file);
+    pendingPhotoURL = dataUrl;
+    document.getElementById('profile-preview-img').src = dataUrl;
+    statusEl.textContent = '✅ 준비 완료! "저장하기"를 눌러 적용하세요.';
+    setTimeout(() => { if (statusEl.textContent.startsWith('✅')) statusEl.textContent = ''; }, 3000);
+  } catch (err) {
+    document.getElementById('profile-preview-img').src =
+      currentProfile.customPhotoURL || currentUser?.photoURL || '';
+    statusEl.textContent = '';
+    showToast('이미지 처리 실패: ' + err.message, 'error');
+  } finally {
+    URL.revokeObjectURL(tempUrl);
+    e.target.value = '';
+  }
+});
+
 // Bio 글자수
 document.getElementById('profile-bio')?.addEventListener('input', function () {
   document.getElementById('bio-char-count').textContent = `${this.value.length} / 200`;
@@ -810,7 +866,7 @@ document.getElementById('form-profile')?.addEventListener('submit', async (e) =>
   const nickname = document.getElementById('profile-nickname').value.trim();
   if (!nickname) { showError(errEl, '닉네임을 입력해주세요.'); return; }
 
-  const customPhotoURL = document.getElementById('profile-photo-url').value.trim();
+  const customPhotoURL = pendingPhotoURL ?? (currentProfile.customPhotoURL || '');
   const jobRole        = document.getElementById('profile-job-role').value.trim();
   const bio            = document.getElementById('profile-bio').value.trim();
   const portfolioUrl   = document.getElementById('profile-portfolio').value.trim();
@@ -835,6 +891,7 @@ document.getElementById('form-profile')?.addEventListener('submit', async (e) =>
     updateSidebarProfile();
 
     closeModal('modal-profile');
+    pendingPhotoURL = null;
     showToast('프로필이 저장되었습니다! 🍔', 'success');
   } catch (err) {
     showError(errEl, '저장 중 오류: ' + err.message);
