@@ -1744,6 +1744,8 @@ select.form-input option:checked {
   padding: 2px 7px;
   border-radius: 3px;
   letter-spacing: 0.1em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .role-pending {
