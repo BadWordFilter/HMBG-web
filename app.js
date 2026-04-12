@@ -90,12 +90,13 @@ const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      revealObs.unobserve(entry.target);
+    } else {
+      entry.target.classList.remove('visible');
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.1, rootMargin: '-10% 0px -10% 0px' });
 
-document.querySelectorAll('.reveal, .reveal-left').forEach(el => revealObs.observe(el));
+document.querySelectorAll('.reveal, .reveal-left, .reveal-stagger').forEach(el => revealObs.observe(el));
 
 // Staggered delays
 document.querySelectorAll('.activity-card').forEach((c, i) => { c.style.transitionDelay = `${i * 75}ms`; });

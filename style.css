@@ -214,28 +214,59 @@ body::after {
   letter-spacing: -0.01em;
 }
 
-/* ── SCROLL REVEAL ── */
+/* ── SCROLL REVEAL (Apple Style) ── */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  transform: translateY(30px) scale(0.96);
+  filter: blur(5px);
+  transition: 
+    opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform, opacity, filter;
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+  filter: blur(0);
 }
 
 .reveal-left {
   opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  transform: translateX(-40px) scale(0.98);
+  filter: blur(5px);
+  transition: 
+    opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform, opacity, filter;
 }
 
 .reveal-left.visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0) scale(1);
+  filter: blur(0);
 }
+
+/* Staggered transition for groups */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s var(--ease), transform 1s var(--ease);
+}
+
+.reveal-stagger.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: 100ms; }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: 200ms; }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: 300ms; }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: 400ms; }
+.reveal-stagger.visible > *:nth-child(5) { transition-delay: 500ms; }
+
 
 /* ── NEON LINE DIVIDER ── */
 .neon-line {
@@ -965,7 +996,7 @@ body::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: var(--sp-9);
+  margin-bottom: var(--sp-4);
   padding: var(--sp-5) 0;
 }
 

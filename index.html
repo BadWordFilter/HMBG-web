@@ -12,7 +12,7 @@
   <!-- Open Graph & SEO -->
   <meta property="og:title" content="햄부기 HMBG | 게임 개발 동아리" />
   <meta property="og:description" content="단순 학습을 넘어 실제 시장에 출시할 수 있는 수준의 게임을 제작합니다." />
-  <meta property="og:image" content="https://hmbg-web.vercel.app/hero_bg.png" />
+  <meta property="og:image" content="https://hmbg-web.vercel.app/hambgi.png" />
   <meta property="og:url" content="https://hmbg-web.vercel.app/" />
   <meta property="og:type" content="website" />
 
@@ -148,18 +148,6 @@
   <section id="about" class="section about" aria-labelledby="about-title">
     <div class="container">
 
-      <!-- Hambgi Pixel Art Showcase -->
-      <div class="hambgi-showcase reveal" aria-label="햄부기 픽셀아트">
-        <div class="hambgi-frame">
-          <div class="hambgi-frame-corner corner-tl" aria-hidden="true"></div>
-          <div class="hambgi-frame-corner corner-tr" aria-hidden="true"></div>
-          <div class="hambgi-frame-corner corner-bl" aria-hidden="true"></div>
-          <div class="hambgi-frame-corner corner-br" aria-hidden="true"></div>
-          <div class="hambgi-scan" aria-hidden="true"></div>
-          <img src="hambgi.png" alt="햄부기 픽셀아트 — 햄버거 재료들" class="hambgi-img" />
-          <div class="hambgi-label" aria-hidden="true"><span class="hambgi-label-dot"></span>HMBG_PIXEL.ART</div>
-        </div>
-      </div>
 
       <div class="about-grid">
         <div class="reveal-left">
@@ -176,7 +164,7 @@
           <p class="about-subtitle">
             모든 부원이 함께 만드는 즐거움을 체감하며, 신규 프로젝트 4개 출시와 1인 1 포트폴리오 고도화에 집중합니다.
           </p>
-          <div class="tech-grid" aria-label="사용 기술">
+          <div class="tech-grid reveal-stagger" aria-label="사용 기술">
             <span class="tech-tag">Unity</span>
             <span class="tech-tag">Unreal Engine</span>
             <span class="tech-tag">Godot</span>
@@ -189,35 +177,45 @@
             <span class="tech-tag">게임 기획</span>
           </div>
         </div>
-        <div class="reveal">
-          <div class="pillar-list">
-            <div class="pillar" id="pillar-vision">
+        <!-- Hambgi Pixel Art Showcase (Right Side) -->
+        <div class="hambgi-showcase reveal" aria-label="햄부기 픽셀아트">
+          <div class="hambgi-frame">
+            <div class="hambgi-frame-corner corner-tl" aria-hidden="true"></div>
+            <div class="hambgi-frame-corner corner-tr" aria-hidden="true"></div>
+            <div class="hambgi-frame-corner corner-bl" aria-hidden="true"></div>
+            <div class="hambgi-frame-corner corner-br" aria-hidden="true"></div>
+            <div class="hambgi-scan" aria-hidden="true"></div>
+            <img src="hambgi.png" alt="햄부기 픽셀아트 — 햄버거 재료들" class="hambgi-img" />
+            <div class="hambgi-label" aria-hidden="true"><span class="hambgi-label-dot"></span>HMBG_PIXEL.ART</div>
+          </div>
+        </div>
+      </div>
 
-              <div>
-                <h3>출시 목표</h3>
-                <p>단기간에 게임을 완성하는 경험을 제공하고 실제 시장에 출시할 수 있는 수준으로 고도화합니다.</p>
-              </div>
+      <!-- Pillar List (Activities Explanation moved below) -->
+      <div class="reveal-stagger" style="margin-top: var(--sp-6);">
+        <div class="pillar-list" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-5);">
+          <div class="pillar" id="pillar-vision">
+            <div>
+              <h3>출시 목표</h3>
+              <p>단기간에 게임을 완성하는 경험을 제공하고 실제 시장에 출시할 수 있는 수준으로 고도화합니다.</p>
             </div>
-            <div class="pillar" id="pillar-mission">
-
-              <div>
-                <h3>성장 지원</h3>
-                <p>회장의 출시 경험과 노하우를 공유하여 퍼블리싱 및 상용화 단계의 진입장벽을 낮춥니다.</p>
-              </div>
+          </div>
+          <div class="pillar" id="pillar-mission">
+            <div>
+              <h3>성장 지원</h3>
+              <p>회장의 출시 경험과 노하우를 공유하여 퍼블리싱 및 상용화 단계의 진입장벽을 낮춥니다.</p>
             </div>
-            <div class="pillar" id="pillar-culture">
-
-              <div>
-                <h3>함께하는 문화</h3>
-                <p>멘토링과 네트워킹을 통해 기술 격차를 해소하고, 중도 이탈 없는 끈끈한 유대감을 형성합니다.</p>
-              </div>
+          </div>
+          <div class="pillar" id="pillar-culture">
+            <div>
+              <h3>함께하는 문화</h3>
+              <p>멘토링과 네트워킹을 통해 기술 격차를 해소하고, 중도 이탈 없는 끈끈한 유대감을 형성합니다.</p>
             </div>
-            <div class="pillar" id="pillar-community">
-
-              <div>
-                <h3>상호 피드백</h3>
-                <p>정기적인 빌드 데이와 스탠드업 미팅을 통해 서로의 개발 과정을 공유하고 시너지를 창출합니다.</p>
-              </div>
+          </div>
+          <div class="pillar" id="pillar-community">
+            <div>
+              <h3>상호 피드백</h3>
+              <p>정기적인 빌드 데이와 스탠드업 미팅을 통해 서로의 개발 과정을 공유하고 시너지를 창출합니다.</p>
             </div>
           </div>
         </div>
