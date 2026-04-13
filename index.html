@@ -47,9 +47,8 @@
         <li role="none"><a href="#projects" class="nav-link" role="menuitem">프로젝트</a></li>
         <li role="none"><a href="#awards" class="nav-link" role="menuitem">수상</a></li>
         <li role="none"><a href="#members" class="nav-link" role="menuitem">운영진</a></li>
-        <li role="none"><a href="portal.html" class="nav-link" id="nav-portal-btn" role="menuitem"
-            style="color:var(--neon-cyan);">🔐 멤버 포털</a></li>
-        <li role="none"><a href="#join" class="nav-link nav-cta" id="nav-join-btn" role="menuitem">모집 마감</a></li>
+        <li role="none"><a href="#join" class="nav-link" id="nav-join-btn" role="menuitem">모집 안내</a></li>
+        <li role="none"><a href="portal.html" class="nav-link nav-cta" id="nav-portal-btn" role="menuitem">멤버 포털</a></li>
       </ul>
       <button class="hamburger" id="hamburger-btn" aria-label="메뉴 열기" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -85,12 +84,11 @@
           무한한 창의력의 여정에 함께하세요.
         </p>
         <div class="hero-btns" id="hero-btns">
-          <a href="#join" class="btn btn-ghost" id="hero-join-btn">
-            <span>2학기 모집 대기중</span>
+          <a href="portal.html" class="btn btn-primary" id="hero-portal-btn">
+            <span>멤버 포털 입장</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               aria-hidden="true">
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>
           </a>
           <a href="#projects" class="btn btn-ghost" id="hero-projects-btn">프로젝트 보기</a>
@@ -237,12 +235,12 @@
       </div>
       <div class="activities-bento" role="list">
 
-        <div class="activity-card featured reveal" id="activity-1" role="listitem">
+        <div class="activity-card reveal" id="activity-1" role="listitem">
 
           <div class="activity-body">
             <h3>햄부기 게임잼</h3>
             <p>3~4인 팀 혹은 개인 단위의 소규모 프로젝트를 진행하며 3개월 내 1개 이상 스토브 공식 출시를 목표로 프로토타입 빌드를 완성합니다.</p>
-            <span class="activity-badge">📅 2026년 4월 ~ 6월</span>
+            <span class="activity-badge">2026년 4월 ~ 6월</span>
           </div>
         </div>
 
@@ -251,7 +249,7 @@
           <div class="activity-body">
             <h3>실전 퍼블리싱 및 출시 멘토링</h3>
             <p>회장의 출시 노하우 공유를 통해 상용화 단계의 진입장벽을 제거하고 실전 출시 가이드를 제공합니다.</p>
-            <span class="activity-badge">📅 2026년 7월</span>
+            <span class="activity-badge">2026년 7월</span>
           </div>
         </div>
 
@@ -260,7 +258,7 @@
           <div class="activity-body">
             <h3>분기별 정기 빌드 데이</h3>
             <p>정기적으로 결과물을 시연하고 상호 피드백을 주고받으며 프로젝트의 최종 퀄리티를 상향 평준화합니다.</p>
-            <span class="activity-badge">📅 1회 / 분기 (6, 9, 12월)</span>
+            <span class="activity-badge">1회 / 분기 (6, 9, 12월)</span>
           </div>
         </div>
 
@@ -269,7 +267,7 @@
           <div class="activity-body">
             <h3>햄부기 선후배 멘토링</h3>
             <p>신입 부원과 기존 부원 간 1:1 또는 소그룹 매칭을 통해 조기 적응을 유도하고 기술 격차를 해소합니다.</p>
-            <span class="activity-badge">📅 2026년 3월 ~ 6월</span>
+            <span class="activity-badge">2026년 3월 ~ 6월</span>
           </div>
         </div>
 
@@ -278,7 +276,7 @@
           <div class="activity-body">
             <h3>주간 개발 일지 및 월간 네트워킹</h3>
             <p>매주 동아리 채널에 개발 과정을 공유하고, 월 1회 대면 네트워킹을 통해 협업 시너지를 창출합니다.</p>
-            <span class="activity-badge">📅 2026년 3월 ~ 12월</span>
+            <span class="activity-badge">2026년 3월 ~ 12월</span>
           </div>
         </div>
 
@@ -287,7 +285,7 @@
           <div class="activity-body">
             <h3>방지 프로젝트 & 연말 시상식</h3>
             <p>출석 및 빌드 제출에 기반한 포인트 제도를 운영하여 능동적 단합을 유도하고 연말 시상식과 연계합니다.</p>
-            <span class="activity-badge">📅 2026년 3월 ~ 12월</span>
+            <span class="activity-badge">2026년 3월 ~ 12월</span>
           </div>
         </div>
 
@@ -606,6 +604,7 @@
             <a href="#projects" id="footer-projects-link">프로젝트</a>
             <a href="#awards" id="footer-awards-link">수상</a>
             <a href="#members" id="footer-members-link">운영진</a>
+            <a href="portal.html" id="footer-portal-link" style="color:var(--neon-pink); font-weight:700;">멤버 포털</a>
           </nav>
         </div>
         <div>
@@ -627,6 +626,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- ══════════════════════════
+       SPACER FOR ANCHORS
+  ══════════════════════════ -->
+  <div style="height: 40vh;" aria-hidden="true"></div>
 
   <!-- ══════════════════════════
        SCROLL TO TOP

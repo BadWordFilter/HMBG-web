@@ -94,7 +94,7 @@ const revealObs = new IntersectionObserver((entries) => {
       entry.target.classList.remove('visible');
     }
   });
-}, { threshold: 0.1, rootMargin: '-10% 0px -10% 0px' });
+}, { threshold: 0.05, rootMargin: '0px' });
 
 document.querySelectorAll('.reveal, .reveal-left, .reveal-stagger').forEach(el => revealObs.observe(el));
 
