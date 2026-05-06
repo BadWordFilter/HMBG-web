@@ -237,9 +237,15 @@ async function loadMyTeamSidebar() {
   teamMembersEl.innerHTML = '';
   membersSnap.forEach(d => {
     const m = d.data();
-    const row = document.createElement('div');
+    const isMe = m.uid === currentUser.uid;
+    const row = document.createElement('button');
+    row.type = 'button';
     row.className = `sidebar-member-row${m.role === 'leader' ? ' sidebar-member-leader' : ''}`;
-    row.innerHTML = `<div class="sidebar-member-dot"></div><span>${m.displayName || m.email}${m.uid === currentUser.uid ? ' (나)' : ''}${m.role === 'leader' ? ' ⭐' : ''}</span>`;
+    row.setAttribute('aria-label', `${m.displayName || m.email} 프로필 보기`);
+    row.innerHTML = `<div class="sidebar-member-dot"></div><span>${m.displayName || m.email}${isMe ? ' (나)' : ''}${m.role === 'leader' ? ' ⭐' : ''}</span>`;
+    if (!isMe) {
+      row.addEventListener('click', () => openUserProfileModal(d.id));
+    }
     teamMembersEl.appendChild(row);
   });
 }
@@ -416,11 +422,13 @@ function renderSubmissionCard(item) {
 
   card.innerHTML = `
     <div class="submission-header">
-      ${avatarHtml}
-      <div class="submission-meta">
-        <div class="submission-author">${escapeHtml(item.userName || '알 수 없음')}</div>
-        <div class="submission-time">${timeStr}</div>
-      </div>
+      <button type="button" class="submission-author-btn" aria-label="${escapeHtml(item.userName || '알 수 없음')} 프로필 보기">
+        ${avatarHtml}
+        <div class="submission-meta">
+          <div class="submission-author">${escapeHtml(item.userName || '알 수 없음')}</div>
+          <div class="submission-time">${timeStr}</div>
+        </div>
+      </button>
       <div class="submission-badges">${teamBadge}${visBadge}</div>
     </div>
     <div class="submission-title">${escapeHtml(item.title)}</div>
@@ -428,6 +436,12 @@ function renderSubmissionCard(item) {
     ${linksHtml ? `<div class="submission-links">${linksHtml}</div>` : ''}
     ${actionsHtml}
   `;
+
+  // 작성자 클릭 → 프로필 보기
+  card.querySelector('.submission-author-btn')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (item.userId) openUserProfileModal(item.userId);
+  });
 
   if (canEdit) {
     card.querySelector('.btn-edit-submission')?.addEventListener('click', (e) => {
@@ -795,11 +809,74 @@ function modalOverlayClose(e) {
 // ESC key
 document.addEventListener('keydown', (e) => {
   if (e.key !== 'Escape') return;
-  ['modal-submit', 'modal-admin-users', 'modal-admin-teams', 'modal-invite', 'modal-profile'].forEach(id => {
+  ['modal-submit', 'modal-admin-users', 'modal-admin-teams', 'modal-invite', 'modal-profile', 'modal-user-profile'].forEach(id => {
     if (!document.getElementById(id)?.hidden) closeModal(id);
   });
 });
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//   USER PROFILE VIEW
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+async function openUserProfileModal(uid) {
+  const modal = document.getElementById('modal-user-profile');
+  if (!modal) return;
 
+  // 로딩 상태
+  document.getElementById('up-avatar').src = '';
+  document.getElementById('up-name').textContent = '불러오는 중...';
+  document.getElementById('up-jobrole').textContent = '';
+  document.getElementById('up-team').textContent = '';
+  document.getElementById('up-bio').textContent = '';
+  document.getElementById('up-bio').hidden = true;
+  document.getElementById('up-portfolio').hidden = true;
+  openModal('modal-user-profile');
+
+  try {
+    const snap = await getDoc(doc(db, 'users', uid));
+    if (!snap.exists()) {
+      document.getElementById('up-name').textContent = '사용자를 찾을 수 없습니다.';
+      return;
+    }
+    const u = snap.data();
+    const team = allTeams.find(t => t.id === u.teamId);
+
+    const avatarEl = document.getElementById('up-avatar');
+    const photo = u.customPhotoURL || u.photoURL || '';
+    if (photo) {
+      avatarEl.src = photo;
+      avatarEl.hidden = false;
+    } else {
+      avatarEl.hidden = true;
+      document.getElementById('up-avatar-fallback').textContent = (u.displayName || '?')[0];
+      document.getElementById('up-avatar-fallback').hidden = false;
+    }
+
+    document.getElementById('up-name').textContent = u.displayName || u.email || '이름 없음';
+    document.getElementById('up-jobrole').textContent = u.jobRole || roleLabel(u.role);
+    document.getElementById('up-role-badge').textContent = roleLabel(u.role);
+    document.getElementById('up-role-badge').className = `role-badge role-${u.role}`;
+    document.getElementById('up-team').textContent = team ? team.name : '팀 미배정';
+
+    const bioEl = document.getElementById('up-bio');
+    if (u.bio) {
+      bioEl.textContent = u.bio;
+      bioEl.hidden = false;
+    } else {
+      bioEl.hidden = true;
+    }
+
+    const portEl = document.getElementById('up-portfolio');
+    if (u.portfolioUrl) {
+      portEl.href = u.portfolioUrl;
+      portEl.hidden = false;
+    } else {
+      portEl.hidden = true;
+    }
+  } catch (err) {
+    document.getElementById('up-name').textContent = '불러오기 실패';
+  }
+}
+
+document.getElementById('btn-close-user-profile')?.addEventListener('click', () => closeModal('modal-user-profile'));
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 //   PROFILE MODAL
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

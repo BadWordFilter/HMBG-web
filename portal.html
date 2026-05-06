@@ -499,6 +499,52 @@
   </div>
 
   <!-- ══════════════════════════
+       USER PROFILE VIEW MODAL
+  ══════════════════════════ -->
+  <div id="modal-user-profile" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-up-title" hidden>
+    <div class="modal-card modal-card--profile-view">
+      <div class="card-corner corner-tl" aria-hidden="true"></div>
+      <div class="card-corner corner-tr" aria-hidden="true"></div>
+      <div class="card-corner corner-bl" aria-hidden="true"></div>
+      <div class="card-corner corner-br" aria-hidden="true"></div>
+
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-up-title">멤버 프로필</h3>
+        <button id="btn-close-user-profile" class="modal-close" aria-label="닫기">×</button>
+      </div>
+
+      <div class="up-body">
+        <!-- Avatar -->
+        <div class="up-avatar-wrap">
+          <img id="up-avatar" class="up-avatar-img" src="" alt="프로필 사진" onerror="this.hidden=true;document.getElementById('up-avatar-fallback').hidden=false;" />
+          <div id="up-avatar-fallback" class="up-avatar-fallback" hidden></div>
+        </div>
+
+        <!-- Info -->
+        <div class="up-info">
+          <div class="up-name" id="up-name">불러오는 중...</div>
+          <div class="up-jobrole" id="up-jobrole"></div>
+          <div class="up-meta-row">
+            <span id="up-role-badge" class="role-badge"></span>
+            <span class="up-team-chip">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span id="up-team"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bio -->
+      <p id="up-bio" class="up-bio" hidden></p>
+
+      <!-- Portfolio -->
+      <a id="up-portfolio" class="up-portfolio-link" href="#" target="_blank" rel="noopener noreferrer" hidden>
+        🔗 포트폴리오 보기
+      </a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════
        TOAST NOTIFICATION
   ══════════════════════════ -->
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
