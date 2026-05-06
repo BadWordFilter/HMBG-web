@@ -2622,8 +2622,10 @@ body::after {
 }
 
 /* ── CUSTOM CURSOR ── */
-body {
-  /* hide default cursor on non-touch devices where custom cursor is active */
+@media (pointer: fine) {
+  body, body * {
+    cursor: none !important;
+  }
 }
 
 @media (pointer: fine) {
