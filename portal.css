@@ -1714,6 +1714,30 @@ select.form-input option:checked {
   min-width: 0;
 }
 
+/* 프로필 보기 버튼 (아바타+이름 영역) */
+.admin-user-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  background: none;
+  border: none;
+  padding: 4px 6px 4px 4px;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  text-align: left;
+  flex: 1;
+  min-width: 0;
+  transition: background var(--t-fast);
+}
+
+.admin-user-profile-btn:hover {
+  background: rgba(255, 100, 150, 0.08);
+}
+
+.admin-user-profile-btn:hover .admin-user-name {
+  color: var(--neon-pink);
+}
+
 .admin-user-name {
   font-size: 0.88rem;
   font-weight: 600;

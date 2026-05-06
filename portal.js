@@ -623,11 +623,13 @@ async function loadAdminUsers(tabName) {
     const team = allTeams.find(t => t.id === u.teamId);
 
     row.innerHTML = `
-      <img src="${escapeHtml(u.photoURL || '')}" alt="${escapeHtml(u.displayName || '')}" class="admin-user-img" onerror="this.style.display='none'" />
-      <div class="admin-user-info">
-        <div class="admin-user-name">${escapeHtml(u.displayName || '이름 없음')}</div>
-        <div class="admin-user-email">${escapeHtml(u.email)}${team ? ` · ${escapeHtml(team.name)}` : ''}</div>
-      </div>
+      <button type="button" class="admin-user-profile-btn" aria-label="${escapeHtml(u.displayName || '이름 없음')} 프로필 보기">
+        <img src="${escapeHtml(u.customPhotoURL || u.photoURL || '')}" alt="${escapeHtml(u.displayName || '')}" class="admin-user-img" onerror="this.style.display='none'" />
+        <div class="admin-user-info">
+          <div class="admin-user-name">${escapeHtml(u.displayName || '이름 없음')}</div>
+          <div class="admin-user-email">${escapeHtml(u.email)}${team ? ` · ${escapeHtml(team.name)}` : ''}</div>
+        </div>
+      </button>
       <div class="admin-user-controls">
         <span class="role-badge role-${u.role}">${roleLabel(u.role)}</span>
         ${tabName === 'pending'
@@ -645,6 +647,11 @@ async function loadAdminUsers(tabName) {
       }
       </div>
     `;
+
+    // 프로필 보기
+    row.querySelector('.admin-user-profile-btn')?.addEventListener('click', () => {
+      openUserProfileModal(d.id);
+    });
 
     // Approve
     row.querySelector('.btn-approve')?.addEventListener('click', async () => {
