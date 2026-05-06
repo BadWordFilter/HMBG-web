@@ -1,8 +1,6 @@
 /* ─── app.js — 햄부기(HMBG) ─── */
 'use strict';
 
-
-
 /* ════════════════════════════
    2. NAVBAR — scroll + shrink
 ════════════════════════════ */
@@ -265,6 +263,16 @@ if (cursor && cursorGlow && window.matchMedia('(pointer: fine)').matches) {
     requestAnimationFrame(animateCursor);
   };
   requestAnimationFrame(animateCursor);
+
+  // Hide cursor when leaving window
+  document.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
+    cursorGlow.style.opacity = '0';
+  });
+  document.addEventListener('mouseenter', () => {
+    cursor.style.opacity = '1';
+    cursorGlow.style.opacity = '1';
+  });
 
   // Hover states for links and buttons
   const interactables = document.querySelectorAll('a, button, input, textarea, select, .project-card, .activity-card');
