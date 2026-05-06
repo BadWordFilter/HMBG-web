@@ -581,7 +581,7 @@ async function loadAdminUsers(tabName) {
         ? `<button class="btn-approve" data-uid="${d.id}">승인</button>
              <button class="btn-reject"  data-uid="${d.id}">거절</button>`
         : `<select class="role-select" data-uid="${d.id}">
-               <option value="member"    ${u.role === 'member' ? 'selected' : ''}>운영진</option>
+               <option value="member"    ${u.role === 'member' ? 'selected' : ''}>팀원</option>
                <option value="leader"    ${u.role === 'leader' ? 'selected' : ''}>팀장</option>
                <option value="executive" ${u.role === 'executive' ? 'selected' : ''}>운영진</option>
              </select>
@@ -1013,7 +1013,7 @@ async function handleDeleteSubmission(id, title) {
 //   UTILITIES
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 function roleLabel(role) {
-  const map = { pending: '승인 대기', member: '운영진', leader: '팀장', executive: '운영진' };
+  const map = { pending: '승인 대기', member: '팀원', leader: '팀장', executive: '운영진' };
   return map[role] || role;
 }
 
