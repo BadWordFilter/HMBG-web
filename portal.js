@@ -828,7 +828,7 @@ async function openUserProfileModal(uid) {
   if (!modal) return;
 
   // 로딩 상태
-  document.getElementById('up-avatar').src = '';
+  document.getElementById('up-avatar').removeAttribute('src');
   document.getElementById('up-avatar').hidden = true;
   document.getElementById('up-avatar-fallback').hidden = true;
   document.getElementById('up-name').textContent = '불러오는 중...';
@@ -853,7 +853,9 @@ async function openUserProfileModal(uid) {
     if (photo) {
       avatarEl.src = photo;
       avatarEl.hidden = false;
+      document.getElementById('up-avatar-fallback').hidden = true;
     } else {
+      avatarEl.removeAttribute('src');
       avatarEl.hidden = true;
       document.getElementById('up-avatar-fallback').textContent = (u.displayName || '?')[0];
       document.getElementById('up-avatar-fallback').hidden = false;
