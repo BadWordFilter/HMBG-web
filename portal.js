@@ -193,6 +193,9 @@ async function loadPortal() {
   // 내 팀 정보
   await loadMyTeamSidebar();
 
+  // 전체 멤버 사이드바
+  await loadAllMembersSidebar();
+
   // 사이드바 프로필 초기화
   updateSidebarProfile();
 
@@ -248,6 +251,74 @@ async function loadMyTeamSidebar() {
     }
     teamMembersEl.appendChild(row);
   });
+}
+
+async function loadAllMembersSidebar() {
+  const listEl = document.getElementById('all-members-list');
+  if (!listEl) return;
+
+  try {
+    const membersSnap = await getDocs(query(collection(db, 'users'), where('role', '!=', 'pending')));
+    
+    const grouped = {
+      executive: [],
+      leader: [],
+      member: []
+    };
+    
+    membersSnap.forEach(d => {
+      const m = d.data();
+      if (grouped[m.role]) {
+        grouped[m.role].push({ id: d.id, ...m });
+      }
+    });
+
+    listEl.innerHTML = '';
+
+    const renderGroup = (role, label, color) => {
+      if (grouped[role].length === 0) return;
+      
+      const header = document.createElement('div');
+      header.className = 'all-members-group-header';
+      header.innerHTML = `<span>${label}</span> <span>${grouped[role].length}</span>`;
+      header.style.color = color;
+      listEl.appendChild(header);
+
+      grouped[role].forEach(m => {
+        const isMe = m.uid === currentUser.uid;
+        const team = allTeams.find(t => t.id === m.teamId);
+        const row = document.createElement('button');
+        row.type = 'button';
+        row.className = 'all-members-row';
+        row.setAttribute('aria-label', `${m.displayName || m.email} 프로필 보기`);
+        
+        const avatar = m.customPhotoURL || m.photoURL || '';
+        const avatarHtml = avatar 
+          ? `<img src="${escapeHtml(avatar)}" class="all-members-avatar" alt=""/>`
+          : `<div class="all-members-avatar-fallback">${(m.displayName || '?')[0]}</div>`;
+          
+        row.innerHTML = `
+          <div class="all-members-avatar-wrapper">
+            ${avatarHtml}
+            <div class="all-members-status-dot"></div>
+          </div>
+          <div class="all-members-info">
+            <div class="all-members-name">${escapeHtml(m.displayName || m.email)}${isMe ? ' (나)' : ''}</div>
+            <div class="all-members-team">${team ? escapeHtml(team.name) : '팀 미배정'}</div>
+          </div>
+        `;
+        row.addEventListener('click', () => openUserProfileModal(m.id));
+        listEl.appendChild(row);
+      });
+    };
+
+    renderGroup('executive', '운영진', 'var(--neon-pink)');
+    renderGroup('leader', '팀장', 'var(--neon-gold)');
+    renderGroup('member', '팀원', 'var(--text-2)');
+    
+  } catch (err) {
+    listEl.innerHTML = '<div style="text-align: center; color: var(--text-3); font-size: 0.8rem;">불러오기 실패</div>';
+  }
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
