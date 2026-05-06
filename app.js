@@ -232,3 +232,50 @@ if (scrollTopBtn) {
   });
 }
 
+/* ════════════════════════════
+   11. CUSTOM CURSOR
+════════════════════════════ */
+const cursor = document.getElementById('custom-cursor');
+const cursorGlow = document.getElementById('custom-cursor-glow');
+
+if (cursor && cursorGlow && window.matchMedia('(pointer: fine)').matches) {
+  let mouseX = 0;
+  let mouseY = 0;
+  let cursorX = 0;
+  let cursorY = 0;
+  let glowX = 0;
+  let glowY = 0;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  const animateCursor = () => {
+    // Smooth interpolation for cursor (fast)
+    cursorX += (mouseX - cursorX) * 0.4;
+    cursorY += (mouseY - cursorY) * 0.4;
+    cursor.style.transform = `translate(calc(${cursorX}px - 50%), calc(${cursorY}px - 50%))`;
+
+    // Smooth interpolation for glow (slower for trailing effect)
+    glowX += (mouseX - glowX) * 0.15;
+    glowY += (mouseY - glowY) * 0.15;
+    cursorGlow.style.transform = `translate(calc(${glowX}px - 50%), calc(${glowY}px - 50%))`;
+
+    requestAnimationFrame(animateCursor);
+  };
+  requestAnimationFrame(animateCursor);
+
+  // Hover states for links and buttons
+  const interactables = document.querySelectorAll('a, button, input, textarea, select, .project-card, .activity-card');
+  interactables.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.classList.add('hover');
+      cursorGlow.classList.add('hover');
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.classList.remove('hover');
+      cursorGlow.classList.remove('hover');
+    });
+  });
+}

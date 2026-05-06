@@ -1147,12 +1147,73 @@ body::after {
 /* Feed Loading */
 .feed-loading {
   display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  padding: 0;
+}
+
+/* Skeleton UI for Feed */
+.skeleton-card {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--border-neon);
+  border-radius: var(--r-md);
+  padding: var(--sp-5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.skeleton-header {
+  display: flex;
   align-items: center;
-  justify-content: center;
   gap: var(--sp-3);
-  padding: var(--sp-8);
-  color: var(--text-3);
-  font-size: 0.9rem;
+}
+
+.skeleton-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--border-dim);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.skeleton-line {
+  height: 12px;
+  background: var(--border-dim);
+  border-radius: 4px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-line.title {
+  height: 18px;
+  width: 60%;
+  margin-bottom: 8px;
+}
+
+.skeleton-line.long {
+  width: 90%;
+}
+
+.skeleton-line.short {
+  width: 30%;
+}
+
+.skeleton-line.very-short {
+  width: 15%;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.5; }
 }
 
 .loading-spinner {
@@ -1255,6 +1316,17 @@ body::after {
   overflow: hidden;
   transition: all var(--t-mid) var(--ease);
   animation: card-enter 0.5s var(--ease) both;
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .submission-card::before {

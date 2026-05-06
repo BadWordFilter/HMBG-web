@@ -440,15 +440,16 @@ function renderWeekGroup(group, container) {
   `;
 
   const submissionsEl = section.querySelector('.week-submissions');
-  group.items.forEach(item => submissionsEl.appendChild(renderSubmissionCard(item)));
+  group.items.forEach((item, index) => submissionsEl.appendChild(renderSubmissionCard(item, index)));
 
   container.appendChild(section);
 }
 
 // ── SUBMISSION CARD RENDER ──
-function renderSubmissionCard(item) {
+function renderSubmissionCard(item, index = 0) {
   const card = document.createElement('article');
   card.className = 'submission-card';
+  card.style.animationDelay = `${index * 60}ms`;
 
   const avatarHtml = item.userPhotoURL
     ? `<img src="${escapeHtml(item.userPhotoURL)}" alt="${escapeHtml(item.userName)}" class="submission-avatar" loading="lazy" />`
