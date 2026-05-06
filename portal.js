@@ -70,15 +70,54 @@ function showToast(msg, type = 'info') {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 //   AUTH
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// ── 인앱 브라우저 감지 ──
+function isInAppBrowser() {
+  const ua = navigator.userAgent || '';
+  return /KAKAOTALK|Line\/|FB_IAB|FBAN|Instagram|NaverApp|DaumApp|Whale\/|SamsungBrowser\/|MicroMessenger/i.test(ua);
+}
+
+// 인앱 브라우저인 경우 로그인 버튼 클릭 전 경고
+(function checkInAppBrowser() {
+  if (!isInAppBrowser()) return;
+  const err = document.getElementById('login-error');
+  err.hidden = false;
+  err.innerHTML = `
+    ⚠️ 카카오톡·인스타그램 등 앱 내 브라우저에서는 Google 로그인이 차단됩니다.<br>
+    <strong>Chrome, Safari 등 일반 브라우저</strong>에서 열어주세요.<br>
+    <small style="opacity:.7">우측 상단 메뉴 → "기본 브라우저로 열기"</small>
+  `;
+})();
+
 document.getElementById('btn-google-login').addEventListener('click', async () => {
   const err = document.getElementById('login-error');
   err.hidden = true;
+
+  // 인앱 브라우저 차단
+  if (isInAppBrowser()) {
+    err.hidden = false;
+    err.innerHTML = `
+      ⚠️ 앱 내 브라우저에서는 Google 로그인이 지원되지 않습니다.<br>
+      <strong>Chrome 또는 Safari</strong>로 접속해주세요.
+    `;
+    return;
+  }
+
   try {
     const provider = new GoogleAuthProvider();
     await signInWithPopup(auth, provider);
   } catch (e) {
     err.hidden = false;
-    err.textContent = '로그인 실패: ' + (e.message || '다시 시도해주세요.');
+    // disallowed_useragent 전용 안내
+    if (e.code === 'auth/cancelled-popup-request') return; // 팝업 중복 무시
+    if (e.code === 'auth/popup-closed-by-user') return;   // 사용자가 팝업 닫은 경우 무시
+    if (e.message?.includes('disallowed_useragent') || e.code === 'auth/operation-not-supported-in-this-environment') {
+      err.innerHTML = `
+        ⚠️ 이 브라우저에서는 Google 로그인이 차단됩니다.<br>
+        <strong>Chrome, Safari, Edge</strong> 등 일반 브라우저로 접속해주세요.
+      `;
+    } else {
+      err.textContent = '로그인 실패: ' + (e.message || '다시 시도해주세요.');
+    }
   }
 });
 
