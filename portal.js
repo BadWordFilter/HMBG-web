@@ -829,6 +829,8 @@ async function openUserProfileModal(uid) {
 
   // 로딩 상태
   document.getElementById('up-avatar').src = '';
+  document.getElementById('up-avatar').hidden = true;
+  document.getElementById('up-avatar-fallback').hidden = true;
   document.getElementById('up-name').textContent = '불러오는 중...';
   document.getElementById('up-jobrole').textContent = '';
   document.getElementById('up-team').textContent = '';
