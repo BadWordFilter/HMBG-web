@@ -29,41 +29,6 @@ navLinks.querySelectorAll('.nav-link').forEach(link => {
 });
 
 /* ════════════════════════════
-   4. HERO PARTICLES
-════════════════════════════ */
-(function spawnParticles() {
-  const container = document.getElementById('particles-container');
-  if (!container) return;
-  const colours = [
-    'hsl(300,100%,70%)',
-    'hsl(185,100%,65%)',
-    'hsl(270,90%,70%)',
-    'hsl(320,80%,60%)',
-    'hsl(200,100%,65%)',
-  ];
-  for (let i = 0; i < 55; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    const size = 1.5 + Math.random() * 2.5;
-    const left = Math.random() * 100;
-    const dur = 8 + Math.random() * 14;
-    const delay = -(Math.random() * 14);
-    const col = colours[Math.floor(Math.random() * colours.length)];
-    p.style.cssText = `
-      left: ${left}%;
-      bottom: 0;
-      width: ${size}px;
-      height: ${size}px;
-      background: ${col};
-      box-shadow: 0 0 ${size * 4}px ${col};
-      --dur: ${dur}s;
-      --delay: ${delay}s;
-    `;
-    container.appendChild(p);
-  }
-})();
-
-/* ════════════════════════════
    5. NUMBER COUNTER
 ════════════════════════════ */
 function animateCounter(el) {
@@ -83,13 +48,12 @@ function animateCounter(el) {
 /* ════════════════════════════
    6. INTERSECTION OBSERVER
 ════════════════════════════ */
-// Scroll reveal
+// Scroll reveal (한 번만 재생)
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-    } else {
-      entry.target.classList.remove('visible');
+      revealObs.unobserve(entry.target);
     }
   });
 }, { threshold: 0.05, rootMargin: '0px' });
@@ -152,8 +116,7 @@ const navObs = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       navItems.forEach(link => {
-        const active = link.getAttribute('href') === '#' + entry.target.id;
-        link.style.color = active ? 'var(--text-0)' : '';
+        link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
       });
     }
   });
@@ -230,60 +193,3 @@ if (scrollTopBtn) {
   });
 }
 
-/* ════════════════════════════
-   11. CUSTOM CURSOR
-════════════════════════════ */
-const cursor = document.getElementById('custom-cursor');
-const cursorGlow = document.getElementById('custom-cursor-glow');
-
-if (cursor && cursorGlow && window.matchMedia('(pointer: fine)').matches) {
-  let mouseX = 0;
-  let mouseY = 0;
-  let cursorX = 0;
-  let cursorY = 0;
-  let glowX = 0;
-  let glowY = 0;
-
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  const animateCursor = () => {
-    // Smooth interpolation for cursor (fast)
-    cursorX += (mouseX - cursorX) * 0.4;
-    cursorY += (mouseY - cursorY) * 0.4;
-    cursor.style.transform = `translate(calc(${cursorX}px - 50%), calc(${cursorY}px - 50%))`;
-
-    // Smooth interpolation for glow (slower for trailing effect)
-    glowX += (mouseX - glowX) * 0.15;
-    glowY += (mouseY - glowY) * 0.15;
-    cursorGlow.style.transform = `translate(calc(${glowX}px - 50%), calc(${glowY}px - 50%))`;
-
-    requestAnimationFrame(animateCursor);
-  };
-  requestAnimationFrame(animateCursor);
-
-  // Hide cursor when leaving window
-  document.addEventListener('mouseleave', () => {
-    cursor.style.opacity = '0';
-    cursorGlow.style.opacity = '0';
-  });
-  document.addEventListener('mouseenter', () => {
-    cursor.style.opacity = '1';
-    cursorGlow.style.opacity = '1';
-  });
-
-  // Hover states for links and buttons
-  const interactables = document.querySelectorAll('a, button, input, textarea, select, .project-card, .activity-card');
-  interactables.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.classList.add('hover');
-      cursorGlow.classList.add('hover');
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.classList.remove('hover');
-      cursorGlow.classList.remove('hover');
-    });
-  });
-}

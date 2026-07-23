@@ -245,7 +245,7 @@ async function loadMyTeamSidebar() {
     row.type = 'button';
     row.className = `sidebar-member-row${m.role === 'leader' ? ' sidebar-member-leader' : ''}`;
     row.setAttribute('aria-label', `${m.displayName || m.email} 프로필 보기`);
-    row.innerHTML = `<div class="sidebar-member-dot"></div><span>${m.displayName || m.email}${isMe ? ' (나)' : ''}${m.role === 'leader' ? ' ⭐' : ''}</span>`;
+    row.innerHTML = `<div class="sidebar-member-dot"></div><span>${escapeHtml(m.displayName || m.email)}${isMe ? ' (나)' : ''}${m.role === 'leader' ? ' ⭐' : ''}</span>`;
     if (!isMe) {
       row.addEventListener('click', () => openUserProfileModal(d.id));
     }
@@ -295,7 +295,7 @@ async function loadAllMembersSidebar() {
         const avatar = m.customPhotoURL || m.photoURL || '';
         const avatarHtml = avatar 
           ? `<img src="${escapeHtml(avatar)}" class="all-members-avatar" alt=""/>`
-          : `<div class="all-members-avatar-fallback">${(m.displayName || '?')[0]}</div>`;
+          : `<div class="all-members-avatar-fallback">${escapeHtml((m.displayName || '?')[0])}</div>`;
           
         row.innerHTML = `
           <div class="all-members-avatar-wrapper">
@@ -453,7 +453,7 @@ function renderSubmissionCard(item, index = 0) {
 
   const avatarHtml = item.userPhotoURL
     ? `<img src="${escapeHtml(item.userPhotoURL)}" alt="${escapeHtml(item.userName)}" class="submission-avatar" loading="lazy" />`
-    : `<div class="submission-avatar-fallback">${(item.userName || '?')[0]}</div>`;
+    : `<div class="submission-avatar-fallback">${escapeHtml((item.userName || '?')[0])}</div>`;
 
   const teamBadge = item.teamName
     ? `<span class="submission-team-badge">${escapeHtml(item.teamName)}</span>`
@@ -463,8 +463,8 @@ function renderSubmissionCard(item, index = 0) {
     ? `<p class="submission-desc">${escapeHtml(item.description)}</p>`
     : '';
 
-  const linksHtml = (item.links || []).map(l => `
-    <a href="${escapeHtml(l.url)}" target="_blank" rel="noopener noreferrer" class="submission-link">
+  const linksHtml = (item.links || []).filter(l => safeUrl(l.url)).map(l => `
+    <a href="${escapeHtml(safeUrl(l.url))}" target="_blank" rel="noopener noreferrer" class="submission-link">
       <span class="link-icon">${linkIcon(l.type)}</span>
       ${escapeHtml(l.label || l.type)}
     </a>
@@ -593,11 +593,11 @@ document.getElementById('form-submit').addEventListener('submit', async (e) => {
   if (!weekRaw) { showError(errEl, '주차를 선택해주세요.'); return; }
   if (!title) { showError(errEl, '제목을 입력해주세요.'); return; }
 
-  // 링크 수집
+  // 링크 수집 (scheme 없는 URL은 https:// 보정, http/https 외 scheme은 제외)
   const links = [];
   document.querySelectorAll('#links-container .link-row').forEach(row => {
     const type = row.querySelector('.link-type').value;
-    const url = row.querySelector('.link-url').value.trim();
+    const url = normalizeUrl(row.querySelector('.link-url').value);
     if (url) links.push({ type, url, label: linkLabel(type) });
   });
 
@@ -948,8 +948,9 @@ async function openUserProfileModal(uid) {
     }
 
     const portEl = document.getElementById('up-portfolio');
-    if (u.portfolioUrl) {
-      portEl.href = u.portfolioUrl;
+    const portfolioUrl = safeUrl(u.portfolioUrl);
+    if (portfolioUrl) {
+      portEl.href = portfolioUrl;
       portEl.hidden = false;
     } else {
       portEl.hidden = true;
@@ -1012,8 +1013,9 @@ function updateSidebarProfile() {
   bioEl.style.display = bio ? 'block' : 'none';
 
   const portEl = document.getElementById('sidebar-profile-portfolio');
-  if (port) {
-    portEl.href = port;
+  const portSafe = safeUrl(port);
+  if (portSafe) {
+    portEl.href = portSafe;
     portEl.textContent = '🔗 포트폴리오 보기';
     portEl.hidden = false;
   } else {
@@ -1085,7 +1087,7 @@ document.getElementById('form-profile')?.addEventListener('submit', async (e) =>
   const customPhotoURL = pendingPhotoURL ?? (currentProfile.customPhotoURL || '');
   const jobRole = document.getElementById('profile-job-role').value.trim();
   const bio = document.getElementById('profile-bio').value.trim();
-  const portfolioUrl = document.getElementById('profile-portfolio').value.trim();
+  const portfolioUrl = normalizeUrl(document.getElementById('profile-portfolio').value);
 
   spinner.hidden = false; btnText.textContent = '저장 중...';
   document.getElementById('btn-save-profile').disabled = true;
@@ -1240,6 +1242,22 @@ function escapeHtml(str) {
   return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+// http/https 링크만 허용 (javascript: 등 스크립트 실행 URL 차단)
+function safeUrl(url) {
+  if (!url) return '';
+  const s = String(url).trim();
+  return /^https?:\/\//i.test(s) ? s : '';
+}
+
+// 사용자가 scheme 없이 입력한 URL은 https://를 붙여 보정
+function normalizeUrl(url) {
+  const s = String(url || '').trim();
+  if (!s) return '';
+  if (/^https?:\/\//i.test(s)) return s;
+  if (/^[a-z][a-z0-9+.-]*:/i.test(s)) return ''; // javascript: 등 다른 scheme은 거부
+  return 'https://' + s;
+}
+
 function showError(el, msg) {
   el.textContent = msg; el.hidden = false;
   el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1262,7 +1280,7 @@ function applyCustomSelect(selectEl) {
   trigger.className = 'custom-select-trigger';
   
   const selectedOpt = selectEl.options[selectEl.selectedIndex];
-  trigger.innerHTML = `<span class="trigger-text">${selectedOpt ? selectedOpt.text : ''}</span>
+  trigger.innerHTML = `<span class="trigger-text">${selectedOpt ? escapeHtml(selectedOpt.text) : ''}</span>
     <svg class="custom-select-icon" viewBox="0 0 24 24" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg>`;
   
   wrapper.appendChild(trigger);

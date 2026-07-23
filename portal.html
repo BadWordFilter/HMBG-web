@@ -17,7 +17,7 @@
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍔</text></svg>">
 
-  <link rel="stylesheet" href="portal.css?v=2" />
+  <link rel="stylesheet" href="portal.css?v=3" />
 </head>
 
 <body>
@@ -32,16 +32,12 @@
 
     <div class="login-card" role="main" aria-labelledby="login-title">
       <!-- Corner decorations -->
-      <div class="card-corner corner-tl" aria-hidden="true"></div>
-      <div class="card-corner corner-tr" aria-hidden="true"></div>
-      <div class="card-corner corner-bl" aria-hidden="true"></div>
-      <div class="card-corner corner-br" aria-hidden="true"></div>
 
       <div class="login-logo">
         <img src="hambgi.png" alt="HMBG 로고" class="login-logo-img" />
       </div>
 
-      <p class="login-eyebrow">// MEMBER_PORTAL.access</p>
+      <p class="login-eyebrow">멤버 전용 공간</p>
       <h1 class="login-title" id="login-title">
         HMBG <span class="accent">내부 포털</span>
       </h1>
@@ -75,13 +71,9 @@
     <div class="portal-orb orb-b" aria-hidden="true"></div>
 
     <div class="pending-card" role="main">
-      <div class="card-corner corner-tl" aria-hidden="true"></div>
-      <div class="card-corner corner-tr" aria-hidden="true"></div>
-      <div class="card-corner corner-bl" aria-hidden="true"></div>
-      <div class="card-corner corner-br" aria-hidden="true"></div>
 
       <div class="pending-icon" aria-hidden="true">⏳</div>
-      <p class="login-eyebrow">// ACCESS_PENDING</p>
+      <p class="login-eyebrow">승인 대기 중</p>
       <h2 class="pending-title">승인 대기 중</h2>
       <p class="pending-desc">
         로그인 성공! 운영진이 부원 권한을 부여할 때까지<br />
@@ -136,7 +128,7 @@
 
           <!-- My Profile -->
           <div class="sidebar-card sidebar-profile-card" id="sidebar-profile-card">
-            <p class="sidebar-label">// MY_PROFILE</p>
+            <p class="sidebar-label">내 프로필</p>
             <div class="sidebar-profile-preview" id="sidebar-profile-preview">
               <img id="sidebar-profile-avatar" src="" alt="내 프로필" class="sidebar-profile-avatar" />
               <div class="sidebar-profile-info">
@@ -155,7 +147,7 @@
 
           <!-- My Team Info -->
           <div class="sidebar-card" id="sidebar-team-card">
-            <p class="sidebar-label">// MY_TEAM</p>
+            <p class="sidebar-label">내 팀</p>
             <div class="sidebar-team-info" id="sidebar-team-info">
               <div class="team-badge-large" id="sidebar-team-badge">-</div>
               <span class="sidebar-team-name" id="sidebar-team-name">팀 미배정</span>
@@ -165,7 +157,7 @@
 
           <!-- Actions -->
           <div class="sidebar-card" id="sidebar-actions-card">
-            <p class="sidebar-label">// ACTIONS</p>
+            <p class="sidebar-label">바로가기</p>
             <button id="btn-open-submit" class="btn-primary full-width" aria-haspopup="dialog">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 aria-hidden="true">
@@ -178,7 +170,7 @@
 
           <!-- Admin Panel (운영진 only) -->
           <div class="sidebar-card sidebar-admin" id="sidebar-admin-card" hidden>
-            <p class="sidebar-label">// ADMIN_PANEL</p>
+            <p class="sidebar-label">운영진 메뉴</p>
             <button id="btn-admin-users" class="btn-secondary full-width" style="margin-bottom:8px;">
               회원 관리
             </button>
@@ -189,7 +181,7 @@
 
           <!-- Team Leader Panel -->
           <div class="sidebar-card sidebar-leader" id="sidebar-leader-card" hidden>
-            <p class="sidebar-label">// TEAM_LEADER</p>
+            <p class="sidebar-label">팀장 메뉴</p>
             <button id="btn-invite-member" class="btn-secondary full-width">
               팀원 초대
             </button>
@@ -203,7 +195,7 @@
           <!-- Feed Header -->
           <div class="feed-header">
             <div>
-              <p class="section-eyebrow-portal">// WEEKLY_SUBMISSIONS</p>
+              <p class="section-eyebrow-portal">주간 작업물 피드</p>
               <h2 class="feed-title" id="feed-title">
                 작업물 <span class="accent">타임라인</span>
               </h2>
@@ -266,7 +258,7 @@
         <!-- ── RIGHT SIDEBAR (ALL MEMBERS) ── -->
         <aside class="portal-right-sidebar" id="portal-right-sidebar" aria-label="전체 회원 목록">
           <div class="sidebar-card right-sidebar-card">
-            <p class="sidebar-label">// ALL_MEMBERS</p>
+            <p class="sidebar-label">전체 멤버</p>
             <div class="all-members-list" id="all-members-list">
               <!-- JS will render members here -->
               <div style="text-align: center; padding: 20px 0;"><div class="loading-spinner"></div></div>
@@ -284,10 +276,6 @@
   <div id="modal-submit" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-submit-title"
     hidden>
     <div class="modal-card">
-      <div class="card-corner corner-tl" aria-hidden="true"></div>
-      <div class="card-corner corner-tr" aria-hidden="true"></div>
-      <div class="card-corner corner-bl" aria-hidden="true"></div>
-      <div class="card-corner corner-br" aria-hidden="true"></div>
 
       <div class="modal-header">
         <h3 class="modal-title" id="modal-submit-title">작업물 제출</h3>
@@ -382,10 +370,6 @@
   <div id="modal-admin-users" class="modal-overlay modal-large" role="dialog" aria-modal="true"
     aria-labelledby="modal-users-title" hidden>
     <div class="modal-card">
-      <div class="card-corner corner-tl" aria-hidden="true"></div>
-      <div class="card-corner corner-tr" aria-hidden="true"></div>
-      <div class="card-corner corner-bl" aria-hidden="true"></div>
-      <div class="card-corner corner-br" aria-hidden="true"></div>
 
       <div class="modal-header">
         <h3 class="modal-title" id="modal-users-title">회원 관리</h3>
@@ -414,10 +398,6 @@
   <div id="modal-admin-teams" class="modal-overlay modal-large" role="dialog" aria-modal="true"
     aria-labelledby="modal-teams-title" hidden>
     <div class="modal-card">
-      <div class="card-corner corner-tl" aria-hidden="true"></div>
-      <div class="card-corner corner-tr" aria-hidden="true"></div>
-      <div class="card-corner corner-bl" aria-hidden="true"></div>
-      <div class="card-corner corner-br" aria-hidden="true"></div>
 
       <div class="modal-header">
         <h3 class="modal-title" id="modal-teams-title">팀 관리</h3>
@@ -443,10 +423,6 @@
   <div id="modal-invite" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-invite-title"
     hidden>
     <div class="modal-card">
-      <div class="card-corner corner-tl" aria-hidden="true"></div>
-      <div class="card-corner corner-tr" aria-hidden="true"></div>
-      <div class="card-corner corner-bl" aria-hidden="true"></div>
-      <div class="card-corner corner-br" aria-hidden="true"></div>
 
       <div class="modal-header">
         <h3 class="modal-title" id="modal-invite-title">✉️ 팀원 초대</h3>
@@ -466,10 +442,6 @@
   <div id="modal-profile" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-profile-title"
     hidden>
     <div class="modal-card">
-      <div class="card-corner corner-tl" aria-hidden="true"></div>
-      <div class="card-corner corner-tr" aria-hidden="true"></div>
-      <div class="card-corner corner-bl" aria-hidden="true"></div>
-      <div class="card-corner corner-br" aria-hidden="true"></div>
 
       <div class="modal-header">
         <h3 class="modal-title" id="modal-profile-title">프로필 수정</h3>
@@ -545,10 +517,6 @@
   ══════════════════════════ -->
   <div id="modal-user-profile" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-up-title" hidden>
     <div class="modal-card modal-card--profile-view">
-      <div class="card-corner corner-tl" aria-hidden="true"></div>
-      <div class="card-corner corner-tr" aria-hidden="true"></div>
-      <div class="card-corner corner-bl" aria-hidden="true"></div>
-      <div class="card-corner corner-br" aria-hidden="true"></div>
 
       <div class="modal-header">
         <h3 class="modal-title" id="modal-up-title">멤버 프로필</h3>
@@ -592,7 +560,7 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <!-- Firebase SDK -->
-  <script type="module" src="portal.js?v=2"></script>
+  <script type="module" src="portal.js?v=3"></script>
 </body>
 
 </html>

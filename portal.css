@@ -3,8 +3,6 @@
    Aesthetic: Pastel-Toned Hamburger Shop
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&family=Jua&display=swap');
-
 /* ── DESIGN TOKENS (기존 style.css와 동일) ── */
 :root {
   --void: hsl(45, 100%, 98%);
@@ -224,39 +222,6 @@ body::after {
   }
 }
 
-/* ── CARD CORNERS ── */
-.card-corner {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  border-color: var(--neon-pink);
-  border-style: solid;
-}
-
-.corner-tl {
-  top: 10px;
-  left: 10px;
-  border-width: 2px 0 0 2px;
-}
-
-.corner-tr {
-  top: 10px;
-  right: 10px;
-  border-width: 2px 2px 0 0;
-}
-
-.corner-bl {
-  bottom: 10px;
-  left: 10px;
-  border-width: 0 0 2px 2px;
-}
-
-.corner-br {
-  bottom: 10px;
-  right: 10px;
-  border-width: 0 2px 2px 0;
-}
-
 /* ══════════════════════════════════
    LOGIN SCREEN
 ══════════════════════════════════ */
@@ -328,9 +293,9 @@ body::after {
 
 .login-eyebrow {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   color: var(--neon-cyan);
   margin-bottom: var(--sp-3);
 }
@@ -344,10 +309,7 @@ body::after {
 }
 
 .login-title .accent {
-  background: linear-gradient(135deg, var(--neon-pink), var(--neon-cyan));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--neon-pink);
 }
 
 .login-desc {
@@ -667,9 +629,9 @@ body::after {
 
 .sidebar-label {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   color: var(--text-3);
   margin-bottom: var(--sp-4);
 }
@@ -1100,8 +1062,9 @@ body::after {
 
 .section-eyebrow-portal {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   color: var(--neon-cyan);
   margin-bottom: var(--sp-2);
 }
@@ -2416,4 +2379,15 @@ select.role-select {
   background: rgba(100, 255, 150, 0.08);
   border-color: var(--neon-cyan);
   transform: translateY(-1px);
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
