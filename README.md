@@ -6,7 +6,7 @@
 | --- | --- |
 | `index.html` / `style.css` / `app.js` | 메인 사이트 ("ORDER UP!" 스티커 시트 다이너 디자인) |
 | `nav.js` | 헤더·모바일 메뉴 — 라이브러리 없이 동작, vendor 스크립트보다 먼저 로드 |
-| `portal.html` / `portal.css` / `portal.js` | 멤버 전용 포털 (Google 로그인) |
+| `portal.html` / `portal.css` / `portal.js` | 멤버 전용 포털 (Google 로그인) — 메인과 같은 디자인 토큰, 모션 라이브러리 없이 CSS만 사용 |
 | `assets/sprites/` | `hambgi.png`에서 추출한 재료·접시 픽셀 스프라이트 (1× 원본, CSS로 2× 확대) |
 | `flappybird/` | Unity WebGL 빌드 (약 34MB — 사용자가 "플레이 시작"을 눌러야 로드) |
 

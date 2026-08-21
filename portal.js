@@ -312,12 +312,12 @@ async function loadAllMembersSidebar() {
       });
     };
 
-    renderGroup('executive', '운영진', 'var(--neon-pink)');
-    renderGroup('leader', '팀장', 'var(--neon-gold)');
-    renderGroup('member', '팀원', 'var(--text-2)');
-    
+    renderGroup('executive', '운영진', 'var(--pink-ink)');
+    renderGroup('leader', '팀장', 'var(--gold-ink)');
+    renderGroup('member', '팀원', 'var(--choco-60)');
+
   } catch (err) {
-    listEl.innerHTML = '<div style="text-align: center; color: var(--text-3); font-size: 0.8rem;">불러오기 실패</div>';
+    listEl.innerHTML = '<div style="text-align: center; color: var(--choco-60); font-size: 0.8rem;">불러오기 실패</div>';
   }
 }
 
@@ -475,8 +475,8 @@ function renderSubmissionCard(item, index = 0) {
     : '';
 
   const visBadge = item.visibility === 'team'
-    ? `<span class="vis-badge vis-badge-team">🔒 팀공개</span>`
-    : `<span class="vis-badge vis-badge-all">🌐 전체</span>`;
+    ? `<span class="vis-badge vis-badge-team">팀 공개</span>`
+    : `<span class="vis-badge vis-badge-all">전체 공개</span>`;
 
   const canEdit = currentUser?.uid === item.userId || currentProfile?.role === 'executive';
   const actionsHtml = canEdit ? `
@@ -561,6 +561,7 @@ function initWeekSelect() {
 }
 
 document.getElementById('btn-open-submit').addEventListener('click', () => openNewSubmitModal());
+document.getElementById('btn-open-submit-fab')?.addEventListener('click', () => openNewSubmitModal());
 document.getElementById('btn-close-submit').addEventListener('click', () => resetSubmitModal());
 document.getElementById('btn-cancel-submit').addEventListener('click', () => resetSubmitModal());
 
@@ -682,7 +683,7 @@ async function loadAdminUsers(tabName) {
   loadEl.style.display = 'none';
 
   if (snap.empty) {
-    listEl.innerHTML = `<p style="color:var(--text-3);font-size:.85rem;text-align:center;padding:var(--sp-6);">사용자가 없습니다.</p>`;
+    listEl.innerHTML = `<p style="color:var(--choco-60);font-size:.85rem;text-align:center;padding:var(--sp-6);">사용자가 없습니다.</p>`;
     return;
   }
 
@@ -781,7 +782,7 @@ async function loadAdminTeams() {
   allTeams = await loadAllTeams();
 
   if (!allTeams.length) {
-    listEl.innerHTML = `<p style="color:var(--text-3);font-size:.85rem;text-align:center;padding:var(--sp-5);">팀이 없습니다.</p>`;
+    listEl.innerHTML = `<p style="color:var(--choco-60);font-size:.85rem;text-align:center;padding:var(--sp-5);">팀이 없습니다.</p>`;
     return;
   }
 
@@ -833,7 +834,7 @@ async function loadInviteList() {
   const unassigned = snap.docs.filter(d => !d.data().teamId && d.id !== currentUser.uid);
 
   if (!unassigned.length) {
-    listEl.innerHTML = `<p style="color:var(--text-3);font-size:.85rem;text-align:center;padding:var(--sp-5);">초대할 회원이 없습니다.</p>`;
+    listEl.innerHTML = `<p style="color:var(--choco-60);font-size:.85rem;text-align:center;padding:var(--sp-5);">초대할 회원이 없습니다.</p>`;
     return;
   }
 
@@ -1016,7 +1017,7 @@ function updateSidebarProfile() {
   const portSafe = safeUrl(port);
   if (portSafe) {
     portEl.href = portSafe;
-    portEl.textContent = '🔗 포트폴리오 보기';
+    portEl.textContent = '포트폴리오 보기 ↗';
     portEl.hidden = false;
   } else {
     portEl.hidden = true;
