@@ -1,4 +1,4 @@
-name: Update events.ics
+name: Update events (collect candidates + events.ics)
 
 on:
   schedule:
@@ -24,6 +24,13 @@ jobs:
 
       - name: Install firebase-admin
         run: npm install --no-save --no-package-lock firebase-admin@12
+
+      # 후보 수집이 실패해도(사이트 구조 변경 등) 캘린더 갱신은 계속 진행
+      - name: Collect event candidates (itch.io, wevity)
+        continue-on-error: true
+        run: node scripts/collect-candidates.mjs
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
       - name: Generate events.ics
         run: node scripts/generate-ics.mjs

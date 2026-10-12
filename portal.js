@@ -1396,6 +1396,7 @@ document.getElementById('btn-admin-events')?.addEventListener('click', async () 
   openModal('modal-admin-events');
   await loadEvents();
   renderAdminEvents();
+  loadCandidates();
 });
 document.getElementById('btn-close-admin-events')?.addEventListener('click', () => closeModal('modal-admin-events'));
 
@@ -1463,5 +1464,61 @@ function renderAdminEvents() {
       renderAdminEvents();
     });
     listEl.appendChild(row);
+  }
+}
+
+
+// ── 운영진: 자동 수집된 행사 후보 (GitHub Actions가 event_candidates에 저장) ──
+async function loadCandidates() {
+  const el = document.getElementById('events-candidates');
+  el.innerHTML = '<p style="color:var(--choco-60);font-size:.85rem;">불러오는 중…</p>';
+  try {
+    const snap = await getDocs(query(collection(db, 'event_candidates'), where('status', '==', 'pending')));
+    const items = snap.docs.map(d => ({ id: d.id, ...d.data() }))
+      .filter(c => (c.endDate || c.startDate) >= todayStr())
+      .sort((a, b) => a.startDate.localeCompare(b.startDate));
+    renderCandidates(items);
+  } catch (e) {
+    console.error('candidates load failed', e);
+    el.innerHTML = '<p style="color:var(--choco-60);font-size:.85rem;">후보를 불러오지 못했습니다.</p>';
+  }
+}
+
+function renderCandidates(items) {
+  const el = document.getElementById('events-candidates');
+  el.innerHTML = '';
+  if (!items.length) {
+    el.innerHTML = '<p style="color:var(--choco-60);font-size:.85rem;text-align:center;padding:var(--sp-5);">새 후보가 없습니다. (3시간마다 자동 수집)</p>';
+    return;
+  }
+  for (const c of items) {
+    const row = document.createElement('div');
+    row.className = 'admin-user-row';
+    row.innerHTML = `
+      <div class="admin-user-info">
+        <div class="admin-user-name"><a href="${escapeHtml(c.link || '#')}" target="_blank" rel="noopener">${escapeHtml(c.title)}</a></div>
+        <div class="admin-user-email">${EVENT_CATEGORIES[c.category] || ''} · ${formatEventDate(c)} · ${escapeHtml(c.source || '')}${c.description ? ' · ' + escapeHtml(c.description) : ''}</div>
+      </div>
+      <div class="admin-user-controls">
+        <button type="button" class="btn-primary" data-act="approve">승인</button>
+        <button type="button" class="btn-secondary" data-act="reject">거절</button>
+      </div>`;
+    row.querySelector('[data-act="approve"]').addEventListener('click', async () => {
+      await addDoc(collection(db, 'events'), {
+        title: c.title, category: c.category, startDate: c.startDate, endDate: c.endDate || c.startDate,
+        link: c.link || '', description: c.description || '',
+        createdBy: currentUser.uid, createdAt: serverTimestamp(), candidateId: c.id,
+      });
+      await updateDoc(doc(db, 'event_candidates', c.id), { status: 'approved' });
+      row.remove();
+      showToast('승인되었습니다. 캘린더에는 최대 3시간 뒤 반영됩니다.', 'success');
+      await loadEvents();
+      renderAdminEvents();
+    });
+    row.querySelector('[data-act="reject"]').addEventListener('click', async () => {
+      await updateDoc(doc(db, 'event_candidates', c.id), { status: 'rejected' });
+      row.remove();
+    });
+    el.appendChild(row);
   }
 }
