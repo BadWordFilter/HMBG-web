@@ -32,6 +32,14 @@ jobs:
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
+      # 새로 승인된 행사를 디스코드에 공지 (DISCORD_WEBHOOK_URL 시크릿이 없으면 건너뜀)
+      - name: Announce new events on Discord
+        continue-on-error: true
+        run: node scripts/announce-discord.mjs
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+
       - name: Generate events.ics
         run: node scripts/generate-ics.mjs
         env:
@@ -39,12 +47,13 @@ jobs:
 
       - name: Commit if changed
         run: |
-          if [ -n "$(git status --porcelain events.ics)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add events.ics
-            git commit -m "chore: update events.ics"
-            git push
-          else
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add events.ics
+          if git diff --cached --quiet; then
             echo "변경 없음"
+          else
+            git commit -m "chore: update events.ics"
+            git pull --rebase origin main
+            git push
           fi
