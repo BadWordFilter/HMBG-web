@@ -35,7 +35,7 @@ for (const d of pending.slice(0, MAX_PER_RUN)) {
     description: ev.description ? String(ev.description).slice(0, 1000) : undefined,
     color: COLOR[ev.category] ?? 0x99aab5,
     fields: [{ name: '📅 일정', value: range, inline: true }],
-    footer: { text: '햄부기 HMBG · 포털에서 승인된 행사' },
+    footer: { text: '햄부기 HMBG · 자동 수집 행사 공지' },
   };
   const res = await fetch(webhook, {
     method: 'POST',
