@@ -39,6 +39,18 @@ if (!sharedWebhook && !dry) {
   process.exit(0);
 }
 
+// ── 휴지기: 대상 주가 config/journal-skip.json 의 기간과 하루라도 겹치면 알림을 보내지 않음 ──
+// (월요일 최종 공지도 "지난주"를 기준으로 판단하므로, 시험 직후 월요일 공지도 함께 건너뜀)
+const kstDay = (ms) => new Date(ms + KST).toISOString().slice(0, 10);
+const monday = kstDay(weekStart);
+const sunday = kstDay(weekEnd - DAY);
+const skips = JSON.parse(readFileSync(new URL('../config/journal-skip.json', import.meta.url), 'utf-8')).skip || [];
+const hit = skips.find((r) => r.from <= sunday && (r.to || r.from) >= monday);
+if (hit) {
+  console.log(`[${mode}] ${rangeLabel} — 휴지기(${hit.reason || `${hit.from}~${hit.to || hit.from}`})라 알림을 건너뜁니다.`);
+  process.exit(0);
+}
+
 // ── 제출 현황 ──
 initializeApp({ credential: cert(JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)) });
 const db = getFirestore();
