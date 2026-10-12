@@ -1,0 +1,43 @@
+name: Update events.ics
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'   # 3시간마다 (UTC). GitHub 사정으로 몇 분~수십 분 늦을 수 있음
+  workflow_dispatch:         # Actions 탭에서 "Run workflow"로 즉시 갱신
+
+permissions:
+  contents: write
+
+concurrency:
+  group: events-ics
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install firebase-admin
+        run: npm install --no-save --no-package-lock firebase-admin@12
+
+      - name: Generate events.ics
+        run: node scripts/generate-ics.mjs
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
+      - name: Commit if changed
+        run: |
+          if [ -n "$(git status --porcelain events.ics)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add events.ics
+            git commit -m "chore: update events.ics"
+            git push
+          else
+            echo "변경 없음"
+          fi

@@ -2480,3 +2480,10 @@ select.role-select,
     transition-duration: .01ms !important;
   }
 }
+
+/* ── Events sidebar ── */
+.events-upcoming { display: flex; flex-direction: column; gap: 8px; font-size: .85rem; }
+.event-row { line-height: 1.4; }
+.event-row a { color: inherit; text-decoration: underline; }
+.event-date { font-weight: 700; margin-right: 4px; }
+.event-cat { font-size: .7rem; padding: 1px 6px; border: 2px solid var(--choco, #3b1f14); border-radius: 999px; margin-right: 4px; }

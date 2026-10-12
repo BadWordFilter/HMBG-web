@@ -190,6 +190,9 @@ async function loadPortal() {
   // 팀 목록 로드
   allTeams = await loadAllTeams();
 
+  // 다가오는 일정
+  loadEvents();
+
   // 내 팀 정보
   await loadMyTeamSidebar();
 
@@ -1330,3 +1333,135 @@ document.addEventListener('click', () => {
   });
 });
 
+
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//   EVENTS (게임잼 · 공모전 · 외부 활동)
+//   날짜는 종일 일정이라 'YYYY-MM-DD' 문자열로 저장 (시간대 문제 방지)
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+const ICS_URL = 'https://hmbg.kr/events.ics'; // GitHub Actions가 주기적으로 갱신 (.github/workflows/events-ics.yml)
+const EVENT_CATEGORIES = { jam: '게임잼', contest: '공모전', external: '외부 활동', club: '동아리 행사' };
+let allEvents = [];
+
+function todayStr() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
+function formatEventDate(ev) {
+  const fmt = (s) => s.slice(5).replace('-', '/');
+  return ev.endDate && ev.endDate !== ev.startDate ? `${fmt(ev.startDate)} ~ ${fmt(ev.endDate)}` : fmt(ev.startDate);
+}
+
+async function loadEvents() {
+  try {
+    const snap = await getDocs(query(collection(db, 'events'), orderBy('startDate')));
+    allEvents = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  } catch (e) {
+    console.error('events load failed', e);
+    allEvents = [];
+  }
+  renderUpcomingEvents();
+}
+
+function renderUpcomingEvents() {
+  const el = document.getElementById('events-upcoming');
+  if (!el) return;
+  const today = todayStr();
+  const upcoming = allEvents.filter(ev => (ev.endDate || ev.startDate) >= today).slice(0, 5);
+  if (!upcoming.length) {
+    el.innerHTML = '<p style="color:var(--choco-60);font-size:.8rem;">예정된 일정이 없습니다.</p>';
+    return;
+  }
+  el.innerHTML = upcoming.map(ev => {
+    const title = ev.link
+      ? `<a href="${escapeHtml(ev.link)}" target="_blank" rel="noopener">${escapeHtml(ev.title)}</a>`
+      : escapeHtml(ev.title);
+    return `<div class="event-row"><span class="event-date">${formatEventDate(ev)}</span> `
+      + `<span class="event-cat">${EVENT_CATEGORIES[ev.category] || ''}</span> ${title}</div>`;
+  }).join('');
+}
+
+document.getElementById('btn-copy-ics')?.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(ICS_URL);
+    showToast('복사됨! 구글/애플 캘린더의 "URL로 캘린더 추가"에 붙여넣으세요.', 'success');
+  } catch {
+    prompt('이 주소를 캘린더 앱의 "URL로 추가"에 붙여넣으세요.', ICS_URL);
+  }
+});
+
+// ── 운영진: 행사 관리 ──
+document.getElementById('btn-admin-events')?.addEventListener('click', async () => {
+  openModal('modal-admin-events');
+  await loadEvents();
+  renderAdminEvents();
+});
+document.getElementById('btn-close-admin-events')?.addEventListener('click', () => closeModal('modal-admin-events'));
+
+document.getElementById('form-event')?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (currentProfile?.role !== 'executive') return;
+  const title = document.getElementById('event-title').value.trim();
+  const startDate = document.getElementById('event-start').value;
+  let endDate = document.getElementById('event-end').value;
+  const link = document.getElementById('event-link').value.trim();
+  if (!title || !startDate) { showToast('제목과 시작일을 입력해주세요.', 'error'); return; }
+  if (link && !/^https?:\/\//i.test(link)) { showToast('링크는 http(s)://로 시작해야 합니다.', 'error'); return; }
+  if (endDate && endDate < startDate) { showToast('종료일이 시작일보다 빠릅니다.', 'error'); return; }
+  if (!endDate) endDate = startDate;
+
+  await addDoc(collection(db, 'events'), {
+    title, startDate, endDate, link,
+    category: document.getElementById('event-category').value,
+    description: document.getElementById('event-desc').value.trim(),
+    createdBy: currentUser.uid,
+    createdAt: serverTimestamp(),
+  });
+  e.target.reset();
+  showToast('행사가 등록되었습니다. 캘린더에는 최대 3시간 뒤 반영됩니다.', 'success');
+  await loadEvents();
+  renderAdminEvents();
+});
+
+function kakaoNoticeText(ev) {
+  return [
+    `📢 [${EVENT_CATEGORIES[ev.category] || '일정'}] ${ev.title}`,
+    `📅 ${ev.startDate}${ev.endDate && ev.endDate !== ev.startDate ? ' ~ ' + ev.endDate : ''}`,
+    ev.description ? `\n${ev.description}` : '',
+    ev.link ? `\n🔗 ${ev.link}` : '',
+  ].filter(Boolean).join('\n');
+}
+
+function renderAdminEvents() {
+  const listEl = document.getElementById('events-admin-list');
+  listEl.innerHTML = '';
+  if (!allEvents.length) {
+    listEl.innerHTML = '<p style="color:var(--choco-60);font-size:.85rem;text-align:center;padding:var(--sp-5);">등록된 행사가 없습니다.</p>';
+    return;
+  }
+  for (const ev of [...allEvents].reverse()) {
+    const row = document.createElement('div');
+    row.className = 'admin-user-row';
+    row.innerHTML = `
+      <div class="admin-user-info">
+        <div class="admin-user-name">${escapeHtml(ev.title)}</div>
+        <div class="admin-user-email">${EVENT_CATEGORIES[ev.category] || ''} · ${formatEventDate(ev)}</div>
+      </div>
+      <div class="admin-user-controls">
+        <button type="button" class="btn-secondary" data-act="copy">카톡 문구 복사</button>
+        <button type="button" class="btn-secondary" data-act="del">삭제</button>
+      </div>`;
+    row.querySelector('[data-act="copy"]').addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(kakaoNoticeText(ev)); showToast('복사됨! 단톡방에 붙여넣으세요.', 'success'); }
+      catch { prompt('복사해서 사용하세요.', kakaoNoticeText(ev)); }
+    });
+    row.querySelector('[data-act="del"]').addEventListener('click', async () => {
+      if (!confirm(`"${ev.title}" 행사를 삭제할까요?`)) return;
+      await deleteDoc(doc(db, 'events', ev.id));
+      await loadEvents();
+      renderAdminEvents();
+    });
+    listEl.appendChild(row);
+  }
+}
