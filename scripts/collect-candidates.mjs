@@ -142,13 +142,12 @@ let created = 0;
 for (const it of results) {
   if (created >= MAX_NEW_PER_RUN) { console.log('상한 도달 — 나머지는 다음 실행에서 등록'); break; }
   const { id, source, ...ev } = it;
-  try {
-    // create()는 이미 있으면 실패 → 한 번 본 행사는 다시 등록하지 않음 (삭제된 행사 부활 방지)
-    await db.collection('event_candidates').doc(id).create({ ...it, status: 'auto', createdAt: FieldValue.serverTimestamp() });
-  } catch (e) {
-    if (e.code === 6 || /ALREADY_EXISTS/.test(String(e))) continue;
-    throw e;
-  }
+  const ref = db.collection('event_candidates').doc(id);
+  const seen = await ref.get();
+  // 이미 자동 등록됐거나 운영진이 처리(승인/거절)한 건 건너뜀 → 삭제된 행사가 부활하지 않음.
+  // 예전 방식으로 쌓인 pending 후보는 기준을 통과하면 이번에 자동 등록으로 넘김.
+  if (seen.exists && seen.data().status !== 'pending') continue;
+  await ref.set({ ...it, status: 'auto', createdAt: seen.exists ? seen.data().createdAt : FieldValue.serverTimestamp() });
   await db.collection('events').doc(id).set({
     ...ev, source, createdBy: 'bot', createdAt: FieldValue.serverTimestamp(),
   });
