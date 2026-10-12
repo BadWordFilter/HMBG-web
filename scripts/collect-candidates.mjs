@@ -1,12 +1,14 @@
-// itch.io 게임잼과 위비티 공모전을 수집해 Firestore `event_candidates`에 "후보"로 저장합니다.
-// 후보는 포털 > 행사 관리에서 운영진이 승인해야 정식 행사(`events`)가 됩니다.
+// itch.io 게임잼과 위비티 공모전을 수집해 Firestore `events`에 바로 등록합니다(자동 공지는 announce-discord.mjs).
+// `event_candidates`는 "이미 본 행사" 기록이라, 운영진이 포털에서 행사를 삭제해도 다시 등록되지 않습니다.
+// 기준에 안 맞아 등록되지 않은 과거 후보(status: pending)는 포털에서 수동 승인할 수 있습니다.
 // GitHub Actions(.github/workflows/events-ics.yml)에서 FIREBASE_SERVICE_ACCOUNT 환경변수와 함께 실행.
 import { initializeApp, cert } from 'firebase-admin/app';
 import { getFirestore, FieldValue } from 'firebase-admin/firestore';
 
 // ── 조정 가능한 설정 ──
-const ITCH_MIN_JOINED = 100;          // 참가자 수가 이 값 이상이거나 "Ranked" 잼만 후보로
+const ITCH_MIN_JOINED = 300;          // 참가자 수가 이 값 이상이거나 "Ranked" 잼만 자동 등록
 const ITCH_UPCOMING_PAGES = 2;        // 예정 잼 목록 페이지 수 (페이지당 약 50개, 인기순)
+const MAX_NEW_PER_RUN = 15;           // 한 번에 자동 등록하는 최대 개수 (초과분은 다음 실행에서 처리)
 const WEVITY_PAGES = 5;               // 위비티 IT 카테고리 목록 페이지 수 (페이지당 약 10개)
 const WEVITY_KEYWORDS = ['게임', '인디', '해커톤', '유니티', '언리얼', '메타버스', 'game', 'unity', 'unreal', 'hackathon', 'XR', 'VR']; // 제목·분야에 포함되면 후보
 const UA = 'Mozilla/5.0 (compatible; HMBG-club-bot; +https://hmbg.kr)';
@@ -138,14 +140,19 @@ for (const [name, fn] of [['itch.io', collectItch], ['wevity', collectWevity]]) 
 
 let created = 0;
 for (const it of results) {
+  if (created >= MAX_NEW_PER_RUN) { console.log('상한 도달 — 나머지는 다음 실행에서 등록'); break; }
+  const { id, source, ...ev } = it;
   try {
-    // create()는 이미 있는 문서면 실패 → 승인/거절된 후보가 되살아나지 않음
-    await db.collection('event_candidates').doc(it.id).create({
-      ...it, status: 'pending', createdAt: FieldValue.serverTimestamp(),
-    });
-    created++;
+    // create()는 이미 있으면 실패 → 한 번 본 행사는 다시 등록하지 않음 (삭제된 행사 부활 방지)
+    await db.collection('event_candidates').doc(id).create({ ...it, status: 'auto', createdAt: FieldValue.serverTimestamp() });
   } catch (e) {
-    if (e.code !== 6 && !/ALREADY_EXISTS/.test(String(e))) throw e;
+    if (e.code === 6 || /ALREADY_EXISTS/.test(String(e))) continue;
+    throw e;
   }
+  await db.collection('events').doc(id).set({
+    ...ev, source, createdBy: 'bot', createdAt: FieldValue.serverTimestamp(),
+  });
+  created++;
+  console.log(`자동 등록: ${it.title}`);
 }
-console.log(`새 후보 ${created}개 저장 (기존 ${results.length - created}개는 건너뜀)`);
+console.log(`새 행사 ${created}개 자동 등록`);

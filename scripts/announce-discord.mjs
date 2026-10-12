@@ -11,6 +11,7 @@ if (!webhook) {
 
 const CATEGORY = { jam: '🎮 게임잼', contest: '🏆 공모전', external: '🌐 외부 활동', club: '🍔 동아리 행사' };
 const COLOR = { jam: 0x5865f2, contest: 0xf0b232, external: 0x3ba55d, club: 0xeb459e };
+const MAX_PER_RUN = 10; // 한 번에 보내는 최대 공지 수 (초과분은 다음 실행에서)
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const kstToday = () => new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
 
@@ -23,9 +24,9 @@ const pending = snap.docs.filter((d) => {
   const ev = d.data();
   return !ev.announcedAt && (ev.endDate || ev.startDate) >= today; // 이미 끝난 행사는 공지하지 않음
 });
-console.log(`공지할 행사 ${pending.length}개`);
+console.log(`공지할 행사 ${pending.length}개 (이번에 최대 ${MAX_PER_RUN}개)`);
 
-for (const d of pending) {
+for (const d of pending.slice(0, MAX_PER_RUN)) {
   const ev = d.data();
   const range = ev.endDate && ev.endDate !== ev.startDate ? `${ev.startDate} ~ ${ev.endDate}` : ev.startDate;
   const embed = {
