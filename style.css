@@ -2112,8 +2112,15 @@ html.lenis body {
     gap: var(--sp-8);
   }
 
+  /* 카드 수가 4의 배수가 아니어도 마지막 줄이 가운데 정렬되도록 flex 사용 */
   .crew-grid {
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .crew-grid > .name-tag {
+    flex: 0 0 calc((100% - 3 * var(--sp-5)) / 4);
   }
 
   .name-tag:nth-child(even) {
