@@ -119,6 +119,26 @@ DESCRIPTION:주최: Beregon\, Daybloom Project\, BroodyGaming · 참가 94
 URL:https://itch.io/jam/rpg-maker-horror-game-jam-17
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-8-bit-jam-@hmbg.kr
+DTSTAMP:20261012T204646Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261026
+SUMMARY:[게임잼] 8-BIT END PAINT JAM
+DESCRIPTION:주최: Zirk Studios · 참가 29명 · Ranked\nhttps://itch.io
+ /jam/8-bit-jam-
+URL:https://itch.io/jam/8-bit-jam-
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-rpg-mania-xvi@hmbg.kr
+DTSTAMP:20261012T204647Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261116
+SUMMARY:[게임잼] RPG Mania XVI
+DESCRIPTION:주최: CGBilz · 참가 26명 · Ranked\nhttps://itch.io/jam/r
+ pg-mania-xvi
+URL:https://itch.io/jam/rpg-mania-xvi
+END:VEVENT
+BEGIN:VEVENT
 UID:jVkVVn9X5vWIjo6HAdbM@hmbg.kr
 DTSTAMP:20261012T025604Z
 DTSTART;VALUE=DATE:20261015
@@ -147,6 +167,16 @@ SUMMARY:[게임잼] Historically Accurate Game Jam 13
 DESCRIPTION:주최: HAGJ\, Tuile · 참가 66명 · Ranked\nhttps://itch.io
  /jam/historically-accurate-game-jam-13
 URL:https://itch.io/jam/historically-accurate-game-jam-13
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-bad-plan-horror-jam@hmbg.kr
+DTSTAMP:20261012T204648Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261031
+SUMMARY:[게임잼] Bad Plan Horror Jam
+DESCRIPTION:주최: Bad Plan Studios · 참가 26명 · Ranked\nhttps://itc
+ h.io/jam/bad-plan-horror-jam
+URL:https://itch.io/jam/bad-plan-horror-jam
 END:VEVENT
 BEGIN:VEVENT
 UID:qoha3JJO2xe4CQhSeZId@hmbg.kr
@@ -217,6 +247,26 @@ SUMMARY:[게임잼] Comfy Jam: Autumn 🎃 [+ $Prizes]
 DESCRIPTION:주최: Macrow · 진행 중 · 제출 마감일 · 참가 1\,6
  55명\nhttps://itch.io/jam/comfy-jam-autumn-2026
 URL:https://itch.io/jam/comfy-jam-autumn-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-deejam@hmbg.kr
+DTSTAMP:20261012T204651Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261021
+SUMMARY:[게임잼] DeeJam
+DESCRIPTION:주최: pokiios · 참가 20명 · Ranked\nhttps://itch.io/jam/
+ deejam
+URL:https://itch.io/jam/deejam
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-game-jam-europe-starting@hmbg.kr
+DTSTAMP:20261012T204650Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261026
+SUMMARY:[게임잼] Game Jam Europe (€200 Cash Prize - 24 Hours)
+DESCRIPTION:주최: JCI Maltepe · 참가 24명 · Ranked\nhttps://itch.io/
+ jam/game-jam-europe-starting
+URL:https://itch.io/jam/game-jam-europe-starting
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-horror-hatch-21-day-challenge-4@hmbg.kr
@@ -381,6 +431,16 @@ DESCRIPTION:주최: Pixel Tanuki Games\, 🍄 mycelium 🦝\, SomeRanDev\,
 URL:https://itch.io/jam/backseating-allowed-jam-2026
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-chili-code-jam-5@hmbg.kr
+DTSTAMP:20261012T204643Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261031
+SUMMARY:[게임잼] 🦐🦐 Chili Code Jam #5
+DESCRIPTION:주최: SeeOne · 참가 33명 · Ranked\nhttps://itch.io/jam/c
+ hili-code-jam-5
+URL:https://itch.io/jam/chili-code-jam-5
+END:VEVENT
+BEGIN:VEVENT
 UID:p72ymy6D5f7saUd5cQgy@hmbg.kr
 DTSTAMP:20261012T025606Z
 DTSTART;VALUE=DATE:20261023
@@ -389,6 +449,16 @@ SUMMARY:[게임잼] Thailand Horror Jam 2026
 DESCRIPTION:주최: Thailand Game Jam · 참가 142명 · Ranked\nhttps://i
  tch.io/jam/thailand-horror-jam-2026
 URL:https://itch.io/jam/thailand-horror-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-all-tools-allowed-3@hmbg.kr
+DTSTAMP:20261012T204649Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261028
+SUMMARY:[게임잼] All Tools Allowed #3 — A Critics Arcade AI Game Jam
+DESCRIPTION:주최: Critics Arcade · 참가 25명 · Ranked\nhttps://itch.
+ io/jam/all-tools-allowed-3
+URL:https://itch.io/jam/all-tools-allowed-3
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-terror-jam-2026-a-halloween-game-jam@hmbg.kr
@@ -401,6 +471,16 @@ DESCRIPTION:주최: Latinx in Gaming\, pajamaguy · 진행 중 · 제출
  마감일 · 참가 387명\nhttps://itch.io/jam/terror-jam-2026-a-hallowee
  n-game-jam
 URL:https://itch.io/jam/terror-jam-2026-a-halloween-game-jam
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-thatgamejam02@hmbg.kr
+DTSTAMP:20261012T204646Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261109
+SUMMARY:[게임잼] thatgamejam #02💜
+DESCRIPTION:주최: thatgamecompany · 참가 28명 · Ranked\nhttps://itch
+ .io/jam/thatgamejam02
+URL:https://itch.io/jam/thatgamejam02
 END:VEVENT
 BEGIN:VEVENT
 UID:yf9P3XT8reCyFJhl3qKU@hmbg.kr
@@ -433,6 +513,16 @@ DESCRIPTION:주최: Slomby Dev · 참가 81명 · Ranked\nhttps://itch.io/j
 URL:https://itch.io/jam/a-lil-horror-gamejam-2026
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-retro-pixel-jam@hmbg.kr
+DTSTAMP:20261012T204652Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261102
+SUMMARY:[게임잼] Retro Pixel Jam
+DESCRIPTION:주최: DougVeira · 참가 20명 · Ranked\nhttps://itch.io/ja
+ m/retro-pixel-jam
+URL:https://itch.io/jam/retro-pixel-jam
+END:VEVENT
+BEGIN:VEVENT
 UID:8BQ4a4ZRVyMKHYatpE2x@hmbg.kr
 DTSTAMP:20261012T025606Z
 DTSTART;VALUE=DATE:20261027
@@ -441,6 +531,16 @@ SUMMARY:[게임잼] 1-BIT JAM 15 + Prizes
 DESCRIPTION:주최: MYline media 👤 · 참가 56명 · Ranked\nhttps://it
  ch.io/jam/1-bit-jam-15
 URL:https://itch.io/jam/1-bit-jam-15
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-new-wierd-game-jam-fall@hmbg.kr
+DTSTAMP:20261012T204649Z
+DTSTART;VALUE=DATE:20261027
+DTEND;VALUE=DATE:20261102
+SUMMARY:[게임잼] New Wierd Game Jam except it's fall
+DESCRIPTION:주최: siwdvi · 참가 26명 · Ranked\nhttps://itch.io/jam/n
+ ew-wierd-game-jam-fall
+URL:https://itch.io/jam/new-wierd-game-jam-fall
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-autumn-lisp-game-jam-2026@hmbg.kr
@@ -461,6 +561,16 @@ SUMMARY:[게임잼] GoedWare Game Jam Halloween Part 3 👻(+ prizes 🏆)
 DESCRIPTION:주최: GoedWare · 참가 43명 · Ranked\nhttps://itch.io/jam
  /goedware-game-jam-halloween-3
 URL:https://itch.io/jam/goedware-game-jam-halloween-3
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-improve-my-game-jam-47@hmbg.kr
+DTSTAMP:20261012T204645Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261108
+SUMMARY:[게임잼] Improve My Game Jam 47
+DESCRIPTION:주최: anomrac21 · 참가 31명 · Ranked\nhttps://itch.io/ja
+ m/improve-my-game-jam-47
+URL:https://itch.io/jam/improve-my-game-jam-47
 END:VEVENT
 BEGIN:VEVENT
 UID:CSzfw3vCbkKyBUqT18Zv@hmbg.kr
@@ -521,6 +631,16 @@ SUMMARY:[게임잼] Digital Pet Jam
 DESCRIPTION:주최: malaika\, oscar pepperbloom · 진행 중 · 제출 마
  감일 · 참가 520명\nhttps://itch.io/jam/digital-pet-jam
 URL:https://itch.io/jam/digital-pet-jam
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-micro-jam-068@hmbg.kr
+DTSTAMP:20261012T204651Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261103
+SUMMARY:[게임잼] Micro Jam 068: Evolution ($250+ Prizes!)
+DESCRIPTION:주최: tobias\, SeeOne · 참가 20명 · Ranked\nhttps://itch
+ .io/jam/micro-jam-068
+URL:https://itch.io/jam/micro-jam-068
 END:VEVENT
 BEGIN:VEVENT
 UID:mwGdaN4VZKS9OjINKEPg@hmbg.kr
@@ -585,6 +705,16 @@ DESCRIPTION:주최: manonamora\, Autumn Chen\, Lapin Lunaire Games · 진
  행 중 · 제출 마감일 · 참가 125명\nhttps://itch.io/jam/bare-bon
  es-jam-26
 URL:https://itch.io/jam/bare-bones-jam-26
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-gamelike-jam-012@hmbg.kr
+DTSTAMP:20261012T204647Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261202
+SUMMARY:[게임잼] Game-like Jam 12
+DESCRIPTION:주최: HyperGameDev · 참가 26명 · Ranked\nhttps://itch.io
+ /jam/gamelike-jam-012
+URL:https://itch.io/jam/gamelike-jam-012
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-scifanjam@hmbg.kr
@@ -688,6 +818,16 @@ SUMMARY:[게임잼] LÖVE Jam 2026 [B-SIDE]
 DESCRIPTION:주최: Keyslam\, Pablo Mayobre · 참가 137명 · Ranked\nhtt
  ps://itch.io/jam/lve-jam-2026-b-side
 URL:https://itch.io/jam/lve-jam-2026-b-side
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-pizza-jam-pizza-prize-17@hmbg.kr
+DTSTAMP:20261012T204644Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261117
+SUMMARY:[게임잼] Pizza Jam (✨Pizza Prize!✨)
+DESCRIPTION:주최: ComputerJames · 참가 32명 · Ranked\nhttps://itch.i
+ o/jam/pizza-jam-pizza-prize-17
+URL:https://itch.io/jam/pizza-jam-pizza-prize-17
 END:VEVENT
 BEGIN:VEVENT
 UID:qtYVFr0T3tGohPywmXNg@hmbg.kr
@@ -840,6 +980,16 @@ SUMMARY:[게임잼] The Eye Jam III: Folk Horror
 DESCRIPTION:주최: SeeOne · 참가 167명 · Ranked\nhttps://itch.io/jam/
  the-eye-jam3
 URL:https://itch.io/jam/the-eye-jam3
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-craftpix-indie-jam-2-2026@hmbg.kr
+DTSTAMP:20261012T204644Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261215
+SUMMARY:[게임잼] Craftpix Indie Jam #2-2026
+DESCRIPTION:주최: Free Game Assets (GUI\, Sprite\, Tilesets) · 참가 31
+ 명 · Ranked\nhttps://itch.io/jam/craftpix-indie-jam-2-2026
+URL:https://itch.io/jam/craftpix-indie-jam-2-2026
 END:VEVENT
 BEGIN:VEVENT
 UID:QTqzwjCl75U6dN61IL0D@hmbg.kr
