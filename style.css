@@ -1244,7 +1244,7 @@ html.lenis body {
   border: var(--line);
   border-radius: 12px;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10; /* 게임 화면(960×600) 전체와 여백의 점수 표시까지 보이도록 */
   background: var(--maroon);
 }
 

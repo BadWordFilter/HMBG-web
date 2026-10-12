@@ -3,3 +3,7 @@
 
 # iCalendar 규격상 줄바꿈은 CRLF여야 하므로 변환하지 않음
 events.ics -text
+
+# Unity WebGL 빌드 산출물은 줄바꿈 변환 없이 그대로 저장
+mayhem/** -text
+flappybird/** -text

@@ -9,6 +9,8 @@
 | `portal.html` / `portal.css` / `portal.js` | 멤버 전용 포털 (Google 로그인) — 메인과 같은 디자인 토큰, 모션 라이브러리 없이 CSS만 사용 |
 | `assets/sprites/` | `hambgi.png`에서 추출한 재료·접시 픽셀 스프라이트 (1× 원본, CSS로 2× 확대) |
 | `flappybird/` | Unity WebGL 빌드 (약 34MB — 사용자가 "플레이 시작"을 눌러야 로드) |
+| `mayhem/` | Unity WebGL 빌드 (약 44MB, 압축 없이 빌드 — GitHub Pages는 `.br`/`.gz` 헤더를 못 줌). 첫 씬은 MainMenu이고 FMOD 사운드 뱅크는 `StreamingAssets/` |
+| `assets/*-thumb.png` | 프로젝트 카드용 실제 게임플레이 캡처 (960×600 전체 화면 — 흰 여백의 점수 표시까지 게임 화면의 일부) |
 
 ## 로컬 실행
 

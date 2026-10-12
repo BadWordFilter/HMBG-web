@@ -553,7 +553,7 @@
       title.textContent = card.dataset.title || '프로젝트';
       ext.href = card.dataset.ext || '#';
       go.disabled = false;
-      go.textContent = kind === 'game' ? '플레이 시작 (약 34MB · 데스크톱 권장)' : '영상 재생';
+      go.textContent = kind === 'game' ? `플레이 시작 (${card.dataset.size || '약 34MB'} · 데스크톱 권장)` : '영상 재생';
       note.textContent = kind === 'game'
         ? '버튼을 누르기 전까지는 게임 파일을 내려받지 않습니다. 마우스/키보드로 플레이하세요.'
         : 'YouTube 개인정보 보호 모드(youtube-nocookie)로 재생됩니다.';
