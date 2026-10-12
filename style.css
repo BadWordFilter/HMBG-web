@@ -1276,7 +1276,6 @@ html.lenis body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  mix-blend-mode: multiply; /* 유튜브 썸네일의 흰 레터박스가 마룬 배경에 녹아든다 */
 }
 
 .project-info {
@@ -1427,10 +1426,6 @@ html.lenis body {
   height: 100%;
   object-fit: cover;
   z-index: 1;
-}
-
-.case-stage > img[data-case-visual] {
-  mix-blend-mode: multiply;
 }
 
 .case-screen {
