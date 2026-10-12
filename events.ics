@@ -48,6 +48,16 @@ DESCRIPTION:주최: Fisher · 진행 중 · 제출 마감일 · 참가 186
 URL:https://itch.io/jam/torture-jam
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-plasjam-2-1-button-jam@hmbg.kr
+DTSTAMP:20261012T100706Z
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261021
+SUMMARY:[게임잼] PlasJam #2 | 1-Button Jam
+DESCRIPTION:주최: Plasmalot · 참가 33명 · Ranked\nhttps://itch.io/ja
+ m/plasjam-2-1-button-jam
+URL:https://itch.io/jam/plasjam-2-1-button-jam
+END:VEVENT
+BEGIN:VEVENT
 UID:qpdnLOcooCnzoqC278jO@hmbg.kr
 DTSTAMP:20261012T024754Z
 DTSTART;VALUE=DATE:20261013
@@ -89,6 +99,106 @@ DESCRIPTION:주최: gamedesignaccount · 참가 346명 · Ranked\nhttps://i
 URL:https://itch.io/jam/your-worst-ideas
 END:VEVENT
 BEGIN:VEVENT
+UID:3Mcd3rHlWyUvvxDUeGQd@hmbg.kr
+DTSTAMP:20261012T025604Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261215
+SUMMARY:[게임잼] RPG Maker Themed Game Jam #17: Divine Servant
+DESCRIPTION:주최: Beregon\, BroodyGaming · 참가 71명 · Ranked\nhttps
+ ://itch.io/jam/rpg-maker-themed-game-jam-17
+URL:https://itch.io/jam/rpg-maker-themed-game-jam-17
+END:VEVENT
+BEGIN:VEVENT
+UID:YSaKPa0Mmp7uFP2lhfxZ@hmbg.kr
+DTSTAMP:20261012T025603Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261215
+SUMMARY:[게임잼] RPG Maker Horror Game Jam #17: Death Game
+DESCRIPTION:주최: Beregon\, Daybloom Project\, BroodyGaming · 참가 94
+ 명 · Ranked\nhttps://itch.io/jam/rpg-maker-horror-game-jam-17
+URL:https://itch.io/jam/rpg-maker-horror-game-jam-17
+END:VEVENT
+BEGIN:VEVENT
+UID:jVkVVn9X5vWIjo6HAdbM@hmbg.kr
+DTSTAMP:20261012T025604Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261023
+SUMMARY:[게임잼] Synty Spooky Jam - October 2026
+DESCRIPTION:주최: Synty · 참가 243명 · Ranked\nhttps://itch.io/jam/s
+ ynty-spooky-jam-oct26
+URL:https://itch.io/jam/synty-spooky-jam-oct26
+END:VEVENT
+BEGIN:VEVENT
+UID:wkbky2c1qloNwkHnKVym@hmbg.kr
+DTSTAMP:20261012T025603Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20270125
+SUMMARY:[게임잼] #bitsyjam 100
+DESCRIPTION:주최: adam le doux · 참가 208명\nhttps://itch.io/jam/bits
+ y-100
+URL:https://itch.io/jam/bitsy-100
+END:VEVENT
+BEGIN:VEVENT
+UID:9RRQcE3wCGOaqhBjEFet@hmbg.kr
+DTSTAMP:20261012T025604Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261026
+SUMMARY:[게임잼] Historically Accurate Game Jam 13
+DESCRIPTION:주최: HAGJ\, Tuile · 참가 66명 · Ranked\nhttps://itch.io
+ /jam/historically-accurate-game-jam-13
+URL:https://itch.io/jam/historically-accurate-game-jam-13
+END:VEVENT
+BEGIN:VEVENT
+UID:qoha3JJO2xe4CQhSeZId@hmbg.kr
+DTSTAMP:20261012T025604Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261019
+SUMMARY:[게임잼] Mini Jame Gam #60
+DESCRIPTION:주최: Jame Gam\, AcidBurritos\, tiimo\, AmiableVegetable · 
+ 참가 197명 · Ranked\nhttps://itch.io/jam/mini-jame-gam-60
+URL:https://itch.io/jam/mini-jame-gam-60
+END:VEVENT
+BEGIN:VEVENT
+UID:tMUrTvwlQ6fLOn2a9xBu@hmbg.kr
+DTSTAMP:20261012T025604Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261117
+SUMMARY:[게임잼] Zoud GameLab [Up to $140K in Dev Funding]
+DESCRIPTION:주최: Zoud GameLab\, Global Game Jam · 참가 263명\nhttps:
+ //itch.io/jam/zoud-gamelab
+URL:https://itch.io/jam/zoud-gamelab
+END:VEVENT
+BEGIN:VEVENT
+UID:MXI9OZmK2Vv2uJFPmpp7@hmbg.kr
+DTSTAMP:20261012T025605Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261025
+SUMMARY:[게임잼] SCREAM JAM 2026
+DESCRIPTION:주최: SCREAM ZONE · 참가 903명 · Ranked\nhttps://itch.io
+ /jam/scream-jam-2026
+URL:https://itch.io/jam/scream-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-braincloud-jam@hmbg.kr
+DTSTAMP:20261012T100705Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261101
+SUMMARY:[게임잼] brainCloud Jam
+DESCRIPTION:주최: spencerh-bitheads\, markd_bithead\, brainCloud · 참
+ 가 35명 · Ranked\nhttps://itch.io/jam/braincloud-jam
+URL:https://itch.io/jam/braincloud-jam
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-cali-game-jam-4-edicion-colombia-solidaria-2026@hmbg.kr
+DTSTAMP:20261012T100702Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261026
+SUMMARY:[게임잼] 🎮 CALI GAME JAM #4 Edición Colombia Solidaria 2026
+DESCRIPTION:주최: Ricardo Orozco · 참가 41명 · Ranked\nhttps://itch.
+ io/jam/cali-game-jam-4-edicion-colombia-solidaria-2026
+URL:https://itch.io/jam/cali-game-jam-4-edicion-colombia-solidaria-2026
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-christian-padreludos-jam-7@hmbg.kr
 DTSTAMP:20261012T025119Z
 DTSTART;VALUE=DATE:20261017
@@ -107,6 +217,56 @@ SUMMARY:[게임잼] Comfy Jam: Autumn 🎃 [+ $Prizes]
 DESCRIPTION:주최: Macrow · 진행 중 · 제출 마감일 · 참가 1\,6
  55명\nhttps://itch.io/jam/comfy-jam-autumn-2026
 URL:https://itch.io/jam/comfy-jam-autumn-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-horror-hatch-21-day-challenge-4@hmbg.kr
+DTSTAMP:20261012T100703Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261022
+SUMMARY:[게임잼] ✨ Horror Hatch #4 PRIZES 🏆
+DESCRIPTION:주최: swipe_studios · 참가 41명 · Ranked\nhttps://itch.i
+ o/jam/horror-hatch-21-day-challenge-4
+URL:https://itch.io/jam/horror-hatch-21-day-challenge-4
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-micro-jam-067@hmbg.kr
+DTSTAMP:20261012T100700Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261020
+SUMMARY:[게임잼] Micro Jam 067: Windows ($350+ Prizes!)
+DESCRIPTION:주최: tobias\, SeeOne · 참가 52명 · Ranked\nhttps://itch
+ .io/jam/micro-jam-067
+URL:https://itch.io/jam/micro-jam-067
+END:VEVENT
+BEGIN:VEVENT
+UID:pq9igfoxgBGk9gzT7Nkn@hmbg.kr
+DTSTAMP:20261012T025604Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261101
+SUMMARY:[게임잼] AI Browser Game Jam 5
+DESCRIPTION:주최: Focaccai · 참가 128명 · Ranked\nhttps://itch.io/ja
+ m/ai-jam-5
+URL:https://itch.io/jam/ai-jam-5
+END:VEVENT
+BEGIN:VEVENT
+UID:wynFkSbcUnx704O45m6K@hmbg.kr
+DTSTAMP:20261012T025605Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261020
+SUMMARY:[게임잼] Spooky 2D Jam '26 👻
+DESCRIPTION:주최: TheoClarke\, Chloe/Zaetu · 참가 127명 · Ranked\nht
+ tps://itch.io/jam/spooky2djam26
+URL:https://itch.io/jam/spooky2djam26
+END:VEVENT
+BEGIN:VEVENT
+UID:LxvPCXISlHBFgke5HNHQ@hmbg.kr
+DTSTAMP:20261012T025605Z
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261020
+SUMMARY:[게임잼] Revival Jam 2026
+DESCRIPTION:주최: Society of Play · 진행 중 · 제출 마감일 · 
+ 참가 265명\nhttps://itch.io/jam/revival-jam-2026
+URL:https://itch.io/jam/revival-jam-2026
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-godot-wild-jam-98@hmbg.kr
@@ -129,6 +289,108 @@ DESCRIPTION:주최: ltbClyde · 참가 89명 · Ranked\nhttps://itch.io/jam
 URL:https://itch.io/jam/small-scope-jam-
 END:VEVENT
 BEGIN:VEVENT
+UID:lvJWmAi4AmEt9W5ISaRL@hmbg.kr
+DTSTAMP:20261012T025605Z
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261020
+SUMMARY:[게임잼] UNIDOS Hispanic Heritage Month Jam 2026 [$1k in Prizes!
+ ]
+DESCRIPTION:주최: Latinx in Gaming · 진행 중 · 제출 마감일 · 
+ 참가 193명\nhttps://itch.io/jam/unidos-game-jam-2026
+URL:https://itch.io/jam/unidos-game-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-3d-modelling-jam-14@hmbg.kr
+DTSTAMP:20261012T100705Z
+DTSTART;VALUE=DATE:20261020
+DTEND;VALUE=DATE:20261101
+SUMMARY:[게임잼] 3D modelling Jam #14
+DESCRIPTION:주최: Kiri · 참가 35명 · Ranked\nhttps://itch.io/jam/3d-
+ modelling-jam-14
+URL:https://itch.io/jam/3d-modelling-jam-14
+END:VEVENT
+BEGIN:VEVENT
+UID:VTIMXhPDbUhvrxNpoojT@hmbg.kr
+DTSTAMP:20261012T025605Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261029
+SUMMARY:[게임잼] witchcraft jam🎃($100 + prizes)
+DESCRIPTION:주최: Fat frog studios · 참가 54명 · Ranked\nhttps://itc
+ h.io/jam/witchcraft-jam
+URL:https://itch.io/jam/witchcraft-jam
+END:VEVENT
+BEGIN:VEVENT
+UID:Vf62LTI6BBNWyT8yi9VF@hmbg.kr
+DTSTAMP:20261012T025605Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261022
+SUMMARY:[게임잼] Lost Media Jam #1
+DESCRIPTION:주최: Skillva · 진행 중 · 제출 마감일 · 참가 127
+ 명\nhttps://itch.io/jam/lost-media-jam-1
+URL:https://itch.io/jam/lost-media-jam-1
+END:VEVENT
+BEGIN:VEVENT
+UID:c09IptIoBkzZAUM2jfYa@hmbg.kr
+DTSTAMP:20261012T025605Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261029
+SUMMARY:[게임잼] Precision OST Jam #2 🎯🎵
+DESCRIPTION:주최: JacoRen · 참가 70명 · Ranked\nhttps://itch.io/jam/
+ precision-ost-jam-2
+URL:https://itch.io/jam/precision-ost-jam-2
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-horror-hatch-21-day-challenge-5@hmbg.kr
+DTSTAMP:20261012T100705Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261027
+SUMMARY:[게임잼] ✨ Horror Hatch #5 PRIZES 🏆
+DESCRIPTION:주최: swipe_studios · 참가 36명 · Ranked\nhttps://itch.i
+ o/jam/horror-hatch-21-day-challenge-5
+URL:https://itch.io/jam/horror-hatch-21-day-challenge-5
+END:VEVENT
+BEGIN:VEVENT
+UID:OnwHaMz7TnUc0wRSuLGy@hmbg.kr
+DTSTAMP:20261012T025606Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261027
+SUMMARY:[게임잼] Bezi Jam 14 [$400 Prizes] | SOMETHING WICKED
+DESCRIPTION:주최: Bezi · 참가 69명 · Ranked\nhttps://itch.io/jam/bez
+ i-jam-14
+URL:https://itch.io/jam/bezi-jam-14
+END:VEVENT
+BEGIN:VEVENT
+UID:SiGCxiOUhfiWnxJMx4Kx@hmbg.kr
+DTSTAMP:20261012T025606Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261118
+SUMMARY:[게임잼] 20 Second Game Jam 2026
+DESCRIPTION:주최: Akzidenz\, xenobrain\, marc · 참가 616명\nhttps://i
+ tch.io/jam/20-second-game-jam-2026
+URL:https://itch.io/jam/20-second-game-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-backseating-allowed-jam-2026@hmbg.kr
+DTSTAMP:20261012T100704Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261103
+SUMMARY:[게임잼] Backseating Allowed Jam 2026
+DESCRIPTION:주최: Pixel Tanuki Games\, 🍄 mycelium 🦝\, SomeRanDev\, 
+ JustInvoke\, Game Clique · 참가 39명 · Ranked\nhttps://itch.io/jam/ba
+ ckseating-allowed-jam-2026
+URL:https://itch.io/jam/backseating-allowed-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:p72ymy6D5f7saUd5cQgy@hmbg.kr
+DTSTAMP:20261012T025606Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261031
+SUMMARY:[게임잼] Thailand Horror Jam 2026
+DESCRIPTION:주최: Thailand Game Jam · 참가 142명 · Ranked\nhttps://i
+ tch.io/jam/thailand-horror-jam-2026
+URL:https://itch.io/jam/thailand-horror-jam-2026
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-terror-jam-2026-a-halloween-game-jam@hmbg.kr
 DTSTAMP:20261012T025123Z
 DTSTART;VALUE=DATE:20261024
@@ -141,6 +403,116 @@ DESCRIPTION:주최: Latinx in Gaming\, pajamaguy · 진행 중 · 제출
 URL:https://itch.io/jam/terror-jam-2026-a-halloween-game-jam
 END:VEVENT
 BEGIN:VEVENT
+UID:yf9P3XT8reCyFJhl3qKU@hmbg.kr
+DTSTAMP:20261012T025606Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261124
+SUMMARY:[게임잼] Impressions Composing Jam: OST #4
+DESCRIPTION:주최: KaleOverlord · 참가 108명 · Ranked\nhttps://itch.i
+ o/jam/impressions-composing-jam-ost-4
+URL:https://itch.io/jam/impressions-composing-jam-ost-4
+END:VEVENT
+BEGIN:VEVENT
+UID:yrbdVDdOc1S46TPzPY7p@hmbg.kr
+DTSTAMP:20261012T025606Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261028
+SUMMARY:[게임잼] Solo Dev jam 13
+DESCRIPTION:주최: Solo Development\, drahmen\, Practical NPC · 참가 13
+ 0명 · Ranked\nhttps://itch.io/jam/solo-dev-jam-13
+URL:https://itch.io/jam/solo-dev-jam-13
+END:VEVENT
+BEGIN:VEVENT
+UID:XQ95uZhA9iBWf0TGAsJm@hmbg.kr
+DTSTAMP:20261012T025606Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261031
+SUMMARY:[게임잼] A Lil Horror GameJam 2026 ☠️🎃
+DESCRIPTION:주최: Slomby Dev · 참가 81명 · Ranked\nhttps://itch.io/j
+ am/a-lil-horror-gamejam-2026
+URL:https://itch.io/jam/a-lil-horror-gamejam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:8BQ4a4ZRVyMKHYatpE2x@hmbg.kr
+DTSTAMP:20261012T025606Z
+DTSTART;VALUE=DATE:20261027
+DTEND;VALUE=DATE:20261104
+SUMMARY:[게임잼] 1-BIT JAM 15 + Prizes
+DESCRIPTION:주최: MYline media 👤 · 참가 56명 · Ranked\nhttps://it
+ ch.io/jam/1-bit-jam-15
+URL:https://itch.io/jam/1-bit-jam-15
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-autumn-lisp-game-jam-2026@hmbg.kr
+DTSTAMP:20261012T100704Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261110
+SUMMARY:[게임잼] Autumn Lisp Game Jam 2026
+DESCRIPTION:주최: technomancy\, David Thompson · 참가 36명 · Ranked\
+ nhttps://itch.io/jam/autumn-lisp-game-jam-2026
+URL:https://itch.io/jam/autumn-lisp-game-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-goedware-game-jam-halloween-3@hmbg.kr
+DTSTAMP:20261012T100702Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261104
+SUMMARY:[게임잼] GoedWare Game Jam Halloween Part 3 👻(+ prizes 🏆)
+DESCRIPTION:주최: GoedWare · 참가 43명 · Ranked\nhttps://itch.io/jam
+ /goedware-game-jam-halloween-3
+URL:https://itch.io/jam/goedware-game-jam-halloween-3
+END:VEVENT
+BEGIN:VEVENT
+UID:CSzfw3vCbkKyBUqT18Zv@hmbg.kr
+DTSTAMP:20261012T025607Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:[게임잼] Puzzle Games
+DESCRIPTION:주최: UnknownInnocentMan · 진행 중 · 제출 마감일 ·
+  참가 101명\nhttps://itch.io/jam/puzzle-games-
+URL:https://itch.io/jam/puzzle-games-
+END:VEVENT
+BEGIN:VEVENT
+UID:Ufokcvl0yFxdYHXU0c3e@hmbg.kr
+DTSTAMP:20261012T025607Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:[게임잼] RGDC Jam 2026 + [$ Prizes]
+DESCRIPTION:주최: Rickards Game Development Club · 진행 중 · 제출 
+ 마감일 · 참가 286명\nhttps://itch.io/jam/rgdc-gamejam2026
+URL:https://itch.io/jam/rgdc-gamejam2026
+END:VEVENT
+BEGIN:VEVENT
+UID:UwOTgyGFboK8EJyyrcOD@hmbg.kr
+DTSTAMP:20261012T025607Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261201
+SUMMARY:[게임잼] Transformation Game Jam 2026
+DESCRIPTION:주최: MutaSheep\, Malic · 참가 100명\nhttps://itch.io/jam
+ /tf26
+URL:https://itch.io/jam/tf26
+END:VEVENT
+BEGIN:VEVENT
+UID:XEIO2EtfvBtw4QA5gFda@hmbg.kr
+DTSTAMP:20261012T025607Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:[게임잼] Orctober OSR Jam
+DESCRIPTION:주최: Forlorn Skulk · 진행 중 · 제출 마감일 · 참
+ 가 108명\nhttps://itch.io/jam/orctober
+URL:https://itch.io/jam/orctober
+END:VEVENT
+BEGIN:VEVENT
+UID:bSFnM3OgMnE3aol2tXeD@hmbg.kr
+DTSTAMP:20261012T025607Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261103
+SUMMARY:[게임잼] ЧРЕВАТЫЙ ДЖЕМ
+DESCRIPTION:주최: destructive_crab\, oknogmdv\, Kirk1448 · 참가 146명
+  · Ranked\nhttps://itch.io/jam/chrevo-jam
+URL:https://itch.io/jam/chrevo-jam
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-digital-pet-jam@hmbg.kr
 DTSTAMP:20261012T025122Z
 DTSTART;VALUE=DATE:20261031
@@ -149,6 +521,70 @@ SUMMARY:[게임잼] Digital Pet Jam
 DESCRIPTION:주최: malaika\, oscar pepperbloom · 진행 중 · 제출 마
  감일 · 참가 520명\nhttps://itch.io/jam/digital-pet-jam
 URL:https://itch.io/jam/digital-pet-jam
+END:VEVENT
+BEGIN:VEVENT
+UID:mwGdaN4VZKS9OjINKEPg@hmbg.kr
+DTSTAMP:20261012T025607Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:[게임잼] HORRORJAM 2026
+DESCRIPTION:주최: Extar · 진행 중 · 제출 마감일 · 참가 154
+ 명\nhttps://itch.io/jam/horrorjam-2026
+URL:https://itch.io/jam/horrorjam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:2T14cTOZ7TPtsLqtnvzX@hmbg.kr
+DTSTAMP:20261012T025609Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:[게임잼] SNES DEV Game Jam 2026
+DESCRIPTION:주최: SNES-Testberichte\, Kannagichan\, Svambo · 진행 중 
+ · 제출 마감일 · 참가 114명\nhttps://itch.io/jam/snes-dev-game-ja
+ m-2026
+URL:https://itch.io/jam/snes-dev-game-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:359MrEO2LtGlE5fYcelD@hmbg.kr
+DTSTAMP:20261012T025608Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:[게임잼] Folklore Jam 2026
+DESCRIPTION:주최: W.H. Arthur\, unseeliejess\, Lucky Newt Games\, Lari As
+ smuth · 진행 중 · 제출 마감일 · 참가 175명\nhttps://itch.io/
+ jam/folklorejam26
+URL:https://itch.io/jam/folklorejam26
+END:VEVENT
+BEGIN:VEVENT
+UID:3gAApnqVKq3BX0RWC2Lj@hmbg.kr
+DTSTAMP:20261012T025609Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:[게임잼] LIMINAL HORROR SUMMER JAM 2026
+DESCRIPTION:주최: Goblin Archives\, Unenthuser\, Zach Hazard Vaupen // Em
+ o Sludge · 진행 중 · 제출 마감일 · 참가 195명\nhttps://itch.
+ io/jam/liminal-horror-summer-jam-2026
+URL:https://itch.io/jam/liminal-horror-summer-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:4NqshLM8HlxbpPVNJZTy@hmbg.kr
+DTSTAMP:20261012T025609Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:[게임잼] Playtest & Feedback Exchange Jam #9
+DESCRIPTION:주최: One Joyful Day · 진행 중 · 제출 마감일 · 참
+ 가 100명\nhttps://itch.io/jam/playtest-feedback-exchange-jam-9
+URL:https://itch.io/jam/playtest-feedback-exchange-jam-9
+END:VEVENT
+BEGIN:VEVENT
+UID:a34H2Q8JsWL3eZYphDlE@hmbg.kr
+DTSTAMP:20261012T025608Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:[게임잼] The Bare-Bones Jam
+DESCRIPTION:주최: manonamora\, Autumn Chen\, Lapin Lunaire Games · 진
+ 행 중 · 제출 마감일 · 참가 125명\nhttps://itch.io/jam/bare-bon
+ es-jam-26
+URL:https://itch.io/jam/bare-bones-jam-26
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-scifanjam@hmbg.kr
@@ -171,6 +607,67 @@ DESCRIPTION:주최: EVERIUM · 진행 중 · 제출 마감일 · 참가 604
 URL:https://itch.io/jam/wgf2026
 END:VEVENT
 BEGIN:VEVENT
+UID:mkes3wozIKq76SmdTloe@hmbg.kr
+DTSTAMP:20261012T025608Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261112
+SUMMARY:[게임잼] B1T Jam 🎃 6
+DESCRIPTION:주최: Macrow · 참가 133명 · Ranked\nhttps://itch.io/jam/
+ b1t-jam-6
+URL:https://itch.io/jam/b1t-jam-6
+END:VEVENT
+BEGIN:VEVENT
+UID:yB45XUfSP1E9FPhLYctp@hmbg.kr
+DTSTAMP:20261012T025609Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261202
+SUMMARY:[게임잼] Solovember 2026
+DESCRIPTION:주최: Sero · 참가 122명\nhttps://itch.io/jam/solovember20
+ 26
+URL:https://itch.io/jam/solovember2026
+END:VEVENT
+BEGIN:VEVENT
+UID:IEMmJOiiihOBvafh6IGa@hmbg.kr
+DTSTAMP:20261012T025610Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:[게임잼] Minimalist TTRPG Jam 5
+DESCRIPTION:주최: Binary Star Games · 진행 중 · 제출 마감일 · 
+ 참가 266명\nhttps://itch.io/jam/minimalist-ttrpg-jam-5
+URL:https://itch.io/jam/minimalist-ttrpg-jam-5
+END:VEVENT
+BEGIN:VEVENT
+UID:XKwGCIzrAUWBrRcFTwrh@hmbg.kr
+DTSTAMP:20261012T025610Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:[게임잼] Bound Jam 2026
+DESCRIPTION:주최: BreakBound Studios\, JustDuffo\, CrspyHeroGames · 진
+ 행 중 · 제출 마감일 · 참가 137명\nhttps://itch.io/jam/bound-ja
+ m-2026
+URL:https://itch.io/jam/bound-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:axOHCA8j1j6OtEBrPx1B@hmbg.kr
+DTSTAMP:20261012T025610Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261202
+SUMMARY:[게임잼] Game Off 2026
+DESCRIPTION:주최: GitHub · 참가 527명 · Ranked\nhttps://itch.io/jam/
+ game-off-2026
+URL:https://itch.io/jam/game-off-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-the-big-gay-comic-jam@hmbg.kr
+DTSTAMP:20261012T100701Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261203
+SUMMARY:[게임잼] The Big Gay Comic Jam 2026
+DESCRIPTION:주최: Monty Guiraud · 참가 49명 · Ranked\nhttps://itch.i
+ o/jam/the-big-gay-comic-jam
+URL:https://itch.io/jam/the-big-gay-comic-jam
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-game-gauntlet-sim-jam@hmbg.kr
 DTSTAMP:20261012T025123Z
 DTSTART;VALUE=DATE:20261105
@@ -181,6 +678,36 @@ DESCRIPTION:주최: Game Gauntlet\, cosmicforces\, CyclicalZ · 진행 중
  · 제출 마감일 · 참가 454명\nhttps://itch.io/jam/game-gauntlet-si
  m-jam
 URL:https://itch.io/jam/game-gauntlet-sim-jam
+END:VEVENT
+BEGIN:VEVENT
+UID:sgXaldjnLc0lIxh4Suhv@hmbg.kr
+DTSTAMP:20261012T025610Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261117
+SUMMARY:[게임잼] LÖVE Jam 2026 [B-SIDE]
+DESCRIPTION:주최: Keyslam\, Pablo Mayobre · 참가 137명 · Ranked\nhtt
+ ps://itch.io/jam/lve-jam-2026-b-side
+URL:https://itch.io/jam/lve-jam-2026-b-side
+END:VEVENT
+BEGIN:VEVENT
+UID:qtYVFr0T3tGohPywmXNg@hmbg.kr
+DTSTAMP:20261012T025610Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261115
+SUMMARY:[게임잼] ShroomJam 2026
+DESCRIPTION:주최: PotaJoe · 참가 143명 · Ranked\nhttps://itch.io/jam
+ /shroomjam-2026
+URL:https://itch.io/jam/shroomjam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:rd15Udtf9kmRxkhLyF8z@hmbg.kr
+DTSTAMP:20261012T025610Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261117
+SUMMARY:[게임잼] GDevelop BIG Game Jam #10
+DESCRIPTION:주최: GDevelop\, HelperWesley · 참가 606명 · Ranked\nhtt
+ ps://itch.io/jam/gdevelop-big-game-jam-10
+URL:https://itch.io/jam/gdevelop-big-game-jam-10
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-month-of-horror-2@hmbg.kr
@@ -204,6 +731,77 @@ DESCRIPTION:주최: denparin\, denpa\, kalinzero\, canislatransed · 진행
 URL:https://itch.io/jam/denpa-vn-jam-2026
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-godot-wild-jam-99@hmbg.kr
+DTSTAMP:20261012T100701Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261124
+SUMMARY:[게임잼] Godot Wild Jam #99
+DESCRIPTION:주최: Godot Wild Jam · 참가 52명 · Ranked\nhttps://itch.
+ io/jam/godot-wild-jam-99
+URL:https://itch.io/jam/godot-wild-jam-99
+END:VEVENT
+BEGIN:VEVENT
+UID:bJ7oHLDjfMybouIBujiu@hmbg.kr
+DTSTAMP:20261012T025611Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261217
+SUMMARY:[게임잼] Metroidvania Month Finale
+DESCRIPTION:주최: Falcon Nova · 참가 332명\nhttps://itch.io/jam/metro
+ idvania-month-34
+URL:https://itch.io/jam/metroidvania-month-34
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-month-of-horror-3@hmbg.kr
+DTSTAMP:20261012T100703Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261222
+SUMMARY:[게임잼] Month of Horror #3: Endless Ocean
+DESCRIPTION:주최: Beregon\, BroodyGaming · 참가 40명 · Ranked\nhttps
+ ://itch.io/jam/month-of-horror-3
+URL:https://itch.io/jam/month-of-horror-3
+END:VEVENT
+BEGIN:VEVENT
+UID:FgJVRiCMo25j3O4EwHeg@hmbg.kr
+DTSTAMP:20261012T025611Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+SUMMARY:[게임잼] RPG Maker Horror Game Jam: Annual Edition 2026
+DESCRIPTION:주최: Beregon\, BroodyGaming · 진행 중 · 제출 마감
+ 일 · 참가 124명\nhttps://itch.io/jam/rpg-maker-horror-game-jam-annual
+ -edition-2026
+URL:https://itch.io/jam/rpg-maker-horror-game-jam-annual-edition-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:ycC3u5GlMGFwWjtvO7O7@hmbg.kr
+DTSTAMP:20261012T025611Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261209
+SUMMARY:[게임잼] Pixel Forge MEGA JAM | $30k Prizes + Cash !
+DESCRIPTION:주최: PIXEL FORGE · 참가 96명 · Ranked\nhttps://itch.io/
+ jam/pixel-forge-mega-jam
+URL:https://itch.io/jam/pixel-forge-mega-jam
+END:VEVENT
+BEGIN:VEVENT
+UID:HVKoUHc50pJFgCG5Bc4U@hmbg.kr
+DTSTAMP:20261012T025611Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261205
+SUMMARY:[게임잼] 3x3x3 Jam
+DESCRIPTION:주최: Macrow · 참가 70명 · Ranked\nhttps://itch.io/jam/3
+ x3x3-jam
+URL:https://itch.io/jam/3x3x3-jam
+END:VEVENT
+BEGIN:VEVENT
+UID:XX4ERh5hACV08TsPNGTC@hmbg.kr
+DTSTAMP:20261012T025611Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:[게임잼] Love is Unconventional Jam! 2026
+DESCRIPTION:주최: HusbandoGoddess · 진행 중 · 제출 마감일 · 
+ 참가 118명\nhttps://itch.io/jam/love-is-unconventional-2026
+URL:https://itch.io/jam/love-is-unconventional-2026
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-yuri-jam-2026@hmbg.kr
 DTSTAMP:20261012T025125Z
 DTSTART;VALUE=DATE:20261201
@@ -212,6 +810,16 @@ SUMMARY:[게임잼] Yuri Jam 2026
 DESCRIPTION:주최: Snek RK\, Blood Machine\, lightningwing92 · 진행 중
   · 제출 마감일 · 참가 348명\nhttps://itch.io/jam/yuri-jam-2026
 URL:https://itch.io/jam/yuri-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:gOzwXL1nJEsgydLByDjc@hmbg.kr
+DTSTAMP:20261012T025611Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+SUMMARY:[게임잼] The Queer Medieval Jam
+DESCRIPTION:주최: Shigure · 진행 중 · 제출 마감일 · 참가 161
+ 명\nhttps://itch.io/jam/the-queer-medieval-jam
+URL:https://itch.io/jam/the-queer-medieval-jam
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-doandigital@hmbg.kr
@@ -224,6 +832,36 @@ DESCRIPTION:주최: Doan Digital · 진행 중 · 제출 마감일 · 참
 URL:https://itch.io/jam/doandigital
 END:VEVENT
 BEGIN:VEVENT
+UID:VKo2LGJtg36LOyeatQS0@hmbg.kr
+DTSTAMP:20261012T025611Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261215
+SUMMARY:[게임잼] The Eye Jam III: Folk Horror
+DESCRIPTION:주최: SeeOne · 참가 167명 · Ranked\nhttps://itch.io/jam/
+ the-eye-jam3
+URL:https://itch.io/jam/the-eye-jam3
+END:VEVENT
+BEGIN:VEVENT
+UID:QTqzwjCl75U6dN61IL0D@hmbg.kr
+DTSTAMP:20261012T025612Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261216
+SUMMARY:[게임잼] Grassroots Game Jam 2026
+DESCRIPTION:주최: Grassroots Game Jam\, Brian Neff\, Raven's Library · 
+ 참가 71명 · Ranked\nhttps://itch.io/jam/grassroots-game-jam-2026
+URL:https://itch.io/jam/grassroots-game-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:0hPdmw2kwbVyh2ZCMOhi@hmbg.kr
+DTSTAMP:20261012T025612Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261222
+SUMMARY:[게임잼] Godot Wild Jam #100
+DESCRIPTION:주최: Godot Wild Jam · 참가 82명 · Ranked\nhttps://itch.
+ io/jam/godot-wild-jam-100
+URL:https://itch.io/jam/godot-wild-jam-100
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-our-game-lab@hmbg.kr
 DTSTAMP:20261012T025121Z
 DTSTART;VALUE=DATE:20261224
@@ -234,6 +872,117 @@ DESCRIPTION:주최: socialnetworkgames · 진행 중 · 제출 마감일 ·
 URL:https://itch.io/jam/our-game-lab
 END:VEVENT
 BEGIN:VEVENT
+UID:ym4oCtuxXTbq1cDXoi6d@hmbg.kr
+DTSTAMP:20261012T025612Z
+DTSTART;VALUE=DATE:20261224
+DTEND;VALUE=DATE:20261225
+SUMMARY:[게임잼] Seasonal RPG Game Jam #1 - Autumn 2026
+DESCRIPTION:주최: artistotel · 진행 중 · 제출 마감일 · 참가 
+ 212명\nhttps://itch.io/jam/seasonal-rpg-game-jam-1
+URL:https://itch.io/jam/seasonal-rpg-game-jam-1
+END:VEVENT
+BEGIN:VEVENT
+UID:3YbIUFoQ9WmSSSDzAjU3@hmbg.kr
+DTSTAMP:20261012T025612Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270102
+SUMMARY:[게임잼] 2026 Annual Jam
+DESCRIPTION:주최: Infiland · 진행 중 · 제출 마감일 · 참가 29
+ 3명\nhttps://itch.io/jam/2026-jam
+URL:https://itch.io/jam/2026-jam
+END:VEVENT
+BEGIN:VEVENT
+UID:CdJsps5akwTfLiDUxGmY@hmbg.kr
+DTSTAMP:20261012T025612Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270102
+SUMMARY:[게임잼] Interactive Fiction Showcase 2026
+DESCRIPTION:주최: manonamora · 진행 중 · 제출 마감일 · 참가 
+ 290명\nhttps://itch.io/jam/interactive-fiction-showcase-2026
+URL:https://itch.io/jam/interactive-fiction-showcase-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:TFBHoV2LeoewyA2SnrLL@hmbg.kr
+DTSTAMP:20261012T025613Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270102
+SUMMARY:[게임잼] Make Moves Jam
+DESCRIPTION:주최: Plus One Exp\, Kegan (@Keganexe)\, Aaron King · 진행
+  중 · 제출 마감일 · 참가 154명\nhttps://itch.io/jam/makemoves
+URL:https://itch.io/jam/makemoves
+END:VEVENT
+BEGIN:VEVENT
+UID:fTlQ7rbRXpqqPlve5wZq@hmbg.kr
+DTSTAMP:20261012T025613Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270102
+SUMMARY:[게임잼] Pixelverse Jam 2026
+DESCRIPTION:주최: DisasterRoyal346 · 진행 중 · 제출 마감일 · 
+ 참가 106명\nhttps://itch.io/jam/pixelverse-jam-2026
+URL:https://itch.io/jam/pixelverse-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-gdko-2027-round-1@hmbg.kr
+DTSTAMP:20261012T100700Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270116
+SUMMARY:[게임잼] GDKO 2027 Round 1
+DESCRIPTION:주최: Xanderwood · 참가 52명 · Ranked\nhttps://itch.io/j
+ am/gdko-2027-round-1
+URL:https://itch.io/jam/gdko-2027-round-1
+END:VEVENT
+BEGIN:VEVENT
+UID:kvuQ8UAe2IpVZ9balML4@hmbg.kr
+DTSTAMP:20261012T025613Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270102
+SUMMARY:[게임잼] WHAT ARE YOU AFRAID OF?
+DESCRIPTION:주최: earacorn · 진행 중 · 제출 마감일 · 참가 23
+ 1명\nhttps://itch.io/jam/what-are-you-afraid-of-
+URL:https://itch.io/jam/what-are-you-afraid-of-
+END:VEVENT
+BEGIN:VEVENT
+UID:iO5vSpNtBiod9igzPOQW@hmbg.kr
+DTSTAMP:20261012T025613Z
+DTSTART;VALUE=DATE:20270105
+DTEND;VALUE=DATE:20270206
+SUMMARY:[게임잼] 4 PAGE COMIC JAM 2027
+DESCRIPTION:주최: MOC · 참가 199명\nhttps://itch.io/jam/4-page-comic-
+ jam-2027
+URL:https://itch.io/jam/4-page-comic-jam-2027
+END:VEVENT
+BEGIN:VEVENT
+UID:7ICZ7ax9f2NS9l6rIvr8@hmbg.kr
+DTSTAMP:20261012T025613Z
+DTSTART;VALUE=DATE:20270110
+DTEND;VALUE=DATE:20270125
+SUMMARY:[게임잼] Comfy Jam: Winter🗻
+DESCRIPTION:주최: Macrow · 참가 62명 · Ranked\nhttps://itch.io/jam/c
+ omfy-jam-winter-2027
+URL:https://itch.io/jam/comfy-jam-winter-2027
+END:VEVENT
+BEGIN:VEVENT
+UID:1EYrQcDMk6vvYRTh5Mg4@hmbg.kr
+DTSTAMP:20261012T025613Z
+DTSTART;VALUE=DATE:20270201
+DTEND;VALUE=DATE:20270202
+SUMMARY:[게임잼] Anything Jam 2026 (games\, zines\, writing\, comics\, a
+ ssets\, ANYTHING)
+DESCRIPTION:주최: Galvan · 진행 중 · 제출 마감일 · 참가 101
+ 명\nhttps://itch.io/jam/anything-jam-2026
+URL:https://itch.io/jam/anything-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:iXvZoNu3t7EkhtmwW30R@hmbg.kr
+DTSTAMP:20261012T025614Z
+DTSTART;VALUE=DATE:20270214
+DTEND;VALUE=DATE:20270222
+SUMMARY:[게임잼] Brackeys Game Jam 2027.1
+DESCRIPTION:주최: Brackeys\, Duxez\, AquaXV\, Yasahiro · 참가 586명 
+ · Ranked\nhttps://itch.io/jam/brackeys-17
+URL:https://itch.io/jam/brackeys-17
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-5-year-long-jam@hmbg.kr
 DTSTAMP:20261012T025120Z
 DTSTART;VALUE=DATE:20270301
@@ -242,5 +991,45 @@ SUMMARY:[게임잼] 5 Year Long Jam
 DESCRIPTION:주최: Xeight · 진행 중 · 제출 마감일 · 참가 1\,2
  68명\nhttps://itch.io/jam/5-year-long-jam
 URL:https://itch.io/jam/5-year-long-jam
+END:VEVENT
+BEGIN:VEVENT
+UID:IziR3KAOj5K81h0htLsw@hmbg.kr
+DTSTAMP:20261012T025614Z
+DTSTART;VALUE=DATE:20270401
+DTEND;VALUE=DATE:20270601
+SUMMARY:[게임잼] Yuri Comic Jam 2027
+DESCRIPTION:주최: BinaryAndLove\, Masha! · 참가 211명\nhttps://itch.i
+ o/jam/yuri-comic-jam-2027
+URL:https://itch.io/jam/yuri-comic-jam-2027
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-gamedevjs-2027@hmbg.kr
+DTSTAMP:20261012T100659Z
+DTSTART;VALUE=DATE:20270414
+DTEND;VALUE=DATE:20270428
+SUMMARY:[게임잼] Gamedev.js Jam 2027
+DESCRIPTION:주최: End3r\, Enclave Games · 참가 53명 · Ranked\nhttps:
+ //itch.io/jam/gamedevjs-2027
+URL:https://itch.io/jam/gamedevjs-2027
+END:VEVENT
+BEGIN:VEVENT
+UID:PeSPo210SJhkphlAgEIe@hmbg.kr
+DTSTAMP:20261012T025614Z
+DTSTART;VALUE=DATE:20270812
+DTEND;VALUE=DATE:20270817
+SUMMARY:[게임잼] GMTK Game Jam 2027
+DESCRIPTION:주최: Game Maker's Toolkit · 참가 1\,688명 · Ranked\nhtt
+ ps://itch.io/jam/gmtk-2027
+URL:https://itch.io/jam/gmtk-2027
+END:VEVENT
+BEGIN:VEVENT
+UID:oiKJHxTCmyLnvvmr0sVI@hmbg.kr
+DTSTAMP:20261012T025615Z
+DTSTART;VALUE=DATE:20270910
+DTEND;VALUE=DATE:20270921
+SUMMARY:[게임잼] GBJAM 15
+DESCRIPTION:주최: Polyducks · 참가 167명 · Ranked\nhttps://itch.io/j
+ am/gbjam-15
+URL:https://itch.io/jam/gbjam-15
 END:VEVENT
 END:VCALENDAR
