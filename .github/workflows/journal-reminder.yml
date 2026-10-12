@@ -1,0 +1,42 @@
+name: Journal reminder (Discord)
+
+on:
+  schedule:
+    - cron: '0 3 * * 0'   # 일요일 12:00 KST — 이번 주 리마인드
+    - cron: '0 0 * * 1'   # 월요일 09:00 KST — 지난주 최종 미제출 공지
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'auto(요일로 판단) / remind(이번 주) / final(지난주)'
+        default: auto
+        type: choice
+        options: [auto, remind, final]
+      dry_run:
+        description: '디스코드로 보내지 않고 로그만 출력'
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install firebase-admin
+        run: npm install --no-save --no-package-lock firebase-admin@12
+
+      - name: Send journal reminder
+        run: node scripts/journal-reminder.mjs ${{ inputs.mode || 'auto' }}
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_REMINDER_WEBHOOK_URL: ${{ secrets.DISCORD_REMINDER_WEBHOOK_URL }}
+          TEAM_WEBHOOKS: ${{ secrets.TEAM_WEBHOOKS }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
