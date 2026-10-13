@@ -309,6 +309,16 @@ DESCRIPTION:주최: TheoClarke\, Chloe/Zaetu · 참가 127명 · Ranked\nht
 URL:https://itch.io/jam/spooky2djam26
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-hensjam@hmbg.kr
+DTSTAMP:20261013T100011Z
+DTSTART;VALUE=DATE:20261018
+DTEND;VALUE=DATE:20261029
+SUMMARY:[게임잼] THE HENSJAM
+DESCRIPTION:주최: Hensley · 참가 23명 · Ranked\nhttps://itch.io/jam/
+ hensjam
+URL:https://itch.io/jam/hensjam
+END:VEVENT
+BEGIN:VEVENT
 UID:LxvPCXISlHBFgke5HNHQ@hmbg.kr
 DTSTAMP:20261012T025605Z
 DTSTART;VALUE=DATE:20261019
@@ -582,6 +592,16 @@ SUMMARY:[게임잼] Improve My Game Jam 47
 DESCRIPTION:주최: anomrac21 · 참가 31명 · Ranked\nhttps://itch.io/ja
  m/improve-my-game-jam-47
 URL:https://itch.io/jam/improve-my-game-jam-47
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-slapjam-ai-2@hmbg.kr
+DTSTAMP:20261013T100011Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261102
+SUMMARY:[게임잼] Slapjam #2
+DESCRIPTION:주최: slapjam · 참가 22명 · Ranked\nhttps://itch.io/jam/
+ slapjam-ai-2
+URL:https://itch.io/jam/slapjam-ai-2
 END:VEVENT
 BEGIN:VEVENT
 UID:CSzfw3vCbkKyBUqT18Zv@hmbg.kr
@@ -953,6 +973,16 @@ DESCRIPTION:주최: HusbandoGoddess · 진행 중 · 제출 마감일 ·
 URL:https://itch.io/jam/love-is-unconventional-2026
 END:VEVENT
 BEGIN:VEVENT
+UID:itch--pixel-deck-jam-1@hmbg.kr
+DTSTAMP:20261013T100012Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261209
+SUMMARY:[게임잼] PIXEL-DECK JAM #1
+DESCRIPTION:주최: JedimeisterX · 참가 20명 · Ranked\nhttps://itch.io
+ /jam/-pixel-deck-jam-1
+URL:https://itch.io/jam/-pixel-deck-jam-1
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-yuri-jam-2026@hmbg.kr
 DTSTAMP:20261012T025125Z
 DTSTART;VALUE=DATE:20261201
@@ -1111,6 +1141,16 @@ SUMMARY:[게임잼] 4 PAGE COMIC JAM 2027
 DESCRIPTION:주최: MOC · 참가 199명\nhttps://itch.io/jam/4-page-comic-
  jam-2027
 URL:https://itch.io/jam/4-page-comic-jam-2027
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-furries@hmbg.kr
+DTSTAMP:20261013T100009Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270120
+SUMMARY:[게임잼] Furry Game Jam #3 - Winter Edition 2026
+DESCRIPTION:주최: SUDO\, Furry Game Jam · 참가 29명 · Ranked\nhttps:
+ //itch.io/jam/furries
+URL:https://itch.io/jam/furries
 END:VEVENT
 BEGIN:VEVENT
 UID:7ICZ7ax9f2NS9l6rIvr8@hmbg.kr
