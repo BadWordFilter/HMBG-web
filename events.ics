@@ -523,6 +523,17 @@ DESCRIPTION:주최: DougVeira · 참가 20명 · Ranked\nhttps://itch.io/ja
 URL:https://itch.io/jam/retro-pixel-jam
 END:VEVENT
 BEGIN:VEVENT
+UID:wevity-111588@hmbg.kr
+DTSTAMP:20261013T022227Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261027
+SUMMARY:[공모전] 나랏돈 50조 찾기 프로젝트 - 나라장터 해
+ 커톤
+DESCRIPTION:주최: 개혁신당 · 분야: 웹/모바일/IT · 접수 마
+ 감일\nhttps://www.wevity.com/?c=find&s=1&gbn=view&gp=1&ix=111588
+URL:https://www.wevity.com/?c=find&s=1&gbn=view&gp=1&ix=111588
+END:VEVENT
+BEGIN:VEVENT
 UID:8BQ4a4ZRVyMKHYatpE2x@hmbg.kr
 DTSTAMP:20261012T025606Z
 DTSTART;VALUE=DATE:20261027
