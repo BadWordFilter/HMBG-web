@@ -209,6 +209,16 @@ DESCRIPTION:주최: dg · 참가 22명 · Ranked\nhttps://itch.io/jam/jamfe
 URL:https://itch.io/jam/jamference-ai-game-jam-hack-2
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-trijam-394@hmbg.kr
+DTSTAMP:20261014T233655Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261020
+SUMMARY:[게임잼] Trijam #394: The 3 hour game jam
+DESCRIPTION:주최: Trijam\, KrisKuroni\, nerdPoint · 참가 20명 · Rank
+ ed\nhttps://itch.io/jam/trijam-394
+URL:https://itch.io/jam/trijam-394
+END:VEVENT
+BEGIN:VEVENT
 UID:qoha3JJO2xe4CQhSeZId@hmbg.kr
 DTSTAMP:20261012T025604Z
 DTSTART;VALUE=DATE:20261016
@@ -317,6 +327,16 @@ SUMMARY:[게임잼] Micro Jam 067: Windows ($350+ Prizes!)
 DESCRIPTION:주최: tobias\, SeeOne · 참가 52명 · Ranked\nhttps://itch
  .io/jam/micro-jam-067
 URL:https://itch.io/jam/micro-jam-067
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-weekly-note-music-composing-jam-56@hmbg.kr
+DTSTAMP:20261014T233654Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261025
+SUMMARY:[게임잼] Weekly Note Music Composing Jam #56
+DESCRIPTION:주최: emscottish · 참가 21명 · Ranked\nhttps://itch.io/j
+ am/weekly-note-music-composing-jam-56
+URL:https://itch.io/jam/weekly-note-music-composing-jam-56
 END:VEVENT
 BEGIN:VEVENT
 UID:pq9igfoxgBGk9gzT7Nkn@hmbg.kr
