@@ -99,6 +99,16 @@ DESCRIPTION:주최: gamedesignaccount · 참가 346명 · Ranked\nhttps://i
 URL:https://itch.io/jam/your-worst-ideas
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-out-of-the-drawer-jam@hmbg.kr
+DTSTAMP:20261014T081906Z
+DTSTART;VALUE=DATE:20261014
+DTEND;VALUE=DATE:20261018
+SUMMARY:[게임잼] Out of the Drawer Jam
+DESCRIPTION:주최: TM code · 참가 25명 · Ranked\nhttps://itch.io/jam/
+ out-of-the-drawer-jam
+URL:https://itch.io/jam/out-of-the-drawer-jam
+END:VEVENT
+BEGIN:VEVENT
 UID:3Mcd3rHlWyUvvxDUeGQd@hmbg.kr
 DTSTAMP:20261012T025604Z
 DTSTART;VALUE=DATE:20261015
