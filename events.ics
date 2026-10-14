@@ -179,6 +179,16 @@ DESCRIPTION:주최: Bad Plan Studios · 참가 26명 · Ranked\nhttps://itc
 URL:https://itch.io/jam/bad-plan-horror-jam
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-jamference-ai-game-jam-hack-2@hmbg.kr
+DTSTAMP:20261014T000453Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261024
+SUMMARY:[게임잼] Jamference: AI Game Jam Hack 2
+DESCRIPTION:주최: dg · 참가 22명 · Ranked\nhttps://itch.io/jam/jamfe
+ rence-ai-game-jam-hack-2
+URL:https://itch.io/jam/jamference-ai-game-jam-hack-2
+END:VEVENT
+BEGIN:VEVENT
 UID:qoha3JJO2xe4CQhSeZId@hmbg.kr
 DTSTAMP:20261012T025604Z
 DTSTART;VALUE=DATE:20261016
@@ -439,6 +449,16 @@ DESCRIPTION:주최: Pixel Tanuki Games\, 🍄 mycelium 🦝\, SomeRanDev\,
  JustInvoke\, Game Clique · 참가 39명 · Ranked\nhttps://itch.io/jam/ba
  ckseating-allowed-jam-2026
 URL:https://itch.io/jam/backseating-allowed-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-beginners-jam-halloween-2026@hmbg.kr
+DTSTAMP:20261014T000454Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261031
+SUMMARY:[게임잼] Beginner's Jam Halloween 2026
+DESCRIPTION:주최: Vatredox · 참가 21명 · Ranked\nhttps://itch.io/jam
+ /beginners-jam-halloween-2026
+URL:https://itch.io/jam/beginners-jam-halloween-2026
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-chili-code-jam-5@hmbg.kr
