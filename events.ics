@@ -249,6 +249,16 @@ DESCRIPTION:주최: SCREAM ZONE · 참가 903명 · Ranked\nhttps://itch.io
 URL:https://itch.io/jam/scream-jam-2026
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-1-day-jam-4@hmbg.kr
+DTSTAMP:20261015T135206Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261019
+SUMMARY:[게임잼] 1-DAY JAM #4 + Prizes
+DESCRIPTION:주최: MYline media 👤 · 참가 21명 · Ranked\nhttps://it
+ ch.io/jam/1-day-jam-4
+URL:https://itch.io/jam/1-day-jam-4
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-braincloud-jam@hmbg.kr
 DTSTAMP:20261012T100705Z
 DTSTART;VALUE=DATE:20261017
@@ -900,6 +910,16 @@ DESCRIPTION:주최: Monty Guiraud · 참가 49명 · Ranked\nhttps://itch.i
 URL:https://itch.io/jam/the-big-gay-comic-jam
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-20gameschallenge-autumn-2026@hmbg.kr
+DTSTAMP:20261015T135205Z
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261124
+SUMMARY:[게임잼] 20 Games Challenge - Autumn Jam 2026!
+DESCRIPTION:주최: Fictional\, SDGGames · 참가 25명 · Ranked\nhttps:/
+ /itch.io/jam/20gameschallenge-autumn-2026
+URL:https://itch.io/jam/20gameschallenge-autumn-2026
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-game-gauntlet-sim-jam@hmbg.kr
 DTSTAMP:20261012T025123Z
 DTSTART;VALUE=DATE:20261105
@@ -1283,6 +1303,16 @@ SUMMARY:[게임잼] Gamedev.js Jam 2027
 DESCRIPTION:주최: End3r\, Enclave Games · 참가 53명 · Ranked\nhttps:
  //itch.io/jam/gamedevjs-2027
 URL:https://itch.io/jam/gamedevjs-2027
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-z4597annualgamejam2026@hmbg.kr
+DTSTAMP:20261015T135201Z
+DTSTART;VALUE=DATE:20270709
+DTEND;VALUE=DATE:20270724
+SUMMARY:[게임잼] 🎮⚡ Z4597 ANNUAL GAME JAM 2027⚡🎮
+DESCRIPTION:주최: Z4597 · 참가 46명 · Ranked\nhttps://itch.io/jam/z4
+ 597annualgamejam2026
+URL:https://itch.io/jam/z4597annualgamejam2026
 END:VEVENT
 BEGIN:VEVENT
 UID:PeSPo210SJhkphlAgEIe@hmbg.kr
