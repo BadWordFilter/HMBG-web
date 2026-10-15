@@ -664,6 +664,17 @@ DESCRIPTION:주최: slapjam · 참가 22명 · Ranked\nhttps://itch.io/jam/
 URL:https://itch.io/jam/slapjam-ai-2
 END:VEVENT
 BEGIN:VEVENT
+UID:wevity-111685@hmbg.kr
+DTSTAMP:20261015T075618Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:[공모전] 2026 제8회 TS 보안 허점을 찾아라 공모전
+DESCRIPTION:주최: 한국교통안전공단 · 분야: 웹/모바일/IT\, 
+ 게임/소프트웨어 · 접수 마감일\nhttps://www.wevity.com/?c=find
+ &s=1&gbn=view&gp=1&ix=111685
+URL:https://www.wevity.com/?c=find&s=1&gbn=view&gp=1&ix=111685
+END:VEVENT
+BEGIN:VEVENT
 UID:CSzfw3vCbkKyBUqT18Zv@hmbg.kr
 DTSTAMP:20261012T025607Z
 DTSTART;VALUE=DATE:20261031
