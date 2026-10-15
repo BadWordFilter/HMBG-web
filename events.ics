@@ -521,6 +521,16 @@ DESCRIPTION:주최: SeeOne · 참가 33명 · Ranked\nhttps://itch.io/jam/c
 URL:https://itch.io/jam/chili-code-jam-5
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-mini-jam-222-enchanted@hmbg.kr
+DTSTAMP:20261015T233057Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261027
+SUMMARY:[게임잼] Mini Jam 222: Enchanted
+DESCRIPTION:주최: ZahranW · 참가 30명 · Ranked\nhttps://itch.io/jam/
+ mini-jam-222-enchanted
+URL:https://itch.io/jam/mini-jam-222-enchanted
+END:VEVENT
+BEGIN:VEVENT
 UID:p72ymy6D5f7saUd5cQgy@hmbg.kr
 DTSTAMP:20261012T025606Z
 DTSTART;VALUE=DATE:20261023
