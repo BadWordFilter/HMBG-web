@@ -309,6 +309,16 @@ DESCRIPTION:주최: pokiios · 참가 20명 · Ranked\nhttps://itch.io/jam/
 URL:https://itch.io/jam/deejam
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-dutch-game-jam-6-fall-2026@hmbg.kr
+DTSTAMP:20261016T183507Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261026
+SUMMARY:[게임잼] 🇳🇱 Dutch Game Jam #6 - Fall 2026
+DESCRIPTION:주최: mathiasveldhuizen · 참가 22명 · Ranked\nhttps://it
+ ch.io/jam/dutch-game-jam-6-fall-2026
+URL:https://itch.io/jam/dutch-game-jam-6-fall-2026
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-game-jam-europe-starting@hmbg.kr
 DTSTAMP:20261012T204650Z
 DTSTART;VALUE=DATE:20261017
@@ -519,6 +529,16 @@ SUMMARY:[게임잼] 🦐🦐 Chili Code Jam #5
 DESCRIPTION:주최: SeeOne · 참가 33명 · Ranked\nhttps://itch.io/jam/c
  hili-code-jam-5
 URL:https://itch.io/jam/chili-code-jam-5
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-jame-gam-game-jam@hmbg.kr
+DTSTAMP:20261016T183458Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261027
+SUMMARY:[게임잼] the jame gam game jam (for teenagers!)
+DESCRIPTION:주최: augie\, Hack Club · 참가 136명 · Ranked\nhttps://i
+ tch.io/jam/jame-gam-game-jam
+URL:https://itch.io/jam/jame-gam-game-jam
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-mini-jam-222-enchanted@hmbg.kr
@@ -829,6 +849,26 @@ DESCRIPTION:주최: manonamora\, Autumn Chen\, Lapin Lunaire Games · 진
 URL:https://itch.io/jam/bare-bones-jam-26
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-bevy-jam-8@hmbg.kr
+DTSTAMP:20261016T183509Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261110
+SUMMARY:[게임잼] Bevy Jam #8
+DESCRIPTION:주최: bevy · 참가 20명 · Ranked\nhttps://itch.io/jam/bev
+ y-jam-8
+URL:https://itch.io/jam/bevy-jam-8
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-cyg-15@hmbg.kr
+DTSTAMP:20261016T183509Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261202
+SUMMARY:[게임잼] Continue Your Game 15
+DESCRIPTION:주최: Mouse Potato Does Stuff · 참가 20명 · Ranked\nhttp
+ s://itch.io/jam/cyg-15
+URL:https://itch.io/jam/cyg-15
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-gamelike-jam-012@hmbg.kr
 DTSTAMP:20261012T204647Z
 DTSTART;VALUE=DATE:20261101
@@ -1054,6 +1094,16 @@ DESCRIPTION:주최: Beregon\, BroodyGaming · 진행 중 · 제출 마감
 URL:https://itch.io/jam/rpg-maker-horror-game-jam-annual-edition-2026
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-2026-ost-album-jam-reprise@hmbg.kr
+DTSTAMP:20261016T183507Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261218
+SUMMARY:[게임잼] 2026 OST Album Jam - Reprise
+DESCRIPTION:주최: Grunt. · 참가 23명 · Ranked\nhttps://itch.io/jam/2
+ 026-ost-album-jam-reprise
+URL:https://itch.io/jam/2026-ost-album-jam-reprise
+END:VEVENT
+BEGIN:VEVENT
 UID:ycC3u5GlMGFwWjtvO7O7@hmbg.kr
 DTSTAMP:20261012T025611Z
 DTSTART;VALUE=DATE:20261128
@@ -1152,6 +1202,16 @@ SUMMARY:[게임잼] Grassroots Game Jam 2026
 DESCRIPTION:주최: Grassroots Game Jam\, Brian Neff\, Raven's Library · 
  참가 71명 · Ranked\nhttps://itch.io/jam/grassroots-game-jam-2026
 URL:https://itch.io/jam/grassroots-game-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-b3agz-jam-2026@hmbg.kr
+DTSTAMP:20261016T183508Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261218
+SUMMARY:[게임잼] b3agz Jam 2026
+DESCRIPTION:주최: b3agz · 참가 20명 · Ranked\nhttps://itch.io/jam/b3
+ agz-jam-2026
+URL:https://itch.io/jam/b3agz-jam-2026
 END:VEVENT
 BEGIN:VEVENT
 UID:0hPdmw2kwbVyh2ZCMOhi@hmbg.kr
@@ -1283,6 +1343,16 @@ SUMMARY:[게임잼] Anything Jam 2026 (games\, zines\, writing\, comics\, a
 DESCRIPTION:주최: Galvan · 진행 중 · 제출 마감일 · 참가 101
  명\nhttps://itch.io/jam/anything-jam-2026
 URL:https://itch.io/jam/anything-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-games-for-blind-gamers-6@hmbg.kr
+DTSTAMP:20261016T183510Z
+DTSTART;VALUE=DATE:20270205
+DTEND;VALUE=DATE:20270309
+SUMMARY:[게임잼] Games for Blind Gamers 6
+DESCRIPTION:주최: Ericbomb\, Patricia\, shiftBacktick · 참가 17명 · 
+ Ranked\nhttps://itch.io/jam/games-for-blind-gamers-6
+URL:https://itch.io/jam/games-for-blind-gamers-6
 END:VEVENT
 BEGIN:VEVENT
 UID:iXvZoNu3t7EkhtmwW30R@hmbg.kr
