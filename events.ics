@@ -920,6 +920,16 @@ DESCRIPTION:주최: Monty Guiraud · 참가 49명 · Ranked\nhttps://itch.i
 URL:https://itch.io/jam/the-big-gay-comic-jam
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-littlejs-jam@hmbg.kr
+DTSTAMP:20261016T074905Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261104
+SUMMARY:[게임잼] LittleJS Jam 3
+DESCRIPTION:주최: Frank Force Games · 진행 중 · 제출 마감일 · 
+ 참가 112명\nhttps://itch.io/jam/littlejs-jam
+URL:https://itch.io/jam/littlejs-jam
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-20gameschallenge-autumn-2026@hmbg.kr
 DTSTAMP:20261015T135205Z
 DTSTART;VALUE=DATE:20261105
