@@ -349,6 +349,16 @@ DESCRIPTION:주최: tobias\, SeeOne · 참가 52명 · Ranked\nhttps://itch
 URL:https://itch.io/jam/micro-jam-067
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-utah-indie-game-jam-2026@hmbg.kr
+DTSTAMP:20261016T231311Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261019
+SUMMARY:[게임잼] Utah Indie Game Jam+ 2026
+DESCRIPTION:주최: Greg Squire · 참가 19명 · Ranked\nhttps://itch.io/
+ jam/utah-indie-game-jam-2026
+URL:https://itch.io/jam/utah-indie-game-jam-2026
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-weekly-note-music-composing-jam-56@hmbg.kr
 DTSTAMP:20261014T233654Z
 DTSTART;VALUE=DATE:20261017
@@ -1174,6 +1184,16 @@ DESCRIPTION:주최: Doan Digital · 진행 중 · 제출 마감일 · 참
 URL:https://itch.io/jam/doandigital
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-uplifting-game-jam-cash-prizes-10@hmbg.kr
+DTSTAMP:20261016T231312Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261216
+SUMMARY:[게임잼] Uplifting Game Jam - CASH PRIZES $$
+DESCRIPTION:주최: LightBearSoftware · 참가 17명 · Ranked\nhttps://it
+ ch.io/jam/uplifting-game-jam-cash-prizes-10
+URL:https://itch.io/jam/uplifting-game-jam-cash-prizes-10
+END:VEVENT
+BEGIN:VEVENT
 UID:VKo2LGJtg36LOyeatQS0@hmbg.kr
 DTSTAMP:20261012T025611Z
 DTSTART;VALUE=DATE:20261204
@@ -1332,6 +1352,16 @@ SUMMARY:[게임잼] Comfy Jam: Winter🗻
 DESCRIPTION:주최: Macrow · 참가 62명 · Ranked\nhttps://itch.io/jam/c
  omfy-jam-winter-2027
 URL:https://itch.io/jam/comfy-jam-winter-2027
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-pirate@hmbg.kr
+DTSTAMP:20261016T231313Z
+DTSTART;VALUE=DATE:20270118
+DTEND;VALUE=DATE:20270202
+SUMMARY:[게임잼] Pirate Software - Game Jam 20
+DESCRIPTION:주최: Pirate Software · 참가 17명 · Ranked\nhttps://itch
+ .io/jam/pirate
+URL:https://itch.io/jam/pirate
 END:VEVENT
 BEGIN:VEVENT
 UID:1EYrQcDMk6vvYRTh5Mg4@hmbg.kr
