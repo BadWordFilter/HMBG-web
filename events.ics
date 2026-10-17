@@ -419,6 +419,16 @@ DESCRIPTION:주최: Godot Wild Jam · 진행 중 · 제출 마감일 · 참
 URL:https://itch.io/jam/godot-wild-jam-98
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-indie-jam-2@hmbg.kr
+DTSTAMP:20261017T195835Z
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261024
+SUMMARY:[게임잼] Indie Jam
+DESCRIPTION:주최: Echo Studios · 참가 16명 · Ranked\nhttps://itch.io
+ /jam/indie-jam-2
+URL:https://itch.io/jam/indie-jam-2
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-small-scope-jam-@hmbg.kr
 DTSTAMP:20261012T025118Z
 DTSTART;VALUE=DATE:20261019
@@ -1093,6 +1103,16 @@ DESCRIPTION:주최: denparin\, denpa\, kalinzero\, canislatransed · 진행
 URL:https://itch.io/jam/denpa-vn-jam-2026
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-necrovenge-community-jam-01@hmbg.kr
+DTSTAMP:20261017T195836Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20270101
+SUMMARY:[게임잼] NECROVENGE Community Zine #01
+DESCRIPTION:주최: Philip Jensen · 참가 15명 · Ranked\nhttps://itch.i
+ o/jam/necrovenge-community-jam-01
+URL:https://itch.io/jam/necrovenge-community-jam-01
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-godot-wild-jam-99@hmbg.kr
 DTSTAMP:20261012T100701Z
 DTSTART;VALUE=DATE:20261114
@@ -1152,6 +1172,16 @@ SUMMARY:[게임잼] 2026 OST Album Jam - Reprise
 DESCRIPTION:주최: Grunt. · 참가 23명 · Ranked\nhttps://itch.io/jam/2
  026-ost-album-jam-reprise
 URL:https://itch.io/jam/2026-ost-album-jam-reprise
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-creepy-cozy-solstice-game-jam@hmbg.kr
+DTSTAMP:20261017T195837Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261215
+SUMMARY:[게임잼] Creepy Cozy Solstice Game Jam
+DESCRIPTION:주최: Unlucky Planet Games · 참가 14명 · Ranked\nhttps:/
+ /itch.io/jam/creepy-cozy-solstice-game-jam
+URL:https://itch.io/jam/creepy-cozy-solstice-game-jam
 END:VEVENT
 BEGIN:VEVENT
 UID:ycC3u5GlMGFwWjtvO7O7@hmbg.kr
