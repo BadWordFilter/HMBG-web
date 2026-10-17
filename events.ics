@@ -591,6 +591,16 @@ DESCRIPTION:주최: Critics Arcade · 참가 25명 · Ranked\nhttps://itch.
 URL:https://itch.io/jam/all-tools-allowed-3
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-dtj36-31@hmbg.kr
+DTSTAMP:20261017T072701Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261026
+SUMMARY:[게임잼] 🎃Devs That Jam 36-hour Challenge #31: Spooky Edition
+DESCRIPTION:주최: Devs That Jam · 참가 15명 · Ranked\nhttps://itch.i
+ o/jam/dtj36-31
+URL:https://itch.io/jam/dtj36-31
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-terror-jam-2026-a-halloween-game-jam@hmbg.kr
 DTSTAMP:20261012T025123Z
 DTSTART;VALUE=DATE:20261024
@@ -1101,6 +1111,16 @@ SUMMARY:[게임잼] Metroidvania Month Finale
 DESCRIPTION:주최: Falcon Nova · 참가 332명\nhttps://itch.io/jam/metro
  idvania-month-34
 URL:https://itch.io/jam/metroidvania-month-34
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-oprmj3@hmbg.kr
+DTSTAMP:20261017T072700Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261124
+SUMMARY:[게임잼] OPR Mission Jam #3
+DESCRIPTION:주최: onepagerules · 참가 15명 · Ranked\nhttps://itch.io
+ /jam/oprmj3
+URL:https://itch.io/jam/oprmj3
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-month-of-horror-3@hmbg.kr
