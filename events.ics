@@ -490,6 +490,16 @@ DESCRIPTION:주최: swipe_studios · 참가 36명 · Ranked\nhttps://itch.i
 URL:https://itch.io/jam/horror-hatch-21-day-challenge-5
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-teengame-jam-1@hmbg.kr
+DTSTAMP:20261017T023734Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261101
+SUMMARY:[게임잼] Teen Game Jam #1
+DESCRIPTION:주최: Marmalade Seal Studios · 참가 18명 · Ranked\nhttps
+ ://itch.io/jam/teengame-jam-1
+URL:https://itch.io/jam/teengame-jam-1
+END:VEVENT
+BEGIN:VEVENT
 UID:OnwHaMz7TnUc0wRSuLGy@hmbg.kr
 DTSTAMP:20261012T025606Z
 DTSTART;VALUE=DATE:20261023
@@ -887,6 +897,16 @@ SUMMARY:[게임잼] Game-like Jam 12
 DESCRIPTION:주최: HyperGameDev · 참가 26명 · Ranked\nhttps://itch.io
  /jam/gamelike-jam-012
 URL:https://itch.io/jam/gamelike-jam-012
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-printerjam2026@hmbg.kr
+DTSTAMP:20261017T023736Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261202
+SUMMARY:[게임잼] PrinterJam 2026
+DESCRIPTION:주최: Connor Sites-Bowen Pittsburgh Papercraft · 참가 16
+ 명 · Ranked\nhttps://itch.io/jam/printerjam2026
+URL:https://itch.io/jam/printerjam2026
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-scifanjam@hmbg.kr
