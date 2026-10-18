@@ -470,6 +470,17 @@ DESCRIPTION:주최: Kiri · 참가 35명 · Ranked\nhttps://itch.io/jam/3d-
 URL:https://itch.io/jam/3d-modelling-jam-14
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-music-travel-rpg-6@hmbg.kr
+DTSTAMP:20261018T174419Z
+DTSTART;VALUE=DATE:20261020
+DTEND;VALUE=DATE:20261027
+SUMMARY:[게임잼] 🎵🎧🇯🇵 Music Jam: Travel RPG #6: A Hip-Hop Br
+ oadcast
+DESCRIPTION:주최: Tokyo Frequency · 참가 16명 · Ranked\nhttps://itch
+ .io/jam/music-travel-rpg-6
+URL:https://itch.io/jam/music-travel-rpg-6
+END:VEVENT
+BEGIN:VEVENT
 UID:VTIMXhPDbUhvrxNpoojT@hmbg.kr
 DTSTAMP:20261012T025605Z
 DTSTART;VALUE=DATE:20261021
