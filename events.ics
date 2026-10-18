@@ -389,6 +389,16 @@ DESCRIPTION:주최: TheoClarke\, Chloe/Zaetu · 참가 127명 · Ranked\nht
 URL:https://itch.io/jam/spooky2djam26
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-boomer-shooter-2026@hmbg.kr
+DTSTAMP:20261018T023848Z
+DTSTART;VALUE=DATE:20261018
+DTEND;VALUE=DATE:20261102
+SUMMARY:[게임잼] Boomer Shooter 2026
+DESCRIPTION:주최: LynkBro · 참가 15명 · Ranked\nhttps://itch.io/jam/
+ boomer-shooter-2026
+URL:https://itch.io/jam/boomer-shooter-2026
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-hensjam@hmbg.kr
 DTSTAMP:20261013T100011Z
 DTSTART;VALUE=DATE:20261018
@@ -508,6 +518,16 @@ SUMMARY:[게임잼] Teen Game Jam #1
 DESCRIPTION:주최: Marmalade Seal Studios · 참가 18명 · Ranked\nhttps
  ://itch.io/jam/teengame-jam-1
 URL:https://itch.io/jam/teengame-jam-1
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-women-game-jam-2026@hmbg.kr
+DTSTAMP:20261018T023851Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261022
+SUMMARY:[게임잼] Women Game Jam | 2026
+DESCRIPTION:주최: Women Game Jam · 진행 중 · 제출 마감일 · 참
+ 가 300명\nhttps://itch.io/jam/women-game-jam-2026
+URL:https://itch.io/jam/women-game-jam-2026
 END:VEVENT
 BEGIN:VEVENT
 UID:OnwHaMz7TnUc0wRSuLGy@hmbg.kr
