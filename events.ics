@@ -622,6 +622,17 @@ DESCRIPTION:주최: Thailand Game Jam · 참가 142명 · Ranked\nhttps://i
 URL:https://itch.io/jam/thailand-horror-jam-2026
 END:VEVENT
 BEGIN:VEVENT
+UID:wevity-111734@hmbg.kr
+DTSTAMP:20261019T025227Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261024
+SUMMARY:[공모전] 2026 동해시 AI 활용 해커톤 대회
+DESCRIPTION:주최: 동해시 & 한림대 G-Lab · 분야: 웹/모바일/IT
+  · 접수 마감일\nhttps://www.wevity.com/?c=find&s=1&gbn=view&gp=1&ix=
+ 111734
+URL:https://www.wevity.com/?c=find&s=1&gbn=view&gp=1&ix=111734
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-all-tools-allowed-3@hmbg.kr
 DTSTAMP:20261012T204649Z
 DTSTART;VALUE=DATE:20261024
@@ -630,6 +641,16 @@ SUMMARY:[게임잼] All Tools Allowed #3 — A Critics Arcade AI Game Jam
 DESCRIPTION:주최: Critics Arcade · 참가 25명 · Ranked\nhttps://itch.
  io/jam/all-tools-allowed-3
 URL:https://itch.io/jam/all-tools-allowed-3
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-devplay-jam-2026@hmbg.kr
+DTSTAMP:20261019T025212Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261101
+SUMMARY:[게임잼] Dev&Play Jam 2026
+DESCRIPTION:주최: Baudo · 참가 109명 · Ranked\nhttps://itch.io/jam/d
+ evplay-jam-2026
+URL:https://itch.io/jam/devplay-jam-2026
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-dtj36-31@hmbg.kr
@@ -692,6 +713,16 @@ SUMMARY:[게임잼] A Lil Horror GameJam 2026 ☠️🎃
 DESCRIPTION:주최: Slomby Dev · 참가 81명 · Ranked\nhttps://itch.io/j
  am/a-lil-horror-gamejam-2026
 URL:https://itch.io/jam/a-lil-horror-gamejam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-jame-gam-63-halloween-edition@hmbg.kr
+DTSTAMP:20261019T025220Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261101
+SUMMARY:[게임잼] Jame Gam #63 Halloween Edition
+DESCRIPTION:주최: AcidBurritos\, AmiableVegetable\, tiimo · 참가 18명
+  · Ranked\nhttps://itch.io/jam/jame-gam-63-halloween-edition
+URL:https://itch.io/jam/jame-gam-63-halloween-edition
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-retro-pixel-jam@hmbg.kr
@@ -1172,6 +1203,16 @@ SUMMARY:[게임잼] OPR Mission Jam #3
 DESCRIPTION:주최: onepagerules · 참가 15명 · Ranked\nhttps://itch.io
  /jam/oprmj3
 URL:https://itch.io/jam/oprmj3
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-gamejamplus-2627@hmbg.kr
+DTSTAMP:20261019T025221Z
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+SUMMARY:[게임잼] GameJamPlus 26/27 - 11th Edition
+DESCRIPTION:주최: GameJamPlus · 진행 중 · 제출 마감일 · 참가
+  684명\nhttps://itch.io/jam/gamejamplus-2627
+URL:https://itch.io/jam/gamejamplus-2627
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-month-of-horror-3@hmbg.kr
