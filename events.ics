@@ -470,6 +470,16 @@ DESCRIPTION:주최: Kiri · 참가 35명 · Ranked\nhttps://itch.io/jam/3d-
 URL:https://itch.io/jam/3d-modelling-jam-14
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-horror-game-jam-gore-@hmbg.kr
+DTSTAMP:20261019T160725Z
+DTSTART;VALUE=DATE:20261020
+DTEND;VALUE=DATE:20261101
+SUMMARY:[게임잼] Horror Game Jam ( GORE)
+DESCRIPTION:주최: giovabonifacio · 참가 17명 · Ranked\nhttps://itch.
+ io/jam/horror-game-jam-gore-
+URL:https://itch.io/jam/horror-game-jam-gore-
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-music-travel-rpg-6@hmbg.kr
 DTSTAMP:20261018T174419Z
 DTSTART;VALUE=DATE:20261020
