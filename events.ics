@@ -1175,6 +1175,19 @@ DESCRIPTION:주최: Philip Jensen · 참가 15명 · Ranked\nhttps://itch.i
 URL:https://itch.io/jam/necrovenge-community-jam-01
 END:VEVENT
 BEGIN:VEVENT
+UID:wevity-111768@hmbg.kr
+DTSTAMP:20261019T082405Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:[공모전] 2026 대경권 캠퍼스 IR 챔피언십 (창업 공모
+ 전)
+DESCRIPTION:주최: (주)포항연합기술지주 · 분야: 기획/아이
+ 디어\, 광고/마케팅\, 웹/모바일/IT\, 게임/소프트웨어\, 
+ 과학/공학\, 취업/창업 · 접수 마감일\nhttps://www.wevity.com/
+ ?c=find&s=1&gbn=view&gp=1&ix=111768
+URL:https://www.wevity.com/?c=find&s=1&gbn=view&gp=1&ix=111768
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-godot-wild-jam-99@hmbg.kr
 DTSTAMP:20261012T100701Z
 DTSTART;VALUE=DATE:20261114
