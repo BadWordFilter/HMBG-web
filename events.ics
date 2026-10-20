@@ -653,6 +653,16 @@ DESCRIPTION:주최: Critics Arcade · 참가 25명 · Ranked\nhttps://itch.
 URL:https://itch.io/jam/all-tools-allowed-3
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-community-music-challenge@hmbg.kr
+DTSTAMP:20261020T030222Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261027
+SUMMARY:[게임잼] 🎶 Community Music Challenge 🎶
+DESCRIPTION:주최: Juniper Dev Discord Team\, Bela Memory\, Erin DJV · 
+ 참가 55명 · Ranked\nhttps://itch.io/jam/community-music-challenge
+URL:https://itch.io/jam/community-music-challenge
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-devplay-jam-2026@hmbg.kr
 DTSTAMP:20261019T025212Z
 DTSTART;VALUE=DATE:20261024
@@ -671,6 +681,16 @@ SUMMARY:[게임잼] 🎃Devs That Jam 36-hour Challenge #31: Spooky Edition
 DESCRIPTION:주최: Devs That Jam · 참가 15명 · Ranked\nhttps://itch.i
  o/jam/dtj36-31
 URL:https://itch.io/jam/dtj36-31
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-gddc-fall-2026-game-jam@hmbg.kr
+DTSTAMP:20261020T030226Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261103
+SUMMARY:[게임잼] UofT GDDC Fall 2026 Game Jam
+DESCRIPTION:주최: Recnats · 참가 19명 · Ranked\nhttps://itch.io/jam/
+ gddc-fall-2026-game-jam
+URL:https://itch.io/jam/gddc-fall-2026-game-jam
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-terror-jam-2026-a-halloween-game-jam@hmbg.kr
