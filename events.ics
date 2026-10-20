@@ -521,6 +521,16 @@ DESCRIPTION:주최: JacoRen · 참가 70명 · Ranked\nhttps://itch.io/jam/
 URL:https://itch.io/jam/precision-ost-jam-2
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-good-horror-jam2@hmbg.kr
+DTSTAMP:20261020T210910Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261122
+SUMMARY:[게임잼] Good horror jam #2
+DESCRIPTION:주최: Minns Jogos · 참가 20명 · Ranked\nhttps://itch.io/
+ jam/good-horror-jam2
+URL:https://itch.io/jam/good-horror-jam2
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-horror-hatch-21-day-challenge-5@hmbg.kr
 DTSTAMP:20261012T100705Z
 DTSTART;VALUE=DATE:20261021
@@ -549,6 +559,16 @@ SUMMARY:[게임잼] Women Game Jam | 2026
 DESCRIPTION:주최: Women Game Jam · 진행 중 · 제출 마감일 · 참
  가 300명\nhttps://itch.io/jam/women-game-jam-2026
 URL:https://itch.io/jam/women-game-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-this-is-halloween-jam@hmbg.kr
+DTSTAMP:20261020T210911Z
+DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261030
+SUMMARY:[게임잼] THIS IS HALLOWEEN JAM
+DESCRIPTION:주최: Lana Lux · 참가 17명 · Ranked\nhttps://itch.io/jam
+ /this-is-halloween-jam
+URL:https://itch.io/jam/this-is-halloween-jam
 END:VEVENT
 BEGIN:VEVENT
 UID:OnwHaMz7TnUc0wRSuLGy@hmbg.kr
