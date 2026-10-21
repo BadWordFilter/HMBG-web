@@ -1134,6 +1134,16 @@ DESCRIPTION:주최: GitHub · 참가 527명 · Ranked\nhttps://itch.io/jam/
 URL:https://itch.io/jam/game-off-2026
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-edu-jam-5@hmbg.kr
+DTSTAMP:20261021T190530Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261107
+SUMMARY:[게임잼] Educational Jam #5
+DESCRIPTION:주최: DTMLP · 참가 15명 · Ranked\nhttps://itch.io/jam/ed
+ u-jam-5
+URL:https://itch.io/jam/edu-jam-5
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-the-big-gay-comic-jam@hmbg.kr
 DTSTAMP:20261012T100701Z
 DTSTART;VALUE=DATE:20261102
