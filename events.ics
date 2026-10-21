@@ -561,6 +561,16 @@ DESCRIPTION:주최: Women Game Jam · 진행 중 · 제출 마감일 · 참
 URL:https://itch.io/jam/women-game-jam-2026
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-rpg-maker-rtp-challenge-2@hmbg.kr
+DTSTAMP:20261021T141836Z
+DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261110
+SUMMARY:[게임잼] RPG Maker RTP Challenge #2
+DESCRIPTION:주최: Beregon\, BroodyGaming · 참가 17명 · Ranked\nhttps
+ ://itch.io/jam/rpg-maker-rtp-challenge-2
+URL:https://itch.io/jam/rpg-maker-rtp-challenge-2
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-this-is-halloween-jam@hmbg.kr
 DTSTAMP:20261020T210911Z
 DTSTART;VALUE=DATE:20261022
@@ -794,6 +804,18 @@ SUMMARY:[공모전] 나랏돈 50조 찾기 프로젝트 - 나라장터 해
 DESCRIPTION:주최: 개혁신당 · 분야: 웹/모바일/IT · 접수 마
  감일\nhttps://www.wevity.com/?c=find&s=1&gbn=view&gp=1&ix=111588
 URL:https://www.wevity.com/?c=find&s=1&gbn=view&gp=1&ix=111588
+END:VEVENT
+BEGIN:VEVENT
+UID:wevity-111843@hmbg.kr
+DTSTAMP:20261021T141843Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261027
+SUMMARY:[공모전] 2026 한림 G-Lab@동해 AI활용 지역문제해결 
+ 해커톤
+DESCRIPTION:주최: 한림대학교\, 동해시 · 분야: 웹/모바일/IT
+  · 접수 마감일\nhttps://www.wevity.com/?c=find&s=1&gbn=view&gp=1&ix=
+ 111843
+URL:https://www.wevity.com/?c=find&s=1&gbn=view&gp=1&ix=111843
 END:VEVENT
 BEGIN:VEVENT
 UID:8BQ4a4ZRVyMKHYatpE2x@hmbg.kr
@@ -1427,6 +1449,16 @@ SUMMARY:[게임잼] Grassroots Game Jam 2026
 DESCRIPTION:주최: Grassroots Game Jam\, Brian Neff\, Raven's Library · 
  참가 71명 · Ranked\nhttps://itch.io/jam/grassroots-game-jam-2026
 URL:https://itch.io/jam/grassroots-game-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-1-bit-jam-16@hmbg.kr
+DTSTAMP:20261021T141837Z
+DTSTART;VALUE=DATE:20261208
+DTEND;VALUE=DATE:20261216
+SUMMARY:[게임잼] 1-BIT JAM 16
+DESCRIPTION:주최: MYline media 👤 · 참가 15명 · Ranked\nhttps://it
+ ch.io/jam/1-bit-jam-16
+URL:https://itch.io/jam/1-bit-jam-16
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-b3agz-jam-2026@hmbg.kr
