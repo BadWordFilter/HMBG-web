@@ -652,6 +652,16 @@ DESCRIPTION:주최: ZahranW · 참가 30명 · Ranked\nhttps://itch.io/jam/
 URL:https://itch.io/jam/mini-jam-222-enchanted
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-trijam-395@hmbg.kr
+DTSTAMP:20261022T190157Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261027
+SUMMARY:[게임잼] Trijam #395: The 3 hour game jam
+DESCRIPTION:주최: Trijam\, KrisKuroni\, nerdPoint · 참가 18명 · Rank
+ ed\nhttps://itch.io/jam/trijam-395
+URL:https://itch.io/jam/trijam-395
+END:VEVENT
+BEGIN:VEVENT
 UID:p72ymy6D5f7saUd5cQgy@hmbg.kr
 DTSTAMP:20261012T025606Z
 DTSTART;VALUE=DATE:20261023
@@ -711,6 +721,16 @@ SUMMARY:[게임잼] 🎃Devs That Jam 36-hour Challenge #31: Spooky Edition
 DESCRIPTION:주최: Devs That Jam · 참가 15명 · Ranked\nhttps://itch.i
  o/jam/dtj36-31
 URL:https://itch.io/jam/dtj36-31
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-falling-sun@hmbg.kr
+DTSTAMP:20261022T190156Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261026
+SUMMARY:[게임잼] Falling Sun
+DESCRIPTION:주최: Dat one dev · 참가 23명 · Ranked\nhttps://itch.io/
+ jam/falling-sun
+URL:https://itch.io/jam/falling-sun
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-gddc-fall-2026-game-jam@hmbg.kr
@@ -1154,6 +1174,16 @@ DESCRIPTION:주최: DTMLP · 참가 15명 · Ranked\nhttps://itch.io/jam/ed
 URL:https://itch.io/jam/edu-jam-5
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-indie-park-game-jam-6@hmbg.kr
+DTSTAMP:20261022T190158Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261202
+SUMMARY:[게임잼] 🇫🇷[100€] Indie Park Game Jam #6
+DESCRIPTION:주최: Landry GD · 참가 18명 · Ranked\nhttps://itch.io/ja
+ m/indie-park-game-jam-6
+URL:https://itch.io/jam/indie-park-game-jam-6
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-made-with-visionaire-jam-3@hmbg.kr
 DTSTAMP:20261021T235247Z
 DTSTART;VALUE=DATE:20261102
@@ -1204,6 +1234,16 @@ DESCRIPTION:주최: Game Gauntlet\, cosmicforces\, CyclicalZ · 진행 중
  · 제출 마감일 · 참가 454명\nhttps://itch.io/jam/game-gauntlet-si
  m-jam
 URL:https://itch.io/jam/game-gauntlet-sim-jam
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-official-unity-game-jam-2026@hmbg.kr
+DTSTAMP:20261022T190149Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261115
+SUMMARY:[게임잼] Official 2026 Unity Game Jam
+DESCRIPTION:주최: Unity\, BradstonUnity\, theJoyatUnity · 참가 106명 
+ · Ranked\nhttps://itch.io/jam/official-unity-game-jam-2026
+URL:https://itch.io/jam/official-unity-game-jam-2026
 END:VEVENT
 BEGIN:VEVENT
 UID:sgXaldjnLc0lIxh4Suhv@hmbg.kr
