@@ -1724,6 +1724,16 @@ DESCRIPTION:주최: Xeight · 진행 중 · 제출 마감일 · 참가 1\,2
 URL:https://itch.io/jam/5-year-long-jam
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-lsdjam-2026@hmbg.kr
+DTSTAMP:20261022T234955Z
+DTSTART;VALUE=DATE:20270301
+DTEND;VALUE=DATE:20270302
+SUMMARY:[게임잼] LSDJAM 2026
+DESCRIPTION:주최: Figglewatts · 진행 중 · 제출 마감일 · 참가
+  301명\nhttps://itch.io/jam/lsdjam-2026
+URL:https://itch.io/jam/lsdjam-2026
+END:VEVENT
+BEGIN:VEVENT
 UID:IziR3KAOj5K81h0htLsw@hmbg.kr
 DTSTAMP:20261012T025614Z
 DTSTART;VALUE=DATE:20270401
