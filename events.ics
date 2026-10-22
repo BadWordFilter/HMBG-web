@@ -1073,6 +1073,16 @@ DESCRIPTION:주최: Platinum Soul Press\, DarkChibiShadow · 진행 중 ·
 URL:https://itch.io/jam/scifanjam
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-vedantopengamejam2026@hmbg.kr
+DTSTAMP:20261022T081433Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261112
+SUMMARY:[게임잼] Vedant Open Game Jam 2026
+DESCRIPTION:주최: vedant-game-studios · 참가 16명 · Ranked\nhttps://
+ itch.io/jam/vedantopengamejam2026
+URL:https://itch.io/jam/vedantopengamejam2026
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-wgf2026@hmbg.kr
 DTSTAMP:20261012T025122Z
 DTSTART;VALUE=DATE:20261101
@@ -1328,6 +1338,18 @@ SUMMARY:[게임잼] Month of Horror #3: Endless Ocean
 DESCRIPTION:주최: Beregon\, BroodyGaming · 참가 40명 · Ranked\nhttps
  ://itch.io/jam/month-of-horror-3
 URL:https://itch.io/jam/month-of-horror-3
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-touhou-jam-17@hmbg.kr
+DTSTAMP:20261022T081431Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261124
+SUMMARY:[게임잼] Touhou Fan Game Jam 17
+DESCRIPTION:주최: Nitori\, WelpThatWorked\, GreatHornedOwl\, SolarisSect\
+ , Yal\, noeticnightjar\, hp78\, Megapig9001\, Fox McMurphy\, Jacoder23\, A
+ eon\, Kevin Minh · 참가 21명 · Ranked\nhttps://itch.io/jam/touhou-jam
+ -17
+URL:https://itch.io/jam/touhou-jam-17
 END:VEVENT
 BEGIN:VEVENT
 UID:FgJVRiCMo25j3O4EwHeg@hmbg.kr
