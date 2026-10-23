@@ -1327,6 +1327,16 @@ DESCRIPTION:주최: denparin\, denpa\, kalinzero\, canislatransed · 진행
 URL:https://itch.io/jam/denpa-vn-jam-2026
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-2026-epic-ai-megajam@hmbg.kr
+DTSTAMP:20261023T234307Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261116
+SUMMARY:[게임잼] 2026 Epic AI MegaJam
+DESCRIPTION:주최: epicgamesjams · 참가 806명\nhttps://itch.io/jam/202
+ 6-epic-ai-megajam
+URL:https://itch.io/jam/2026-epic-ai-megajam
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-necrovenge-community-jam-01@hmbg.kr
 DTSTAMP:20261017T195836Z
 DTSTART;VALUE=DATE:20261113
