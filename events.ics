@@ -652,6 +652,16 @@ DESCRIPTION:주최: ZahranW · 참가 30명 · Ranked\nhttps://itch.io/jam/
 URL:https://itch.io/jam/mini-jam-222-enchanted
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-minuit@hmbg.kr
+DTSTAMP:20261023T082243Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261025
+SUMMARY:[게임잼] Minuit-jam
+DESCRIPTION:주최: AllianceFrancaiseBangkok · 참가 16명 · Ranked\nhtt
+ ps://itch.io/jam/minuit
+URL:https://itch.io/jam/minuit
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-trijam-395@hmbg.kr
 DTSTAMP:20261022T190157Z
 DTSTART;VALUE=DATE:20261023
@@ -813,6 +823,16 @@ SUMMARY:[게임잼] Retro Pixel Jam
 DESCRIPTION:주최: DougVeira · 참가 20명 · Ranked\nhttps://itch.io/ja
  m/retro-pixel-jam
 URL:https://itch.io/jam/retro-pixel-jam
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-iade-game-jam@hmbg.kr
+DTSTAMP:20261023T082242Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261030
+SUMMARY:[게임잼] IADE Game Jam
+DESCRIPTION:주최: Digital Games - IADE/UE · 참가 17명 · Ranked\nhttp
+ s://itch.io/jam/iade-game-jam
+URL:https://itch.io/jam/iade-game-jam
 END:VEVENT
 BEGIN:VEVENT
 UID:wevity-111588@hmbg.kr
