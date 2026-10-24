@@ -825,6 +825,16 @@ DESCRIPTION:주최: DougVeira · 참가 20명 · Ranked\nhttps://itch.io/ja
 URL:https://itch.io/jam/retro-pixel-jam
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-coding-club-november-game-jam@hmbg.kr
+DTSTAMP:20261024T075046Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261123
+SUMMARY:[게임잼] Coding Club November Game Jam
+DESCRIPTION:주최: FLIPPER401 · 참가 14명 · Ranked\nhttps://itch.io/j
+ am/coding-club-november-game-jam
+URL:https://itch.io/jam/coding-club-november-game-jam
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-iade-game-jam@hmbg.kr
 DTSTAMP:20261023T082242Z
 DTSTART;VALUE=DATE:20261026
@@ -833,6 +843,16 @@ SUMMARY:[게임잼] IADE Game Jam
 DESCRIPTION:주최: Digital Games - IADE/UE · 참가 17명 · Ranked\nhttp
  s://itch.io/jam/iade-game-jam
 URL:https://itch.io/jam/iade-game-jam
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-pmkn-jam@hmbg.kr
+DTSTAMP:20261024T075049Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261031
+SUMMARY:[게임잼] Pmkn Jam
+DESCRIPTION:주최: Davissss · 참가 13명 · Ranked\nhttps://itch.io/jam
+ /pmkn-jam
+URL:https://itch.io/jam/pmkn-jam
 END:VEVENT
 BEGIN:VEVENT
 UID:wevity-111588@hmbg.kr
@@ -989,6 +1009,16 @@ DESCRIPTION:주최: malaika\, oscar pepperbloom · 진행 중 · 제출 마
 URL:https://itch.io/jam/digital-pet-jam
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-jamlloween@hmbg.kr
+DTSTAMP:20261024T075049Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261108
+SUMMARY:[게임잼] JAMLLOWEEN 2
+DESCRIPTION:주최: LAG · 참가 13명 · Ranked\nhttps://itch.io/jam/jaml
+ loween
+URL:https://itch.io/jam/jamlloween
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-micro-jam-068@hmbg.kr
 DTSTAMP:20261012T204651Z
 DTSTART;VALUE=DATE:20261031
@@ -997,6 +1027,16 @@ SUMMARY:[게임잼] Micro Jam 068: Evolution ($250+ Prizes!)
 DESCRIPTION:주최: tobias\, SeeOne · 참가 20명 · Ranked\nhttps://itch
  .io/jam/micro-jam-068
 URL:https://itch.io/jam/micro-jam-068
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-the-lost-ps2-jam@hmbg.kr
+DTSTAMP:20261024T075044Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261123
+SUMMARY:[게임잼] THE LOST PS2 JAM
+DESCRIPTION:주최: YAGER · 참가 16명 · Ranked\nhttps://itch.io/jam/th
+ e-lost-ps2-jam
+URL:https://itch.io/jam/the-lost-ps2-jam
 END:VEVENT
 BEGIN:VEVENT
 UID:mwGdaN4VZKS9OjINKEPg@hmbg.kr
@@ -1111,6 +1151,16 @@ SUMMARY:[게임잼] Science Fantasy Jam
 DESCRIPTION:주최: Platinum Soul Press\, DarkChibiShadow · 진행 중 · 
  제출 마감일 · 참가 364명\nhttps://itch.io/jam/scifanjam
 URL:https://itch.io/jam/scifanjam
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-the-strategy-game-jam-2026@hmbg.kr
+DTSTAMP:20261024T075043Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261109
+SUMMARY:[게임잼] 7-Day Strategy Game Jam
+DESCRIPTION:주최: Starborn Interactive · 참가 17명 · Ranked\nhttps:/
+ /itch.io/jam/the-strategy-game-jam-2026
+URL:https://itch.io/jam/the-strategy-game-jam-2026
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-vedantopengamejam2026@hmbg.kr
@@ -1347,6 +1397,16 @@ DESCRIPTION:주최: Philip Jensen · 참가 15명 · Ranked\nhttps://itch.i
 URL:https://itch.io/jam/necrovenge-community-jam-01
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-ultimate-ai-powered-game-jam-7@hmbg.kr
+DTSTAMP:20261024T075047Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261117
+SUMMARY:[게임잼] Ultimate AI-Powered Game Jam #7
+DESCRIPTION:주최: michyo · 참가 14명 · Ranked\nhttps://itch.io/jam/u
+ ltimate-ai-powered-game-jam-7
+URL:https://itch.io/jam/ultimate-ai-powered-game-jam-7
+END:VEVENT
+BEGIN:VEVENT
 UID:wevity-111768@hmbg.kr
 DTSTAMP:20261019T082405Z
 DTSTART;VALUE=DATE:20261113
@@ -1408,6 +1468,16 @@ SUMMARY:[게임잼] Month of Horror #3: Endless Ocean
 DESCRIPTION:주최: Beregon\, BroodyGaming · 참가 40명 · Ranked\nhttps
  ://itch.io/jam/month-of-horror-3
 URL:https://itch.io/jam/month-of-horror-3
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-imaginary-game-mini-jam-november-2026@hmbg.kr
+DTSTAMP:20261024T075048Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261123
+SUMMARY:[게임잼] Imaginary Game Mini Jam | November 2026
+DESCRIPTION:주최: Caxt Nova · 참가 13명 · Ranked\nhttps://itch.io/ja
+ m/imaginary-game-mini-jam-november-2026
+URL:https://itch.io/jam/imaginary-game-mini-jam-november-2026
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-touhou-jam-17@hmbg.kr
@@ -1593,6 +1663,16 @@ DESCRIPTION:주최: Godot Wild Jam · 참가 82명 · Ranked\nhttps://itch.
 URL:https://itch.io/jam/godot-wild-jam-100
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-bob-game-jam-2026@hmbg.kr
+DTSTAMP:20261024T075045Z
+DTSTART;VALUE=DATE:20261220
+DTEND;VALUE=DATE:20261228
+SUMMARY:[게임잼] WINTER BOB GAME JAM 2026
+DESCRIPTION:주최: EHG | bob studios · 참가 15명 · Ranked\nhttps://it
+ ch.io/jam/bob-game-jam-2026
+URL:https://itch.io/jam/bob-game-jam-2026
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-our-game-lab@hmbg.kr
 DTSTAMP:20261012T025121Z
 DTSTART;VALUE=DATE:20261224
@@ -1683,6 +1763,16 @@ DESCRIPTION:주최: MOC · 참가 199명\nhttps://itch.io/jam/4-page-comic-
 URL:https://itch.io/jam/4-page-comic-jam-2027
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-month-of-horror-4@hmbg.kr
+DTSTAMP:20261024T075045Z
+DTSTART;VALUE=DATE:20270107
+DTEND;VALUE=DATE:20270209
+SUMMARY:[게임잼] Month of Horror #4: Tortured Artist
+DESCRIPTION:주최: Beregon\, BroodyGaming · 참가 15명 · Ranked\nhttps
+ ://itch.io/jam/month-of-horror-4
+URL:https://itch.io/jam/month-of-horror-4
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-furries@hmbg.kr
 DTSTAMP:20261013T100009Z
 DTSTART;VALUE=DATE:20270109
@@ -1701,6 +1791,16 @@ SUMMARY:[게임잼] Comfy Jam: Winter🗻
 DESCRIPTION:주최: Macrow · 참가 62명 · Ranked\nhttps://itch.io/jam/c
  omfy-jam-winter-2027
 URL:https://itch.io/jam/comfy-jam-winter-2027
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-rpg-maker-horror-game-jam-18@hmbg.kr
+DTSTAMP:20261024T075048Z
+DTSTART;VALUE=DATE:20270114
+DTEND;VALUE=DATE:20270316
+SUMMARY:[게임잼] RPG Maker Horror Game Jam #18: Cursed Hotel
+DESCRIPTION:주최: Beregon\, BroodyGaming · 참가 13명 · Ranked\nhttps
+ ://itch.io/jam/rpg-maker-horror-game-jam-18
+URL:https://itch.io/jam/rpg-maker-horror-game-jam-18
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-pirate@hmbg.kr
@@ -1792,6 +1892,16 @@ SUMMARY:[게임잼] 🎮⚡ Z4597 ANNUAL GAME JAM 2027⚡🎮
 DESCRIPTION:주최: Z4597 · 참가 46명 · Ranked\nhttps://itch.io/jam/z4
  597annualgamejam2026
 URL:https://itch.io/jam/z4597annualgamejam2026
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-retro-summer@hmbg.kr
+DTSTAMP:20261024T075047Z
+DTSTART;VALUE=DATE:20270718
+DTEND;VALUE=DATE:20270804
+SUMMARY:[게임잼] Retro Summer #32BitJam
+DESCRIPTION:주최: AsFunAs.Fun\, Virtual Nomad · 참가 14명 · Ranked\n
+ https://itch.io/jam/retro-summer
+URL:https://itch.io/jam/retro-summer
 END:VEVENT
 BEGIN:VEVENT
 UID:PeSPo210SJhkphlAgEIe@hmbg.kr
