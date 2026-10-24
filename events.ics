@@ -1823,6 +1823,16 @@ DESCRIPTION:주최: Beregon\, BroodyGaming · 참가 13명 · Ranked\nhttps
 URL:https://itch.io/jam/rpg-maker-horror-game-jam-18
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-rpg-maker-themed-game-jam-18@hmbg.kr
+DTSTAMP:20261024T174635Z
+DTSTART;VALUE=DATE:20270114
+DTEND;VALUE=DATE:20270316
+SUMMARY:[게임잼] RPG Maker Themed Game Jam #18: Adventurer's Guild
+DESCRIPTION:주최: Beregon\, BroodyGaming · 참가 13명 · Ranked\nhttps
+ ://itch.io/jam/rpg-maker-themed-game-jam-18
+URL:https://itch.io/jam/rpg-maker-themed-game-jam-18
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-pirate@hmbg.kr
 DTSTAMP:20261016T231313Z
 DTSTART;VALUE=DATE:20270118
