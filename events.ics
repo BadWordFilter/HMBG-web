@@ -815,6 +815,16 @@ DESCRIPTION:주최: AcidBurritos\, AmiableVegetable\, tiimo · 참가 18명
 URL:https://itch.io/jam/jame-gam-63-halloween-edition
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-official-ai-game-jam@hmbg.kr
+DTSTAMP:20261024T130336Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261107
+SUMMARY:[게임잼] OFFICIAL AI GAME JAM
+DESCRIPTION:주최: huenx · 참가 13명 · Ranked\nhttps://itch.io/jam/of
+ ficial-ai-game-jam
+URL:https://itch.io/jam/official-ai-game-jam
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-retro-pixel-jam@hmbg.kr
 DTSTAMP:20261012T204652Z
 DTSTART;VALUE=DATE:20261025
@@ -926,6 +936,16 @@ SUMMARY:[게임잼] Improve My Game Jam 47
 DESCRIPTION:주최: anomrac21 · 참가 31명 · Ranked\nhttps://itch.io/ja
  m/improve-my-game-jam-47
 URL:https://itch.io/jam/improve-my-game-jam-47
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-jeff-the-killer-spooky-halloween-jam@hmbg.kr
+DTSTAMP:20261024T130335Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261102
+SUMMARY:[게임잼] JEff the Killer!!!! SPOOKY HALLOWEEN JAM
+DESCRIPTION:주최: kit\, Crayon · 참가 13명 · Ranked\nhttps://itch.io
+ /jam/jeff-the-killer-spooky-halloween-jam
+URL:https://itch.io/jam/jeff-the-killer-spooky-halloween-jam
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-slapjam-ai-2@hmbg.kr
