@@ -898,6 +898,17 @@ DESCRIPTION:주최: MYline media 👤 · 참가 56명 · Ranked\nhttps://it
 URL:https://itch.io/jam/1-bit-jam-15
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-music-travel-rpg-7@hmbg.kr
+DTSTAMP:20261025T080228Z
+DTSTART;VALUE=DATE:20261027
+DTEND;VALUE=DATE:20261103
+SUMMARY:[게임잼] 🎵👻💜 Music Jam: Travel RPG #7 - A Love Song for
+  A Ghost
+DESCRIPTION:주최: Tokyo Frequency · 참가 14명 · Ranked\nhttps://itch
+ .io/jam/music-travel-rpg-7
+URL:https://itch.io/jam/music-travel-rpg-7
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-new-wierd-game-jam-fall@hmbg.kr
 DTSTAMP:20261012T204649Z
 DTSTART;VALUE=DATE:20261027
@@ -936,6 +947,16 @@ SUMMARY:[게임잼] Improve My Game Jam 47
 DESCRIPTION:주최: anomrac21 · 참가 31명 · Ranked\nhttps://itch.io/ja
  m/improve-my-game-jam-47
 URL:https://itch.io/jam/improve-my-game-jam-47
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-jamference-ai-game-jam-hack-3@hmbg.kr
+DTSTAMP:20261025T080225Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261107
+SUMMARY:[게임잼] Jamference: AI Game Jam Hack 3
+DESCRIPTION:주최: dg · 참가 16명 · Ranked\nhttps://itch.io/jam/jamfe
+ rence-ai-game-jam-hack-3
+URL:https://itch.io/jam/jamference-ai-game-jam-hack-3
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-jeff-the-killer-spooky-halloween-jam@hmbg.kr
@@ -1448,6 +1469,16 @@ SUMMARY:[게임잼] Godot Wild Jam #99
 DESCRIPTION:주최: Godot Wild Jam · 참가 52명 · Ranked\nhttps://itch.
  io/jam/godot-wild-jam-99
 URL:https://itch.io/jam/godot-wild-jam-99
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-micro-jam-070@hmbg.kr
+DTSTAMP:20261025T080227Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261117
+SUMMARY:[게임잼] Micro Jam 070: Circus ($300+ Prizes)
+DESCRIPTION:주최: tobias · 참가 15명 · Ranked\nhttps://itch.io/jam/m
+ icro-jam-070
+URL:https://itch.io/jam/micro-jam-070
 END:VEVENT
 BEGIN:VEVENT
 UID:bJ7oHLDjfMybouIBujiu@hmbg.kr
