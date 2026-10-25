@@ -1070,6 +1070,16 @@ DESCRIPTION:주최: tobias\, SeeOne · 참가 20명 · Ranked\nhttps://itch
 URL:https://itch.io/jam/micro-jam-068
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-setfire-halloween-jam@hmbg.kr
+DTSTAMP:20261025T230002Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261104
+SUMMARY:[게임잼] 🎃Setfire Halloween Jam
+DESCRIPTION:주최: Setfire Entertainment · 참가 14명 · Ranked\nhttps:
+ //itch.io/jam/setfire-halloween-jam
+URL:https://itch.io/jam/setfire-halloween-jam
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-the-lost-ps2-jam@hmbg.kr
 DTSTAMP:20261024T075044Z
 DTSTART;VALUE=DATE:20261031
@@ -1313,6 +1323,16 @@ SUMMARY:[게임잼] The Big Gay Comic Jam 2026
 DESCRIPTION:주최: Monty Guiraud · 참가 49명 · Ranked\nhttps://itch.i
  o/jam/the-big-gay-comic-jam
 URL:https://itch.io/jam/the-big-gay-comic-jam
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-5educationaljam@hmbg.kr
+DTSTAMP:20261025T230001Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261109
+SUMMARY:[게임잼] Educational Jam #5
+DESCRIPTION:주최: DTMLP · 참가 17명 · Ranked\nhttps://itch.io/jam/5e
+ ducationaljam
+URL:https://itch.io/jam/5educationaljam
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-littlejs-jam@hmbg.kr
@@ -1712,6 +1732,16 @@ SUMMARY:[게임잼] Godot Wild Jam #100
 DESCRIPTION:주최: Godot Wild Jam · 참가 82명 · Ranked\nhttps://itch.
  io/jam/godot-wild-jam-100
 URL:https://itch.io/jam/godot-wild-jam-100
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-meaningful-games-jam-2026-2-mini-edition@hmbg.kr
+DTSTAMP:20261025T230003Z
+DTSTART;VALUE=DATE:20261216
+DTEND;VALUE=DATE:20261221
+SUMMARY:[게임잼] Meaningful Games Jam 2026.2: Mini Edition!
+DESCRIPTION:주최: Anthony L. Wolf · 참가 13명 · Ranked\nhttps://itch
+ .io/jam/meaningful-games-jam-2026-2-mini-edition
+URL:https://itch.io/jam/meaningful-games-jam-2026-2-mini-edition
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-bob-game-jam-2026@hmbg.kr
