@@ -979,6 +979,16 @@ DESCRIPTION:주최: slapjam · 참가 22명 · Ranked\nhttps://itch.io/jam/
 URL:https://itch.io/jam/slapjam-ai-2
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-untitled-game-jam-135@hmbg.kr
+DTSTAMP:20261026T221141Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261110
+SUMMARY:[게임잼] Untitled Game Jam #135
+DESCRIPTION:주최: Thedrdevin\, LexLoco · 참가 13명 · Ranked\nhttps:/
+ /itch.io/jam/untitled-game-jam-135
+URL:https://itch.io/jam/untitled-game-jam-135
+END:VEVENT
+BEGIN:VEVENT
 UID:wevity-111685@hmbg.kr
 DTSTAMP:20261015T075618Z
 DTSTART;VALUE=DATE:20261030
@@ -1068,6 +1078,16 @@ SUMMARY:[게임잼] Micro Jam 068: Evolution ($250+ Prizes!)
 DESCRIPTION:주최: tobias\, SeeOne · 참가 20명 · Ranked\nhttps://itch
  .io/jam/micro-jam-068
 URL:https://itch.io/jam/micro-jam-068
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-retro-horror-jam-2026@hmbg.kr
+DTSTAMP:20261026T221141Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261116
+SUMMARY:[게임잼] Retro Horror Jam 2026
+DESCRIPTION:주최: RetroGig · 참가 13명 · Ranked\nhttps://itch.io/jam
+ /retro-horror-jam-2026
+URL:https://itch.io/jam/retro-horror-jam-2026
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-setfire-halloween-jam@hmbg.kr
