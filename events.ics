@@ -1491,6 +1491,16 @@ DESCRIPTION:주최: Godot Wild Jam · 참가 52명 · Ranked\nhttps://itch.
 URL:https://itch.io/jam/godot-wild-jam-99
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-micro-jam-069@hmbg.kr
+DTSTAMP:20261026T082409Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261117
+SUMMARY:[게임잼] Micro Jam 069: Halloween ($350+ Prizes!)
+DESCRIPTION:주최: tobias\, SeeOne · 참가 16명 · Ranked\nhttps://itch
+ .io/jam/micro-jam-069
+URL:https://itch.io/jam/micro-jam-069
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-micro-jam-070@hmbg.kr
 DTSTAMP:20261025T080227Z
 DTSTART;VALUE=DATE:20261114
