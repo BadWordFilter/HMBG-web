@@ -1367,6 +1367,16 @@ DESCRIPTION:주최: Game Gauntlet\, cosmicforces\, CyclicalZ · 진행 중
 URL:https://itch.io/jam/game-gauntlet-sim-jam
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-super-free-ai-game-jam-2@hmbg.kr
+DTSTAMP:20261026T154443Z
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261113
+SUMMARY:[게임잼] Super Free AI Game jam #2
+DESCRIPTION:주최: Morei309 · 참가 13명 · Ranked\nhttps://itch.io/jam
+ /super-free-ai-game-jam-2
+URL:https://itch.io/jam/super-free-ai-game-jam-2
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-official-unity-game-jam-2026@hmbg.kr
 DTSTAMP:20261022T190149Z
 DTSTART;VALUE=DATE:20261106
