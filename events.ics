@@ -1204,6 +1204,16 @@ DESCRIPTION:주최: HyperGameDev · 참가 26명 · Ranked\nhttps://itch.io
 URL:https://itch.io/jam/gamelike-jam-012
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-msi-czsk-gamejam-2026@hmbg.kr
+DTSTAMP:20261027T032046Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261112
+SUMMARY:[게임잼] MSI CZ/SK GameJam 2026
+DESCRIPTION:주최: tmsddc\, Viktor Břenek · 참가 88명 · Ranked\nhttp
+ s://itch.io/jam/msi-czsk-gamejam-2026
+URL:https://itch.io/jam/msi-czsk-gamejam-2026
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-printerjam2026@hmbg.kr
 DTSTAMP:20261017T023736Z
 DTSTART;VALUE=DATE:20261101
