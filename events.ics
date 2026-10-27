@@ -1764,6 +1764,16 @@ DESCRIPTION:주최: Grassroots Game Jam\, Brian Neff\, Raven's Library ·
 URL:https://itch.io/jam/grassroots-game-jam-2026
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-gamedevtv-holiday-jam-2026@hmbg.kr
+DTSTAMP:20261027T214258Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261216
+SUMMARY:[게임잼] GameDev.tv Holiday Jam 2026
+DESCRIPTION:주최: gamedevtv · 참가 20명 · Ranked\nhttps://itch.io/ja
+ m/gamedevtv-holiday-jam-2026
+URL:https://itch.io/jam/gamedevtv-holiday-jam-2026
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-1-bit-jam-16@hmbg.kr
 DTSTAMP:20261021T141837Z
 DTSTART;VALUE=DATE:20261208
