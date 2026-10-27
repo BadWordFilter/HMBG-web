@@ -1488,6 +1488,16 @@ DESCRIPTION:주최: epicgamesjams · 참가 806명\nhttps://itch.io/jam/202
 URL:https://itch.io/jam/2026-epic-ai-megajam
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-hand-crafted-jam@hmbg.kr
+DTSTAMP:20261027T112652Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261120
+SUMMARY:[게임잼] Hand Crafted Jam
+DESCRIPTION:주최: Dylan Browne · 참가 36명 · Ranked\nhttps://itch.io
+ /jam/hand-crafted-jam
+URL:https://itch.io/jam/hand-crafted-jam
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-necrovenge-community-jam-01@hmbg.kr
 DTSTAMP:20261017T195836Z
 DTSTART;VALUE=DATE:20261113
