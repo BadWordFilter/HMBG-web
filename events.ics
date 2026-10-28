@@ -1355,6 +1355,16 @@ DESCRIPTION:주최: Monty Guiraud · 참가 49명 · Ranked\nhttps://itch.i
 URL:https://itch.io/jam/the-big-gay-comic-jam
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-unknown-horrors@hmbg.kr
+DTSTAMP:20261028T033711Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261116
+SUMMARY:[게임잼] Unknown Horrors
+DESCRIPTION:주최: Cyanide Time Games\, Combo Bomb Games · 참가 17명 
+ · Ranked\nhttps://itch.io/jam/unknown-horrors
+URL:https://itch.io/jam/unknown-horrors
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-5educationaljam@hmbg.kr
 DTSTAMP:20261025T230001Z
 DTSTART;VALUE=DATE:20261103
