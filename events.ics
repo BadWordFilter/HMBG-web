@@ -1224,6 +1224,16 @@ DESCRIPTION:주최: Game Developers Kerala · 참가 16명 · Ranked\nhttps
 URL:https://itch.io/jam/gdk-mini-jam-2026
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-goraglejam-2026@hmbg.kr
+DTSTAMP:20261029T200218Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261202
+SUMMARY:[게임잼] GoragleJam 2026
+DESCRIPTION:주최: Goragle · 참가 19명 · Ranked\nhttps://itch.io/jam/
+ goraglejam-2026
+URL:https://itch.io/jam/goraglejam-2026
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-msi-czsk-gamejam-2026@hmbg.kr
 DTSTAMP:20261027T032046Z
 DTSTART;VALUE=DATE:20261101
@@ -1435,6 +1445,16 @@ SUMMARY:[게임잼] Super Free AI Game jam #2
 DESCRIPTION:주최: Morei309 · 참가 13명 · Ranked\nhttps://itch.io/jam
  /super-free-ai-game-jam-2
 URL:https://itch.io/jam/super-free-ai-game-jam-2
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-mini-jam-223-construction@hmbg.kr
+DTSTAMP:20261029T200218Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261110
+SUMMARY:[게임잼] Mini Jam 223: Construction
+DESCRIPTION:주최: ZahranW · 참가 19명 · Ranked\nhttps://itch.io/jam/
+ mini-jam-223-construction
+URL:https://itch.io/jam/mini-jam-223-construction
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-official-unity-game-jam-2026@hmbg.kr
