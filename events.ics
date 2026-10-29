@@ -979,6 +979,16 @@ DESCRIPTION:주최: slapjam · 참가 22명 · Ranked\nhttps://itch.io/jam/
 URL:https://itch.io/jam/slapjam-ai-2
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-trijam-396@hmbg.kr
+DTSTAMP:20261029T120826Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261103
+SUMMARY:[게임잼] Trijam #396: The 3 hour game jam
+DESCRIPTION:주최: Trijam\, KrisKuroni\, nerdPoint · 참가 16명 · Rank
+ ed\nhttps://itch.io/jam/trijam-396
+URL:https://itch.io/jam/trijam-396
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-untitled-game-jam-135@hmbg.kr
 DTSTAMP:20261026T221141Z
 DTSTART;VALUE=DATE:20261030
@@ -1202,6 +1212,16 @@ SUMMARY:[게임잼] Game-like Jam 12
 DESCRIPTION:주최: HyperGameDev · 참가 26명 · Ranked\nhttps://itch.io
  /jam/gamelike-jam-012
 URL:https://itch.io/jam/gamelike-jam-012
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-gdk-mini-jam-2026@hmbg.kr
+DTSTAMP:20261029T120827Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261224
+SUMMARY:[게임잼] GDK Lazy Mini Jam 2026
+DESCRIPTION:주최: Game Developers Kerala · 참가 16명 · Ranked\nhttps
+ ://itch.io/jam/gdk-mini-jam-2026
+URL:https://itch.io/jam/gdk-mini-jam-2026
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-msi-czsk-gamejam-2026@hmbg.kr
