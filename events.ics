@@ -1060,6 +1060,16 @@ DESCRIPTION:주최: destructive_crab\, oknogmdv\, Kirk1448 · 참가 146명
 URL:https://itch.io/jam/chrevo-jam
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-chug-some-water-jam@hmbg.kr
+DTSTAMP:20261030T173739Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261115
+SUMMARY:[게임잼] Chug Some Water Jam
+DESCRIPTION:주최: look_alive_sunshine · 참가 16명 · Ranked\nhttps://
+ itch.io/jam/chug-some-water-jam
+URL:https://itch.io/jam/chug-some-water-jam
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-digital-pet-jam@hmbg.kr
 DTSTAMP:20261012T025122Z
 DTSTART;VALUE=DATE:20261031
@@ -2133,5 +2143,15 @@ SUMMARY:[게임잼] GBJAM 15
 DESCRIPTION:주최: Polyducks · 참가 167명 · Ranked\nhttps://itch.io/j
  am/gbjam-15
 URL:https://itch.io/jam/gbjam-15
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-scream-jam-2027@hmbg.kr
+DTSTAMP:20261030T173736Z
+DTSTART;VALUE=DATE:20271010
+DTEND;VALUE=DATE:20271018
+SUMMARY:[게임잼] SCREAM JAM 2027
+DESCRIPTION:주최: SCREAM ZONE · 참가 21명 · Ranked\nhttps://itch.io/
+ jam/scream-jam-2027
+URL:https://itch.io/jam/scream-jam-2027
 END:VEVENT
 END:VCALENDAR
