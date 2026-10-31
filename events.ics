@@ -2155,6 +2155,16 @@ DESCRIPTION:주최: End3r\, Enclave Games · 참가 53명 · Ranked\nhttps:
 URL:https://itch.io/jam/gamedevjs-2027
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-feverdream-game-jam4@hmbg.kr
+DTSTAMP:20261031T235511Z
+DTSTART;VALUE=DATE:20270420
+DTEND;VALUE=DATE:20270521
+SUMMARY:[게임잼] 🌃FeverDream🌠 GAME JAM
+DESCRIPTION:주최: FeverDev · 참가 13명 · Ranked\nhttps://itch.io/jam
+ /feverdream-game-jam4
+URL:https://itch.io/jam/feverdream-game-jam4
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-z4597annualgamejam2026@hmbg.kr
 DTSTAMP:20261015T135201Z
 DTSTART;VALUE=DATE:20270709
