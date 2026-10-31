@@ -1507,6 +1507,16 @@ DESCRIPTION:주최: Keyslam\, Pablo Mayobre · 참가 137명 · Ranked\nhtt
 URL:https://itch.io/jam/lve-jam-2026-b-side
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-gcpl-choose-your-own-game-jam-2026-48-hour-edition@hmbg.kr
+DTSTAMP:20261031T205333Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261110
+SUMMARY:[게임잼] GCPL Choose Your Own Game Jam 2026\, 48-Hour Edition
+DESCRIPTION:주최: GCPL Learning Labs · 참가 14명 · Ranked\nhttps://i
+ tch.io/jam/gcpl-choose-your-own-game-jam-2026-48-hour-edition
+URL:https://itch.io/jam/gcpl-choose-your-own-game-jam-2026-48-hour-edition
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-pizza-jam-pizza-prize-17@hmbg.kr
 DTSTAMP:20261012T204644Z
 DTSTART;VALUE=DATE:20261107
