@@ -1194,6 +1194,16 @@ DESCRIPTION:주최: manonamora\, Autumn Chen\, Lapin Lunaire Games · 진
 URL:https://itch.io/jam/bare-bones-jam-26
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-autumn-frog-jam-2026@hmbg.kr
+DTSTAMP:20261031T034320Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261116
+SUMMARY:[게임잼] Autumn Frog Jam 2026
+DESCRIPTION:주최: Simplicitysocoollikeomg\, NisseManen · 참가 14명 ·
+  Ranked\nhttps://itch.io/jam/autumn-frog-jam-2026
+URL:https://itch.io/jam/autumn-frog-jam-2026
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-bevy-jam-8@hmbg.kr
 DTSTAMP:20261016T183509Z
 DTSTART;VALUE=DATE:20261101
@@ -1556,6 +1566,16 @@ SUMMARY:[게임잼] Hand Crafted Jam
 DESCRIPTION:주최: Dylan Browne · 참가 36명 · Ranked\nhttps://itch.io
  /jam/hand-crafted-jam
 URL:https://itch.io/jam/hand-crafted-jam
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-liberen-el-parana-gamejam@hmbg.kr
+DTSTAMP:20261031T034316Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261122
+SUMMARY:[게임잼] Liberen el Paraná gamejam
+DESCRIPTION:주최: Borza\, Rustimak\, Soph Podestá · 참가 24명 · Ran
+ ked\nhttps://itch.io/jam/liberen-el-parana-gamejam
+URL:https://itch.io/jam/liberen-el-parana-gamejam
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-necrovenge-community-jam-01@hmbg.kr
