@@ -1395,6 +1395,16 @@ DESCRIPTION:주최: polytely games\, Esmeralda · 참가 15명 · Ranked\nh
 URL:https://itch.io/jam/made-with-visionaire-jam-3
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-s-kill-up-horror-2026@hmbg.kr
+DTSTAMP:20261031T113419Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261107
+SUMMARY:[게임잼] S-Kill-Up Horror Game Jam 2026
+DESCRIPTION:주최: UpSkill Community · 참가 14명 · Ranked\nhttps://it
+ ch.io/jam/s-kill-up-horror-2026
+URL:https://itch.io/jam/s-kill-up-horror-2026
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-the-big-gay-comic-jam@hmbg.kr
 DTSTAMP:20261012T100701Z
 DTSTART;VALUE=DATE:20261102
@@ -1882,6 +1892,16 @@ SUMMARY:[게임잼] Godot Wild Jam #100
 DESCRIPTION:주최: Godot Wild Jam · 참가 82명 · Ranked\nhttps://itch.
  io/jam/godot-wild-jam-100
 URL:https://itch.io/jam/godot-wild-jam-100
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-dcexjam2026@hmbg.kr
+DTSTAMP:20261031T113420Z
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261222
+SUMMARY:[게임잼] Dungeon Crawler Limited Jam 2026
+DESCRIPTION:주최: Dashing Strike\, Captain Coder\, DaveLikesPasta · 참
+ 가 13명 · Ranked\nhttps://itch.io/jam/dcexjam2026
+URL:https://itch.io/jam/dcexjam2026
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-meaningful-games-jam-2026-2-mini-edition@hmbg.kr
