@@ -1967,6 +1967,16 @@ DESCRIPTION:주최: Corniflex · 참가 10명 · Ranked\nhttps://itch.io/ja
 URL:https://itch.io/jam/udc-jam-40
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-the-mfg-gamblers-jam@hmbg.kr
+DTSTAMP:20261102T000936Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261214
+SUMMARY:[게임잼] The MFG Gambler's Jam
+DESCRIPTION:주최: augie\, RetroCrow\, Hack Club · 참가 376명 · Ranke
+ d\nhttps://itch.io/jam/the-mfg-gamblers-jam
+URL:https://itch.io/jam/the-mfg-gamblers-jam
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-1-bit-jam-16@hmbg.kr
 DTSTAMP:20261021T141837Z
 DTSTART;VALUE=DATE:20261208
