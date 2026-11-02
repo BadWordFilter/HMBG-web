@@ -1702,6 +1702,16 @@ DESCRIPTION:주최: tobias · 참가 15명 · Ranked\nhttps://itch.io/jam/m
 URL:https://itch.io/jam/micro-jam-070
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-the-sam-game-jam-2026@hmbg.kr
+DTSTAMP:20261102T102729Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261125
+SUMMARY:[게임잼] The S.A.M Game Jam 2026
+DESCRIPTION:주최: SamGuy · 참가 9명 · Ranked\nhttps://itch.io/jam/th
+ e-sam-game-jam-2026
+URL:https://itch.io/jam/the-sam-game-jam-2026
+END:VEVENT
+BEGIN:VEVENT
 UID:bJ7oHLDjfMybouIBujiu@hmbg.kr
 DTSTAMP:20261012T025611Z
 DTSTART;VALUE=DATE:20261116
@@ -1710,6 +1720,16 @@ SUMMARY:[게임잼] Metroidvania Month Finale
 DESCRIPTION:주최: Falcon Nova · 참가 332명\nhttps://itch.io/jam/metro
  idvania-month-34
 URL:https://itch.io/jam/metroidvania-month-34
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-garbage-jam-8@hmbg.kr
+DTSTAMP:20261102T102728Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261124
+SUMMARY:[게임잼] Garbage jam #8
+DESCRIPTION:주최: polosik · 참가 9명 · Ranked\nhttps://itch.io/jam/g
+ arbage-jam-8
+URL:https://itch.io/jam/garbage-jam-8
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-oprmj3@hmbg.kr
@@ -2105,6 +2125,16 @@ SUMMARY:[게임잼] Pixelverse Jam 2026
 DESCRIPTION:주최: DisasterRoyal346 · 진행 중 · 제출 마감일 · 
  참가 106명\nhttps://itch.io/jam/pixelverse-jam-2026
 URL:https://itch.io/jam/pixelverse-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-2027-annual-jam@hmbg.kr
+DTSTAMP:20261102T102726Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20280101
+SUMMARY:[게임잼] 2027 Annual Jam
+DESCRIPTION:주최: Infiland · 참가 10명 · Ranked\nhttps://itch.io/jam
+ /2027-annual-jam
+URL:https://itch.io/jam/2027-annual-jam
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-gdko-2027-round-1@hmbg.kr
