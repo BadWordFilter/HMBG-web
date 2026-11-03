@@ -1498,6 +1498,16 @@ DESCRIPTION:주최: Morei309 · 참가 13명 · Ranked\nhttps://itch.io/jam
 URL:https://itch.io/jam/super-free-ai-game-jam-2
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-chutti@hmbg.kr
+DTSTAMP:20261103T204523Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261110
+SUMMARY:[게임잼] چھٹیاں ہیں تو گیم جیم
+DESCRIPTION:주최: Adeel Tariq · 참가 11명 · Ranked\nhttps://itch.io/
+ jam/chutti
+URL:https://itch.io/jam/chutti
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-mini-jam-223-construction@hmbg.kr
 DTSTAMP:20261029T200218Z
 DTSTART;VALUE=DATE:20261106
@@ -1586,6 +1596,16 @@ SUMMARY:[게임잼] Month of Horror #2: Withering Away
 DESCRIPTION:주최: Beregon\, BroodyGaming · 참가 266명 · Ranked\nhttp
  s://itch.io/jam/month-of-horror-2
 URL:https://itch.io/jam/month-of-horror-2
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-monochrome-jam-by-clyde@hmbg.kr
+DTSTAMP:20261103T204524Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261118
+SUMMARY:[게임잼] MONOCHROME JAM
+DESCRIPTION:주최: ltbClyde · 참가 11명 · Ranked\nhttps://itch.io/jam
+ /monochrome-jam-by-clyde
+URL:https://itch.io/jam/monochrome-jam-by-clyde
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-denpa-vn-jam-2026@hmbg.kr
@@ -1782,6 +1802,16 @@ DESCRIPTION:주최: Nitori\, WelpThatWorked\, GreatHornedOwl\, SolarisSect\
  eon\, Kevin Minh · 참가 21명 · Ranked\nhttps://itch.io/jam/touhou-jam
  -17
 URL:https://itch.io/jam/touhou-jam-17
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-gmt-jam-1@hmbg.kr
+DTSTAMP:20261103T204522Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261201
+SUMMARY:[게임잼] GMT Jam #1 [$300 multi-track prize pool]
+DESCRIPTION:주최: Pipe Runner Corp · 참가 13명 · Ranked\nhttps://itc
+ h.io/jam/gmt-jam-1
+URL:https://itch.io/jam/gmt-jam-1
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-tragedy-jam@hmbg.kr
@@ -2185,6 +2215,16 @@ SUMMARY:[게임잼] Furry Game Jam #3 - Winter Edition 2026
 DESCRIPTION:주최: SUDO\, Furry Game Jam · 참가 29명 · Ranked\nhttps:
  //itch.io/jam/furries
 URL:https://itch.io/jam/furries
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-meat-on-mars@hmbg.kr
+DTSTAMP:20261103T204523Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270114
+SUMMARY:[게임잼] MEAT on MARS
+DESCRIPTION:주최: Clean Meat Alliance · 참가 12명 · Ranked\nhttps://
+ itch.io/jam/meat-on-mars
+URL:https://itch.io/jam/meat-on-mars
 END:VEVENT
 BEGIN:VEVENT
 UID:7ICZ7ax9f2NS9l6rIvr8@hmbg.kr
