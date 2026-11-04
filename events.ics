@@ -1538,6 +1538,16 @@ DESCRIPTION:주최: VLCRNGH · 참가 11명 · Ranked\nhttps://itch.io/jam/
 URL:https://itch.io/jam/restless-jam-2
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-trijam-397@hmbg.kr
+DTSTAMP:20261104T191512Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261110
+SUMMARY:[게임잼] Trijam #397: The 3 hour game jam
+DESCRIPTION:주최: Trijam\, nerdPoint\, KrisKuroni · 참가 11명 · Rank
+ ed\nhttps://itch.io/jam/trijam-397
+URL:https://itch.io/jam/trijam-397
+END:VEVENT
+BEGIN:VEVENT
 UID:sgXaldjnLc0lIxh4Suhv@hmbg.kr
 DTSTAMP:20261012T025610Z
 DTSTART;VALUE=DATE:20261106
@@ -1691,6 +1701,16 @@ DESCRIPTION:주최: (주)포항연합기술지주 · 분야: 기획/아이
  과학/공학\, 취업/창업 · 접수 마감일\nhttps://www.wevity.com/
  ?c=find&s=1&gbn=view&gp=1&ix=111768
 URL:https://www.wevity.com/?c=find&s=1&gbn=view&gp=1&ix=111768
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-crimson-game-jam-2026@hmbg.kr
+DTSTAMP:20261104T102005Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261117
+SUMMARY:[게임잼] Crimson Game Jam 2026
+DESCRIPTION:주최: WSU Game Dev · 참가 19명 · Ranked\nhttps://itch.io
+ /jam/crimson-game-jam-2026
+URL:https://itch.io/jam/crimson-game-jam-2026
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-gmjam2026@hmbg.kr
