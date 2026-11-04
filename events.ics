@@ -1568,6 +1568,17 @@ DESCRIPTION:주최: ComputerJames · 참가 32명 · Ranked\nhttps://itch.i
 URL:https://itch.io/jam/pizza-jam-pizza-prize-17
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-uji-game-jam-2026-spooky-edition@hmbg.kr
+DTSTAMP:20261104T010025Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261109
+SUMMARY:[게임잼] Uji Game Jam 2026 (Spooky Edition)
+DESCRIPTION:주최: HDchrom\, Jorge Florencio Molina (Floromacoba)\, UbePun
+ to · 참가 10명 · Ranked\nhttps://itch.io/jam/uji-game-jam-2026-spooky
+ -edition
+URL:https://itch.io/jam/uji-game-jam-2026-spooky-edition
+END:VEVENT
+BEGIN:VEVENT
 UID:qtYVFr0T3tGohPywmXNg@hmbg.kr
 DTSTAMP:20261012T025610Z
 DTSTART;VALUE=DATE:20261107
@@ -1957,6 +1968,16 @@ DESCRIPTION:주최: Doan Digital · 진행 중 · 제출 마감일 · 참
 URL:https://itch.io/jam/doandigital
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-precision-ost-jam-3@hmbg.kr
+DTSTAMP:20261104T010025Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261210
+SUMMARY:[게임잼] Precision OST Jam #3 🎯🎵
+DESCRIPTION:주최: JacoRen · 참가 10명 · Ranked\nhttps://itch.io/jam/
+ precision-ost-jam-3
+URL:https://itch.io/jam/precision-ost-jam-3
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-uplifting-game-jam-cash-prizes-10@hmbg.kr
 DTSTAMP:20261016T231312Z
 DTSTART;VALUE=DATE:20261202
@@ -2005,6 +2026,16 @@ SUMMARY:[게임잼] GameDev.tv Holiday Jam 2026
 DESCRIPTION:주최: gamedevtv · 참가 20명 · Ranked\nhttps://itch.io/ja
  m/gamedevtv-holiday-jam-2026
 URL:https://itch.io/jam/gamedevtv-holiday-jam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-ost-fragments-jam-4@hmbg.kr
+DTSTAMP:20261104T010023Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261220
+SUMMARY:[게임잼] ost fragments jam #4
+DESCRIPTION:주최: resident // cryptid · 참가 11명 · Ranked\nhttps://
+ itch.io/jam/ost-fragments-jam-4
+URL:https://itch.io/jam/ost-fragments-jam-4
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-udc-jam-40@hmbg.kr
