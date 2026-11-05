@@ -1609,6 +1609,16 @@ DESCRIPTION:주최: GDevelop\, HelperWesley · 참가 606명 · Ranked\nhtt
 URL:https://itch.io/jam/gdevelop-big-game-jam-10
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-dinos-hoi4-mod-jam-1@hmbg.kr
+DTSTAMP:20261105T192225Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261117
+SUMMARY:[게임잼] Dinos Hoi4 Mod Jam #1
+DESCRIPTION:주최: DinoJakeYT\, JohnParker117 · 참가 18명 · Ranked\nh
+ ttps://itch.io/jam/dinos-hoi4-mod-jam-1
+URL:https://itch.io/jam/dinos-hoi4-mod-jam-1
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-month-of-horror-2@hmbg.kr
 DTSTAMP:20261012T025118Z
 DTSTART;VALUE=DATE:20261109
@@ -1678,6 +1688,16 @@ SUMMARY:[게임잼] NECROVENGE Community Zine #01
 DESCRIPTION:주최: Philip Jensen · 참가 15명 · Ranked\nhttps://itch.i
  o/jam/necrovenge-community-jam-01
 URL:https://itch.io/jam/necrovenge-community-jam-01
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-pjp-game-jam-2026-2@hmbg.kr
+DTSTAMP:20261105T192229Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261116
+SUMMARY:[게임잼] PJP Game Jam 2026-2
+DESCRIPTION:주최: RedTeapot\, Kira · 참가 12명 · Ranked\nhttps://itc
+ h.io/jam/pjp-game-jam-2026-2
+URL:https://itch.io/jam/pjp-game-jam-2026-2
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-ultimate-ai-powered-game-jam-7@hmbg.kr
@@ -2016,6 +2036,16 @@ SUMMARY:[게임잼] The Eye Jam III: Folk Horror
 DESCRIPTION:주최: SeeOne · 참가 167명 · Ranked\nhttps://itch.io/jam/
  the-eye-jam3
 URL:https://itch.io/jam/the-eye-jam3
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-blend-jam-1@hmbg.kr
+DTSTAMP:20261105T192228Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261215
+SUMMARY:[게임잼] BLEND JAM #1
+DESCRIPTION:주최: discolexia · 참가 12명 · Ranked\nhttps://itch.io/j
+ am/blend-jam-1
+URL:https://itch.io/jam/blend-jam-1
 END:VEVENT
 BEGIN:VEVENT
 UID:itch-craftpix-indie-jam-2-2026@hmbg.kr
