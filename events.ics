@@ -1558,6 +1558,16 @@ DESCRIPTION:주최: Keyslam\, Pablo Mayobre · 참가 137명 · Ranked\nhtt
 URL:https://itch.io/jam/lve-jam-2026-b-side
 END:VEVENT
 BEGIN:VEVENT
+UID:itch-gcpl-choose-your-own-game-jam-2026-2-week-edition@hmbg.kr
+DTSTAMP:20261107T003505Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261123
+SUMMARY:[게임잼] GCPL Choose Your Own Game Jam 2026\, 2-Week Edition
+DESCRIPTION:주최: GCPL Learning Labs · 참가 12명 · Ranked\nhttps://i
+ tch.io/jam/gcpl-choose-your-own-game-jam-2026-2-week-edition
+URL:https://itch.io/jam/gcpl-choose-your-own-game-jam-2026-2-week-edition
+END:VEVENT
+BEGIN:VEVENT
 UID:itch-gcpl-choose-your-own-game-jam-2026-48-hour-edition@hmbg.kr
 DTSTAMP:20261031T205333Z
 DTSTART;VALUE=DATE:20261107
@@ -2286,6 +2296,16 @@ SUMMARY:[게임잼] GDKO 2027 Round 1
 DESCRIPTION:주최: Xanderwood · 참가 52명 · Ranked\nhttps://itch.io/j
  am/gdko-2027-round-1
 URL:https://itch.io/jam/gdko-2027-round-1
+END:VEVENT
+BEGIN:VEVENT
+UID:itch-opengameartorgs-winter-game-jam-2027@hmbg.kr
+DTSTAMP:20261107T003506Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270201
+SUMMARY:[게임잼] OpenGameArt.org's Winter Game Jam 2027
+DESCRIPTION:주최: with the love studios · 참가 11명 · Ranked\nhttps:
+ //itch.io/jam/opengameartorgs-winter-game-jam-2027
+URL:https://itch.io/jam/opengameartorgs-winter-game-jam-2027
 END:VEVENT
 BEGIN:VEVENT
 UID:kvuQ8UAe2IpVZ9balML4@hmbg.kr
